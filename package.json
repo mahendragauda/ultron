@@ -2,7 +2,7 @@
   "name": "ultron",
   "private": true,
   "scripts": {
-    "dev": "next dev ./src",
+    "dev": "PORT=3030 next dev ./src",
     "build": "next build ./src",
     "start": "next start ./src",
     "lint": "next lint ./src"
