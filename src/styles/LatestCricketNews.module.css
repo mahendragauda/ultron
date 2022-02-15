@@ -1,0 +1,13 @@
+.latest-news, .related-content {
+    max-width: 48.68%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    flex: 1 1 48%;
+}
+.bdr-dddddd {
+    border: 1px solid #ddd;
+}
+.latest-news:nth-child(odd), .related-content:nth-child(odd) {
+    margin-right: 20px;
+}
