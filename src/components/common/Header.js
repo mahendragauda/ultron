@@ -220,7 +220,7 @@ class Header extends React.Component {
             <div style={this.CSS.header}>
               <div style={this.CSS.headerMenuContainer} id='menuContainer'>
                 <div style={this.CSS.headerMenuWrapper}>
-                  <Link href="/">
+                  <Link href="/the-debate">
                     <a style={this.CSS.menuWrapper}>
                       <div style={{ flexShrink: '0', padding: '5px 20px 5px 0px' }}>The Debate</div>
                     </a>

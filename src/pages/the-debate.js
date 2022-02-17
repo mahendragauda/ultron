@@ -1,16 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import TheDebate from "../components/common/TheDebate";
 import Header from "../components/common/Header";
+
 const axios = require('axios');
 
 export default function TheDebatePage({ debate }) {
-  console.log(debate)
     return (
       <div>
         <Header />
-        <div>{debate.debates[0].id}</div>
+        <TheDebate debate={debate}/>
       </div>
     );
   }
