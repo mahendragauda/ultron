@@ -6,45 +6,45 @@ class TheDebate extends React.Component {
     CSS = {
         desktop: {
             width: "100%",
-            fontfamily: "sans-serif",
+            fontFamily: "sans-serif",
         },
         navbar: {
-            fontfamily: "Roboto,sans-serif",
-            letterspacing: "0",
-            backgroundcolor: "#f8f8f8",
+            fontFamily: "Roboto,sans-serif",
+            letterSpacing: "0",
+            backgroundColor: "#f8f8f8",
         },
         nav: {
-            paddingtop: "15px!important",
-            paddingleft: "10px!important",
-            paddingright: "10px!important",
-            fontsize: '14px',
+            paddingTop: "15px!important",
+            paddingLeft: "10px!important",
+            paddingRight: "10px!important",
+            fontSize: '14px',
         },
         breadcrumb: {
-            maxwidth: "1200px",
+            maxWidth: "1200px",
             width: "100%",
             margin: " 0 auto",
             position: "relative",
         },
         a: {
-            textdecoration: "none",
+            textDecoration: "none",
             border: "none",
             color: "#000",
         },
         sub1: {
-            flexshrink: '0',
+            flexShrink: '0!important',
         },
         sub2: {
-            fontweight: " 500",
-            webkitlineclamp: "1",
+            fontWeight: " 500",
+            webkitLineClamp: "1",
         },
         section: {
-            paddingtop: '25px',
-            paddingleft: '10px',
-            paddingright: '10px',
+            paddingTop: '25px',
+            paddingLeft: '10px',
+            paddingRight: '10px',
         },
         bar: {
-            borderbottom: '1px solid #ddd',
-            paddingbottom: '15px',
+            borderBottom: '1px solid #ddd',
+            paddingBottom: '15px',
         },
         h1: {
 
@@ -65,8 +65,8 @@ class TheDebate extends React.Component {
                     <div style={this.CSS.nav}>
                         <nav style={this.CSS.breadcrumb}>
                             <span><a href="">Home</a></span>
-                            <span class="sub1"><a href="https://www.republicworld.com/the-debate"> / The Debate</a></span>
-                            <span class="sub2"><a href="https://www.republicworld.com/the-debate/2554/7597/hijab-protests-becoming-a-washout.html"> / Hijab protests becoming a washout? </a></span>
+                            <span class="sub1"><a href="https://www.republicworld.com/the-debate"> / The Debate /</a></span>
+                            <span class="sub2"><a href="https://www.republicworld.com/the-debate/2554/7597/hijab-protests-becoming-a-washout.html" style={{color:"#d10014"}}> Hijab protests becoming a washout? </a></span>
                         </nav>
                     </div>
                 </div>
