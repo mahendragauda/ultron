@@ -1,25 +1,26 @@
 import { useRouter } from "next/router";
 import Header from '/components/common/Header'
-import Cricket from '/components/common/Cricket'
+import Cricket from '/components/common/CricketMenuBar'
+import CricketNewsCard from '/components/common/CricketNewsCard'
+import TeamPointsTable from '/components/common/TeamPointsTable'
 import Link from 'next/link';
 import Image from "next/image";
-import styles from '/styles/LatestCricketNews.module.css';
 
 
-export default function ipl(){
+export default function ipl() {
     const router = useRouter()
     let isIpl2021 = router.query.ipl === "ipl-2021"
     // if(isIpl2021){
     return (
         <>
-       <Header/>
-       <Cricket/>
-       <nav id="breadcrumb" class="font14 font-roboto font14 flex flexAlignItemsCenter" style={{paddingTop:"15px",paddingLeft:"10px",paddingRight:"10px"}}>
-            <span><Link href="/"><a style={{textDecoration: "underline !important;"}}>Home / </a></Link></span>
-            <span class="txtTransformCaps"><Link href="/"><a style={{textDecoration: "underline !important;"}}> Cricket / </a></Link></span>
-            <span class="txtTransformCaps"><Link href="/"><a href={{textDecoration: "underline !important;"}}  class="color-e60000 fontweight500"> IPL 2021</a></Link></span>
-        </nav>
-        {/* <div class="flex padtop20 flexJustifyCenter" style={{display: "flex;"}}>
+            <Header />
+            <Cricket />
+            <nav id="breadcrumb" class="font14 font-roboto font14 flex flexAlignItemsCenter" style={{ paddingTop: "15px", paddingLeft: "10px", paddingRight: "10px" }}>
+                <span><Link href="/"><a style={{ textDecoration: "underline !important;" }}>Home / </a></Link></span>
+                <span class="txtTransformCaps"><Link href="/"><a style={{ textDecoration: "underline !important;" }}> Cricket / </a></Link></span>
+                <span class="txtTransformCaps"><Link href="/"><a href={{ textDecoration: "underline !important;" }} class="color-e60000 fontweight500"> IPL 2021</a></Link></span>
+            </nav>
+            {/* <div class="flex padtop20 flexJustifyCenter" style={{display: "flex;"}}>
             <div class="width100 bdr-dddddd flex">
                 <div class="flex mrgnright10" style={{width:"76%"}}>
                     <Image style={{width:"100%"}} src="https://www.republicworld.com/assets/images/cricket/cricket_banner_logo.jpeg" alt="Cricket" title="Cricket" width={100} height={60}/>
@@ -33,166 +34,176 @@ export default function ipl(){
             </div>
         </div>         */}
 
-<section style={{padding: "20px 10px 10px 10px"}}>
-            <h1 class="font25 lineHeight25px" title="IPL 2021">Indian Premier League 2021</h1>
-        </section>
+            <section style={{ padding: "20px 10px 10px 10px" }}>
+                <h1 class="font25 lineHeight25px" title="IPL 2021">Indian Premier League 2021</h1>
+            </section>
 
-        <div class="padtop20 flex cricket-page-responsive" style={{padding: "20px 10px 10px 10px",flexDirection:"column"}}>
-    <div class="width67 padright20">
-        <div class="flex">
-            <article class="hover-effect top-news bdr-dddddd" style={{width: "56%;"}}>
-                <a href="https://www.republicworld.com/sports-news/cricket-news/india-vs-west-indies-t20i-why-was-rishabh-pant-appointed-as-team-indias-vice-captain-articleshow.html">
-                    <div class="posRelative flex overflowHidden">
-                        <img
-                            class="imghover"
-                            src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/jcsdscxwx8skai4i_1644913784.jpeg?tr=w-430,h-281"
-                            style={{width: "100%;"}}
-                            alt="India vs West Indies T20I: Why was Rishabh Pant appointed as Team India's vice-captain?"
-                        />
+            <div class="padtop20 flex cricket-page-responsive" style={{ padding: "20px 10px 10px 10px", flexDirection: "column" }}>
+                <div class="width67 padright20">
+                    <div class="flex" style={{ display: "flex", flex: "initial!important", webkitBoxSizing: "border-box", fontFamily: "Roboto,sans-serif" }}>
+                        <article class="hover-effect top-news bdr-dddddd" style={{ width: "56%;", display: "block", fontFamily: "Roboto,sans-serif", fontSize: ".8em", webkitBoxSizing: "border-box", borderTopColor: "rgb(221, 221, 221)", borderTopStyle: "solid", borderTopWidth: "1px", borderRightColor: "rgb(221, 221, 221)", borderRightStyle: "solid", borderRightWidth: "1px", borderBottomColor: "rgb(221, 221, 221)", borderBottomStyle: "solid", borderBottomWidth: "1px", borderLeftColor: "rgb(221, 221, 221)", borderLeftStyle: "solid", borderLeftWidth: "1px", borderImageSource: "initial", borderImageSlice: "initial", borderImageWidth: "initial", borderImageOutset: "initial", borderImageRepeat: "initial" }}>
+                            <a href="https://www.republicworld.com/sports-news/cricket-news/india-vs-west-indies-t20i-why-was-rishabh-pant-appointed-as-team-indias-vice-captain-articleshow.html">
+                                <div class="posRelative flex overflowHidden">
+                                    <img
+                                        class="imghover"
+                                        src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/jcsdscxwx8skai4i_1644913784.jpeg?tr=w-430,h-281"
+                                        style={{ width: "100%;" }}
+                                        alt="India vs West Indies T20I: Why was Rishabh Pant appointed as Team India's vice-captain?"
+                                    />
+                                </div>
+                                <p class="texthover txtTruncate lineClip3" style={{ transitionProperty: "all", transitionDuration: "0.5s", transitionTimingFunction: "ease", transitionDelay: "0s", lineHeight: "25px", fontSize: "21px", marginTop: "0", marginBottom: "0", padding: "5px 10px", fontWeight: "500", marginRight: "0px", marginLeft: "0px", webkitLineClamp: "3!important", overflowX: "hidden", overflowY: "hidden", display: "-webkit-box", webkitBoxOrient: "vertical", webkitBoxSizing: "border-box", marginBlockStart: "1em", marginBlockEnd: "1em", marginInlineStart: "0px", marginInlineEnd: "0px", fontFamily: "Roboto,sans-serif" }}>
+                                    India vs West Indies T20I: Why was Rishabh Pant appointed as Team India's vice-captain?
+                                </p>
+                            </a>
+                        </article>
+
+                        <div class="flex flexDirectionCol bdrRight-dddddd bdrTop-dddddd bdrBtm-dddddd" style={{ width: "44%;", borderBottomWidth: "1px", borderBottomStyle: "solid", borderBottomColor: "rgb(221, 221, 221)", borderRightWidth: "1px", borderRightStyle: "solid", borderRightColor: "rgb(221, 221, 221)", borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "rgb(221, 221, 221)", flexDirection: "column", display: "flex", flex: "initial!important", webkitBoxSizing: "border-box", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                            <article class="hover-effect recent-news" style={{ borderBottomWidth: "1px", borderBottomStyle: "solid", borderBottomColor: "rgb(221, 221, 221)", webkitBoxSizing: "border-box", display: "block", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                                <a href="https://www.republicworld.com/sports-news/cricket-news/rohit-sharma-shuts-down-questions-on-ex-skipper-virat-kohlis-form-if-you-guys-can-dot-articleshow.html" style={{ width: "100%", display: "flex", padding: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                                    <div class="posRelative flex overflowHidden" style={{ minWidth: "80px", height: "60px", position: "relative", overflow: "hidden!important", display: "flex", flex: "initial!important", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                                        <img
+                                            class="imghover"
+                                            src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/8oshjkptmnuh7a4s_1644915998.jpeg?tr=w-80,h-60"
+                                            alt="Rohit Sharma shuts down questions on ex-skipper Virat Kohli's form; 'If you guys can...'"
+                                            style={{ transitionProperty: "all", transitionDuration: "0.5s", transitionTimingFunction: "ease", transitionDelay: "0s" }}
+                                        />
+                                    </div>
+                                    <p class="texthover txtTruncate lineClip3 font16" style={{ transitionProperty: "all", transitionDuration: "0.5s", transitionTimingFunction: "ease", transitionDelay: "0s", margin: "0 0 0 5px!important", letterSpacing: "-.2px", lineHeight: "21px", fontSize: "16px", webkitLineClamp: "3!important", overflow: "hidden", display: "-webkit-box", webkitBoxSizing: "border-box", marginBlockStart: "1em", marginBlockEnd: "1em", marginInlineStart: "0px", marginInlineEnd: "0px", fontFamily: "Roboto,sans-serif" }}>
+                                        Rohit Sharma shuts down questions on ex-skipper Virat Kohli's form; 'If you guys can...'
+                                    </p>
+                                </a>
+                            </article>
+                        </div>
                     </div>
-                    <p class="texthover txtTruncate lineClip3">
-                        India vs West Indies T20I: Why was Rishabh Pant appointed as Team India's vice-captain?
-                    </p>
-                </a>
-            </article>
+                </div>
+            </div>
+            <div class="padtop30" style={{ padding: "20px 10px 10px 10px" }}>
+                <div class="flex flexJustifyBetween padbtm15" style={{ display: "flex", justifyContent: "space-between" }}>
+                    <h2 class="font25 lineHeight25px">LATEST CRICKET NEWS</h2>
+                    <a href="https://www.republicworld.com/cricket/ipl-2021/1" style={{ textDecoration: "underline!important", fontSize: "14px", paddingTop: "25px" }}>View more</a>
+                </div>
+                <CricketNewsCard />
+            </div>
+            <div class="padtop30" style={{ padding: "20px 10px 10px 10px" }}>
+                <div class="flex flexJustifyBetween padbtm15" style={{ display: "flex", justifyContent: "space-between" }}>
+                    <h2 class="font25 lineHeight25px">EDITOR'S PICK</h2>
+                </div>
+                <CricketNewsCard />
 
-            <div class="flex flexDirectionCol bdrRight-dddddd bdrTop-dddddd bdrBtm-dddddd" style={{width:"44%;"}}>
-                <article class="hover-effect recent-news">
-                    <a href="https://www.republicworld.com/sports-news/cricket-news/rohit-sharma-shuts-down-questions-on-ex-skipper-virat-kohlis-form-if-you-guys-can-dot-articleshow.html">
-                        <div class="posRelative flex overflowHidden" style={{minWidth: "80px", height: "60px"}}>
+            </div>
+            <div class="padtop30" style={{ padding: "20px 10px 10px 10px" }}>
+                <div class="flex flexJustifyBetween padbtm15" style={{ display: "flex", justifyContent: "space-between" }}>
+                    <h2 class="font25 lineHeight25px">MORE CRICKET NEWS</h2>
+                    <a href="https://www.republicworld.com/cricket/ipl-2021/1" style={{ textDecoration: "underline!important", fontSize: "14px", paddingTop: "25px" }}>View more</a>
+                </div>
+                <CricketNewsCard />
+
+            </div>
+            {/*
+             <div class="padtop30" style={{ padding: "20px 10px 10px 10px" }}>
+                <div class="flex flexJustifyBetween padbtm15" style={{ display: "flex", justifyContent: "space-between" }}>
+                    <h2 class="font25 lineHeight25px">VIDEOS</h2>
+                </div>
+
+                <div style={{ padding: "20px 30px", fontFamily: "Roboto", fontSize: "16px", backgroundColor: "#1a1423", border: "1px solid #ddd", display: "flex", flex: "initial!important", webkitBoxSizing: "border-box", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                    <article class="hover-effect video-inner-container" style={{ width: "50%", marginRight: "20px", webkitBoxSizing: "border-box", display: "block", padding: "20px 30px", fontFamily: "Roboto", fontSize: "16px", backgroundColor: "#1a1423", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                        <Link href="/">
+                            <a class="flex flexDirectionCol" style={{ flexDirection: "column", display: "flex", flex: "initial!important", textDecoration: "none!important", border: "none", color: "#000", webkitBoxSizing: "border-box", padding: "20px 30px", fontFamily: "Roboto", fontSize: "16px", backgroundColor: "#1a1423", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }} /></Link>
+                        <div class="overflowHidden posRelative flex" style={{ position: "relative", overflow: "hidden!important", display: "flex", flex: "initial!important", webkitBoxSizing: "border-box", textDecoration: "none!important", border: "none", color: "#000", padding: "20px 30px", fontFamily: "Roboto", fontSize: "16px", backgroundColor: "#1a1423", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
                             <img
                                 class="imghover"
-                                src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/8oshjkptmnuh7a4s_1644915998.jpeg?tr=w-80,h-60"
-                                alt="Rohit Sharma shuts down questions on ex-skipper Virat Kohli's form; 'If you guys can...'"
-                            />
+                                src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/nelza1x0mn3jzzjc_1644139377.jpeg?tr=w-351,h-200"
+                                alt="Nishant Sindhu's coach opines on India's strategy post losing toss in U-19 World Cup final"
+                                style={{ transition: "all .5s", width: "100%", boxSizing: "border-box", textDecoration: "none!important", border: "none", color: "#000", padding: "20px 30px", fontFamily: "Roboto", fontSize: "16px", backgroundColor: "#1a1423", fontFamily: "Roboto,sans-serif", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }} />
+                            <div class="videohover posAbsolute width100 height100p" style={{ background: "rgba(0,0,0,.1)", transition: "all .5s", position: "absolute", height: "100%", width: "100%", boxSizing: "border-box", display: "block", textDecoration: "none!important", border: "none", color: "#000", padding: "20px 30px", fontFamily: "Roboto", fontSize: "16px", backgroundColor: "#1a1423", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                                <div class="flex height100p" style={{ height: "100%", display: "flex", flex: "initial!important", boxSizing: "border-box", textDecoration: "none!important", border: "none", color: "#000", padding: "20px 30px", fontFamily: "Roboto", fontSize: "16px", backgroundColor: "#1a1423", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                                    <div class="livetv-play-button" style={{ fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", margin: "auto", width: "35px", height: "35px", content: ("https://www.republicworld.com/assets/images/livetv/play_button.png"), textAlign: "center", boxSizing: "border-box", display: "block", textDecoration: "none!important", border: "none", color: "#000", padding: "20px 30px", fontFamily: "Roboto", fontSize: "16px", backgroundColor: "#1a1423", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}></div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="texthover txtTruncate lineClip3 font16">
-                            Rohit Sharma shuts down questions on ex-skipper Virat Kohli's form; 'If you guys can...'
-                        </p>
-                    </a>
-                </article>
+                        <div class="texthover video-container-text" style={{ transition: "all .5s", boxSizing: "border-box", display: "block", textDecoration: "none!important", border: "none", color: "#000", padding: "20px 30px", fontFamily: "Roboto", fontSize: "16px", backgroundColor: "#1a1423", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                            <p class="txtTruncate" style={{ margin: "10px 0 0 0", color: "#fff", margin: "0", overflow: "hidden", display: "-webkit-box", webkitLineClamp: "2", webkitBoxOrient: "vertical", boxSizing: "border-box", display: "block", marginBlockStart: "1em", marginBlockEnd: "1em", marginInlineStart: "0px", marginInlineEnd: "0px", textDecoration: "none!important", border: "none", color: "#000", padding: "20px 30px", fontFamily: "Roboto", fontSize: "16px", backgroundColor: "#1a1423", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>Nishant Sindhu's coach opines on India's strategy post losing toss in U-19 World Cup final</p>
+                        </div>
+                    </article>
                 </div>
-</div>
-</div>
-   </div>
-   <div class="padtop30" style={{padding: "20px 10px 10px 10px"}}>
-                        <div class="flex flexJustifyBetween padbtm15" style={{display: "flex",justifyContent: "space-between"}}>
-                            <h2 class="font25 lineHeight25px">LATEST CRICKET NEWS</h2>
-                            <a href="https://www.republicworld.com/cricket/ipl-2021/1" style={{textDecoration: "underline!important",fontSize: "14px",paddingTop: "25px"}}>View more</a>
+            </div>
+ */}
+             <div class="padtop30" style={{ padding: "20px 10px 10px 10px" }}>
+                <div class="flex flexJustifyBetween padbtm15" style={{ display: "flex", justifyContent: "space-between" }}>
+                    <h2 class="font25 lineHeight25px">VIDEOS</h2>
+                </div>
+            <div style={{ padding: "20px 30px", fontFamily: "Roboto", fontSize: "16px", backgroundColor: "#1a1423", border: "1px solid #ddd", display: "flex", flex: "initial!important", webkitBoxSizing: "border-box", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                <Link href="/">
+                    <a style={{ width: "50%", display: "flex", float: "left", padding: "5px" }}>
+                        <div style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", background: "rgb(26, 20, 35)", boxSizing: "border-box" }}>
+                            <div style={{ height: "120px", position: "relative"}}>
+                            <img
+                                src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/nelza1x0mn3jzzjc_1644139377.jpeg?tr=w-351,h-200"
+                                alt="Nishant Sindhu's coach opines on India's strategy post losing toss in U-19 World Cup final"
+                                style={{width: "100%",padding: "20px 30px",fontFamily: "Roboto",fontSize: "16px",backgroundColor: "#1a1423"}} />
+                                <div style={{ position: "absolute", right: "44%", margin: "auto", top: "42%", background: "black", width: "25px", textAlign: "center", borderRadius: "100%", height: "25px", padding: "0px" }}>
+                                    <div style={{ width: "10px", height: "10px", marginLeft: "10px", borderTop: "5px solid transparent", borderBottom: "5px solid transparent", borderLeft: "8px solid white", marginTop: "8px" }}>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style={{ padding: "10px 0px", fontFamily: "Roboto, sans-serif", fontStyle: "normal", fontWeight: "normal", background: "rgb(26, 20, 35)", color: "rgb(255, 255, 255)", fontSize: "14px", textAlign: "left", height: "68px", overflow: "hidden" }}>
+                                <div style={{ paddingTop: "50px",fontSize: "14px", lineHeight: "16px", height: "48px", overflow: "hidden",padding: "20px 30px",fontFamily: "Roboto",fontSize: "16px",backgroundColor: "#1a1423" }} >Nishant Sindhu's coach opines on India's strategy post losing toss in U-19 World Cup final
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex flexWrap">
-                        <article className={styles.latest-news,styles.bdr-dddddd}>
-                                    <a href="https://www.republicworld.com/sports-news/cricket-news/ipl-2022-from-csk-to-srh-heres-predicted-playing-xis-of-all-10-teams-after-mega-auction-articleshow.html">
-                                        <div class="flex">
-                                            <div class="posRelative flex overflowHidden">
-                                                <img class="imghover responsiveImage" src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/qxbnaoffzgkttsp4_1644836282.jpeg?tr=w-110,h-90" alt="IPL 2022: From CSK to SRH, here's predicted playing XIs of all 10 teams after mega auction"/>
-                                                                                            </div>
-                                            <div class="texthover latest-news-text flex flexDirectionCol">
-                                                <div>
-                                                    <p class="txtTruncate lineClip3">
-                                                                                                                IPL 2022: From CSK to SRH, here's predicted playing XIs of all 10 teams after mega auction                                                    </p>
-                                                </div>
-                                                <div class="mrgntop10">
-                                                    <p>22 hours ago</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </article>
-                                                            <article class="hover-effect latest-news bdr-dddddd">
-                                    <a href="https://www.republicworld.com/sports-news/cricket-news/work-begins-on-new-nca-in-bengaluru-foundation-stone-laid-by-bcci-brass-articleshow.html">
-                                        <div class="flex">
-                                            <div class="posRelative flex overflowHidden">
-                                                <img class="imghover responsiveImage" src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/238nazykqvskk8gi_1644836618.jpeg?tr=w-110,h-90" alt="Work begins on new NCA in Bengaluru, foundation stone laid by BCCI brass"/>
-                                                                                            </div>
-                                            <div class="texthover latest-news-text flex flexDirectionCol">
-                                                <div>
-                                                    <p class="txtTruncate lineClip3">
-                                                                                                                Work begins on new NCA in Bengaluru, foundation stone laid by BCCI brass                                                    </p>
-                                                </div>
-                                                <div class="mrgntop10">
-                                                    <p>23 hours ago</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </article>
-                                                            <article class="hover-effect latest-news bdr-dddddd">
-                                    <a href="https://www.republicworld.com/sports-news/cricket-news/ind-vs-wi-t20i-who-will-replace-kl-rahul-will-rishabh-pant-open-alongside-rohit-sharma-articleshow.html">
-                                        <div class="flex">
-                                            <div class="posRelative flex overflowHidden">
-                                                <img class="imghover responsiveImage" src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/jkz6ojgi90kpncvh_1644834455.jpeg?tr=w-110,h-90" alt="IND vs WI T20I: Who will replace KL Rahul? Will Rishabh Pant open alongside Rohit Sharma?"/>
-                                                                                            </div>
-                                            <div class="texthover latest-news-text flex flexDirectionCol">
-                                                <div>
-                                                    <p class="txtTruncate lineClip3">
-                                                                                                                IND vs WI T20I: Who will replace KL Rahul? Will Rishabh Pant open alongside Rohit Sharma?                                                    </p>
-                                                </div>
-                                                <div class="mrgntop10">
-                                                    <p>23 hours ago</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </article>
-                                                            <article class="hover-effect latest-news bdr-dddddd">
-                                    <a href="https://www.republicworld.com/sports-news/cricket-news/kl-rahul-is-all-hearts-for-ladylove-athiya-shetty-in-blurry-valentines-day-mirror-selfie-articleshow.html">
-                                        <div class="flex">
-                                            <div class="posRelative flex overflowHidden">
-                                                <img class="imghover responsiveImage" src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/pptio9rgeijbad1o_1644831820.jpeg?tr=w-110,h-90" alt="KL Rahul is all hearts for ladylove Athiya Shetty in blurry Valentine's Day mirror selfie"/>
-                                                                                            </div>
-                                            <div class="texthover latest-news-text flex flexDirectionCol">
-                                                <div>
-                                                    <p class="txtTruncate lineClip3">
-                                                                                                                KL Rahul is all hearts for ladylove Athiya Shetty in blurry Valentine's Day mirror selfie                                                    </p>
-                                                </div>
-                                                <div class="mrgntop10">
-                                                    <p>1 day ago</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </article>
-                                                            <article class="hover-effect latest-news bdr-dddddd">
-                                    <a href="https://www.republicworld.com/sports-news/cricket-news/preview-india-seek-to-sort-out-batting-fielding-woes-in-2nd-womens-odi-vs-new-zealand-articleshow.html">
-                                        <div class="flex">
-                                            <div class="posRelative flex overflowHidden">
-                                                <img class="imghover responsiveImage" src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/dkzut6metfwyxzku_1644824142.jpeg?tr=w-110,h-90" alt="Preview: India seek to sort out batting, fielding woes in 2nd women's ODI vs New Zealand"/>
-                                                                                            </div>
-                                            <div class="texthover latest-news-text flex flexDirectionCol">
-                                                <div>
-                                                    <p class="txtTruncate lineClip3">
-                                                                                                                Preview: India seek to sort out batting, fielding woes in 2nd women's ODI vs New Zealand                                                    </p>
-                                                </div>
-                                                <div class="mrgntop10">
-                                                    <p>1 day ago</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </article>
-                                                            <article class="hover-effect latest-news bdr-dddddd">
-                                    <a href="https://www.republicworld.com/sports-news/cricket-news/steve-smith-okay-after-suffering-concussion-in-desperate-attempt-to-save-six-articleshow.html">
-                                        <div class="flex">
-                                            <div class="posRelative flex overflowHidden">
-                                                <img class="imghover responsiveImage" src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/hyxbkodkkfpleduq_1644818270.jpeg?tr=w-110,h-90" alt="Steve Smith 'okay' after suffering concussion in desperate attempt to save six"/>
-                                                                                            </div>
-                                            <div class="texthover latest-news-text flex flexDirectionCol">
-                                                <div>
-                                                    <p class="txtTruncate lineClip3">
-                                                                                                                Steve Smith 'okay' after suffering concussion in desperate attempt to save six                                                    </p>
-                                                </div>
-                                                <div class="mrgntop10">
-                                                    <p>1 day ago</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </article>
-                                                    </div>
-                    </div> 
+                    </a>
+                </Link>
+                <Link href="/">
+                    <a style={{ width: "50%", display: "flex", float: "left", padding: "5px" }}>
+                        <div style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", background: "rgb(26, 20, 35)", boxSizing: "border-box" }}>
+                            <div style={{ height: "120px", position: "relative" }}>
+                            <img
+                                src="https://img.republicworld.com/republic-prod/stories/promolarge/mdpi/nelza1x0mn3jzzjc_1644139377.jpeg?tr=w-351,h-200"
+                                alt="Nishant Sindhu's coach opines on India's strategy post losing toss in U-19 World Cup final"
+                                style={{width: "100%",height:"auto",padding: "20px 30px",fontFamily: "Roboto",fontSize: "16px",backgroundColor: "#1a1423"}} />
+                                <div style={{ position: "absolute", right: "44%", margin: "auto", top: "42%", background: "black", width: "25px", textAlign: "center", borderRadius: "100%", height: "25px", padding: "0px" }}>
+                                    <div style={{ width: "10px", height: "10px", marginLeft: "10px", borderTop: "5px solid transparent", borderBottom: "5px solid transparent", borderLeft: "8px solid white", marginTop: "8px" }}>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style={{ padding: "10px 0px", fontFamily: "Roboto, sans-serif", fontStyle: "normal", fontWeight: "normal", background: "rgb(26, 20, 35)", color: "rgb(255, 255, 255)", fontSize: "14px", textAlign: "left", height: "68px", overflow: "hidden" }}>
+                                <div style={{ fontSize: "14px", lineHeight: "16px", height: "48px", overflow: "hidden",padding: "20px 30px",fontFamily: "Roboto",fontSize: "16px",backgroundColor: "#1a1423" }} >Nishant Sindhu's coach opines on India's strategy post losing toss in U-19 World Cup final
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </Link>
 
+            </div>
+            </div>
+            <div class="clr-D10014 mrgntop10 pad5 font18 bdr4px-dddddd fontweight700" style={{ color: "#d10014", marginTop: "10px!important", padding: "5px!important", border: "4px solid #ddd", fontSize: "18px", fontWeight: "700!important", boxSizing: "border-box", display: "block", fontFamily: "Roboto,sans-serif", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                Disclaimer: None of the advertisers on this page are the official sponsors of the IPL 2021
+            </div>
+            <div class="r-logo watch-livetv mrgnbtm20" style={{ display: "block", flexWrap: "wrap", display: "flex", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", background: "#6d1c24", backgroundImage: "url('https://www.republicworld.com/assets/images/youtube/g18.png')", backgroundRepeat: "no-repeat", backgroundSize: "contain", marginBottom: "20px!important", boxSizing: "border-box", fontFamily: "Roboto,sans-serif", webkitTextSizeAdjust: "100%", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                <div class="flex flexJustifyBetween mrgnbtm10" style={{ flexDirection: "row", width: "100%", justifyContent: "space-between", paddingBottom: "5px", marginBottom: "10px!important", display: "flex", flex: "initial!important", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", webkitTextSizeAdjust: "100%", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                    <div style={{ color: "white", boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>WATCH US LIVE</div>
+                    <div class="flex" style={{ padding: "0!important", display: "flex", flex: "initial!important", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>
+                        <div style={{ boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>
+                            <img class="livetv-logo" src="https://www.republicworld.com/assets/images/live-tv/tv-logo.png" alt="Live Tv" style={{ width: "22px", height: "auto", width: "28px", height: "20px", marginRight: "5px", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }} />
+                        </div>
+                        <div class="font18 fontweight100" style={{ fontsize: "18px", fontWeight: "500!important", boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>LIVE TV</div>
+                    </div>
+                </div>
+                <div class="flex flexJustifyBetween" style={{ width: "100%", justifyContent: "space-between", display: "flex", flex: "initial!important", boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>
+                    <Link href="https://www.republicworld.com/livetv.html">
+                        <a target="_blank" class="mrgnright10" spark_ve_preview="none" style={{ marginRight: "10px!important", textDecoration: "none!important", border: "none", color: "#000", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>
+                            <img class="responsiveImage" width="176" height="35" src="https://img.republicworld.com/republic-prod/logo/tr:w-176,h-35/r-logo-web.png" alt="Republic" style={{ height: "auto", width: "100%", boxSizing: "border-box", width: "176px", aspectRatio: "auto 176 / 35", height: "35px", textDecoration: "none!important", border: "none", color: "#000", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }} />
+                        </a>
+                    </Link>
+                    <Link href="https://bharat.republicworld.com/livetv">
+                        <a target="_blank" class="mrgnleft10" spark_ve_preview="none" style={{ marginRight: "10px!important", textDecoration: "none!important", border: "none", color: "#000", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }} >
+                            <img class="responsiveImage" width="146" height="35" src="https://img.republicworld.com/republic-prod/logo/tr:w-146,h-35/rbharat-logo-web.png" alt="R-BHARAT" style={{ height: "auto", width: "100%", boxSizing: "border-box", width: "176px", aspectRatio: "auto 176 / 35", height: "35px", textDecoration: "none!important", border: "none", color: "#000", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }} />
+                        </a>
+                    </Link>
+                </div>
+            </div>
+            <TeamPointsTable />
         </>
     )
     // }
-}   
+}

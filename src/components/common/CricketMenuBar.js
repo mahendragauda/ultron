@@ -1,7 +1,7 @@
 import React from "react";
 import Link from 'next/link';
 
-class Cricket extends React.Component {
+class CricketMenuBar extends React.Component {
     CSS = {
      navbar: {
             display: "flex",
@@ -62,4 +62,4 @@ class Cricket extends React.Component {
 
 }
 
-export default Cricket;
+export default CricketMenuBar;
