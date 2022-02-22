@@ -14,3 +14,34 @@ a {
 * {
   box-sizing: border-box;
 }
+@media(max-width: 950px){
+  .grid {
+  width: 100%;
+  flex-direction: column;
+  }
+}
+/* @media(max-width: 950px)
+.width20, .width25, .width30, .width33, .width34, .width35, .width40, .width45, .width50, .width55, .width60, .width65, .width66, .width70, .width75 {
+  .grid {
+
+  width: 100%;
+  }
+} */
+.fxWidth33, .width33 {
+  width: 33%;
+}
+.fxWidth67, .width67 {
+  width: 67%;
+}
+@media(max-width: 950px){
+.cricket-page-responsive{
+    padding-right: 0!important;
+    padding-bottom: 30px!important;
+}
+}
+@media(max-width: 950px){
+.cricket-page-responsive {
+    width: 100%;
+    flex-direction: column;
+}
+}

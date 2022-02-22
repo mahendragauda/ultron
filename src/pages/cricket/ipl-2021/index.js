@@ -6,7 +6,6 @@ import TeamPointsTable from '/components/common/TeamPointsTable'
 import Link from 'next/link';
 import Image from "next/image";
 
-
 export default function ipl() {
     const router = useRouter()
     let isIpl2021 = router.query.ipl === "ipl-2021"
@@ -39,7 +38,7 @@ export default function ipl() {
             </section>
 
             <div class="padtop20 flex cricket-page-responsive" style={{ padding: "20px 10px 10px 10px", flexDirection: "column" }}>
-                <div class="width67 padright20">
+                <div class="fxWidth67 width67 cricket-page-responsive">
                     <div class="flex" style={{ display: "flex", flex: "initial!important", webkitBoxSizing: "border-box", fontFamily: "Roboto,sans-serif" }}>
                         <article class="hover-effect top-news bdr-dddddd" style={{ width: "56%;", display: "block", fontFamily: "Roboto,sans-serif", fontSize: ".8em", webkitBoxSizing: "border-box", borderTopColor: "rgb(221, 221, 221)", borderTopStyle: "solid", borderTopWidth: "1px", borderRightColor: "rgb(221, 221, 221)", borderRightStyle: "solid", borderRightWidth: "1px", borderBottomColor: "rgb(221, 221, 221)", borderBottomStyle: "solid", borderBottomWidth: "1px", borderLeftColor: "rgb(221, 221, 221)", borderLeftStyle: "solid", borderLeftWidth: "1px", borderImageSource: "initial", borderImageSlice: "initial", borderImageWidth: "initial", borderImageOutset: "initial", borderImageRepeat: "initial" }}>
                             <a href="https://www.republicworld.com/sports-news/cricket-news/india-vs-west-indies-t20i-why-was-rishabh-pant-appointed-as-team-indias-vice-captain-articleshow.html">
@@ -75,8 +74,6 @@ export default function ipl() {
                             </article>
                         </div>
                     </div>
-                </div>
-            </div>
             <div class="padtop30" style={{ padding: "20px 10px 10px 10px" }}>
                 <div class="flex flexJustifyBetween padbtm15" style={{ display: "flex", justifyContent: "space-between" }}>
                     <h2 class="font25 lineHeight25px">LATEST CRICKET NEWS</h2>
@@ -179,30 +176,36 @@ export default function ipl() {
             <div class="clr-D10014 mrgntop10 pad5 font18 bdr4px-dddddd fontweight700" style={{ color: "#d10014", marginTop: "10px!important", padding: "5px!important", border: "4px solid #ddd", fontSize: "18px", fontWeight: "700!important", boxSizing: "border-box", display: "block", fontFamily: "Roboto,sans-serif", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
                 Disclaimer: None of the advertisers on this page are the official sponsors of the IPL 2021
             </div>
+            </div>
+            </div>
+
+            <div class="fxWidth33 width33 grid">
             <div class="r-logo watch-livetv mrgnbtm20" style={{ display: "block", flexWrap: "wrap", display: "flex", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", background: "#6d1c24", backgroundImage: "url('https://www.republicworld.com/assets/images/youtube/g18.png')", backgroundRepeat: "no-repeat", backgroundSize: "contain", marginBottom: "20px!important", boxSizing: "border-box", fontFamily: "Roboto,sans-serif", webkitTextSizeAdjust: "100%", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
                 <div class="flex flexJustifyBetween mrgnbtm10" style={{ flexDirection: "row", width: "100%", justifyContent: "space-between", paddingBottom: "5px", marginBottom: "10px!important", display: "flex", flex: "initial!important", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", webkitTextSizeAdjust: "100%", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
-                    <div style={{ color: "white", boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>WATCH US LIVE</div>
-                    <div class="flex" style={{ padding: "0!important", display: "flex", flex: "initial!important", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>
-                        <div style={{ boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>
-                            <img class="livetv-logo" src="https://www.republicworld.com/assets/images/live-tv/tv-logo.png" alt="Live Tv" style={{ width: "22px", height: "auto", width: "28px", height: "20px", marginRight: "5px", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }} />
+                    <div style={{ color: "white", boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", }}>WATCH US LIVE</div>
+                    <div class="flex" style={{ padding: "0!important", display: "flex", flex: "initial!important", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", }}>
+                        <div style={{ boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", fontFamily: "Roboto,sans-serif", }}>
+                            <img class="livetv-logo" src="https://www.republicworld.com/assets/images/live-tv/tv-logo.png" alt="Live Tv" style={{ width: "22px", height: "auto", width: "28px", height: "20px", marginRight: "5px", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", }} />
                         </div>
-                        <div class="font18 fontweight100" style={{ fontsize: "18px", fontWeight: "500!important", boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>LIVE TV</div>
+                        <div class="font18 fontweight100" style={{ fontsize: "18px", fontWeight: "500!important", boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", }}>LIVE TV</div>
                     </div>
                 </div>
-                <div class="flex flexJustifyBetween" style={{ width: "100%", justifyContent: "space-between", display: "flex", flex: "initial!important", boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>
+                <div class="flex flexJustifyBetween" style={{ width: "100%", justifyContent: "space-between", display: "flex", flex: "initial!important", boxSizing: "border-box", display: "block", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", }}>
                     <Link href="https://www.republicworld.com/livetv.html">
-                        <a target="_blank" class="mrgnright10" spark_ve_preview="none" style={{ marginRight: "10px!important", textDecoration: "none!important", border: "none", color: "#000", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }}>
-                            <img class="responsiveImage" width="176" height="35" src="https://img.republicworld.com/republic-prod/logo/tr:w-176,h-35/r-logo-web.png" alt="Republic" style={{ height: "auto", width: "100%", boxSizing: "border-box", width: "176px", aspectRatio: "auto 176 / 35", height: "35px", textDecoration: "none!important", border: "none", color: "#000", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }} />
+                        <a target="_blank" class="mrgnright10" spark_ve_preview="none" style={{ marginRight: "10px!important", textDecoration: "none!important", border: "none", color: "#000", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", }}>
+                            <img class="responsiveImage" width="176" height="35" src="https://img.republicworld.com/republic-prod/logo/tr:w-176,h-35/r-logo-web.png" alt="Republic" style={{ height: "auto", width: "100%", boxSizing: "border-box", width: "176px", aspectRatio: "auto 176 / 35", height: "35px", textDecoration: "none!important", border: "none", color: "#000", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", }} />
                         </a>
                     </Link>
                     <Link href="https://bharat.republicworld.com/livetv">
-                        <a target="_blank" class="mrgnleft10" spark_ve_preview="none" style={{ marginRight: "10px!important", textDecoration: "none!important", border: "none", color: "#000", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }} >
-                            <img class="responsiveImage" width="146" height="35" src="https://img.republicworld.com/republic-prod/logo/tr:w-146,h-35/rbharat-logo-web.png" alt="R-BHARAT" style={{ height: "auto", width: "100%", boxSizing: "border-box", width: "176px", aspectRatio: "auto 176 / 35", height: "35px", textDecoration: "none!important", border: "none", color: "#000", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", webkitTextSizeAdjust: "100%" }} />
+                        <a target="_blank" class="mrgnleft10" spark_ve_preview="none" style={{ marginRight: "10px!important", textDecoration: "none!important", border: "none", color: "#000", boxSizing: "border-box", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", }} >
+                            <img class="responsiveImage" width="146" height="35" src="https://img.republicworld.com/republic-prod/logo/tr:w-146,h-35/rbharat-logo-web.png" alt="R-BHARAT" style={{ height: "auto", width: "100%", boxSizing: "border-box", width: "176px", aspectRatio: "auto 176 / 35", height: "35px", textDecoration: "none!important", border: "none", color: "#000", display: "flex", padding: "10px 20px 5px 20px", justifyContent: "space-between", fontSize: "18px", fontWeight: "700", color: "#fff", borderRadius: "6px", fontFamily: "Roboto,sans-serif", }} />
                         </a>
                     </Link>
                 </div>
             </div>
             <TeamPointsTable />
+            </div>
+
         </>
     )
     // }
