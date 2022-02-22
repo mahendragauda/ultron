@@ -110,7 +110,7 @@ class Header extends React.Component {
     },
     menuWrapper: {
       textTransform: 'capitalize',
-      flexShrink: '0'
+      flexShrink: '0',
     },
     menuArrowContainer: {
       width: '8%',
