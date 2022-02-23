@@ -1,4 +1,5 @@
 import React from "react";
+import DebateList from "../../components/common/DebateList"
 import Image from "next/image";
 import Link from 'next/link';
 import Recommend from "../../components/common/Recommend.js";
@@ -144,7 +145,7 @@ class TheDebate extends React.Component {
             debates:"debates"
         };
     }
-
+   
     render() {
         return (
             <div style={this.CSS.desktop}>
@@ -173,6 +174,9 @@ class TheDebate extends React.Component {
                             <h1 style={this.CSS.h1}>ARNAB GOSWAMI ON</h1>
                             <h1 style={this.CSS.h2}>THE DEBATE</h1>
                         </div>
+                    </div>
+                    <div>
+                        <DebateList />
                     </div>
                     <Recommend />
                     <div style={this.CSS.ads2}>

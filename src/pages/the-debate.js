@@ -5,10 +5,11 @@ import Header from "../components/common/Header";
 const axios = require('axios');
 
 export default function TheDebatePage({ debate }) {
+  // console.log(debate)
     return (
       <div>
         <Header />
-        <TheDebate debate={debate}/>
+       <TheDebate debateData={debate} />
       </div>
     );
   }
