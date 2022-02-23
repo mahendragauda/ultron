@@ -140,10 +140,14 @@ class TheDebate extends React.Component {
     };
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            debateStory: props.debateData,
+            shows: props.recommendShows
+        };
     }
    
     render() {
+        console.log(this.state.shows)
         return (
             <div style={this.CSS.desktop}>
                 <div style={this.CSS.section1}>
@@ -173,7 +177,7 @@ class TheDebate extends React.Component {
                         </div>
                     </div>
                     <div>
-                        <DebateList />
+                        <DebateList debateData= {this.state.debateStory}/>
                     </div>
                     <Recommend />
                     <div style={this.CSS.ads2}>

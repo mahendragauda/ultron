@@ -73,9 +73,13 @@ class Recommend extends React.Component {
     };
     constructor(props) {
         super(props);
-        this.state = {};
+        console.log(props.recommend);
+        this.state = {
+            recommendShows: props.recommend
+        };
     }
     render() {
+        console.log(this.state.recommendShows)
         return (
             <div style={this.CSS.section}>
                 <div style={this.CSS.section12}>
