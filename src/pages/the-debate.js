@@ -2,8 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import TheDebate from "../components/common/TheDebate";
 import Header from "../components/common/Header";
-import DebateList from "../components/common/DebateList";
-
 const axios = require('axios');
 
 export default function TheDebatePage({ debate }) {
