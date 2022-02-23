@@ -1,5 +1,4 @@
 import React from "react";
-import DebateList from "../../components/common/DebateList"
 import Image from "next/image";
 import Link from 'next/link';
 import Recommend from "../../components/common/Recommend.js";
@@ -9,14 +8,10 @@ class TheDebate extends React.Component {
    
     constructor(props) {
         super(props);
-        this.state = {
-            debateStory: props.debateData,
-            shows: props.recommendShows
-        };
+        this.state = {};
     }
 
     render() {
-        console.log(this.state.shows)
         return (
             <main class="font-roboto width100">
                 <section class="font-roboto letterSpacing0px bg-f8f8f8">

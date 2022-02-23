@@ -5,13 +5,9 @@ import Link from 'next/link';
 class Recommend extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props.recommend);
-        this.state = {
-            recommendShows: props.recommend
-        };
+        this.state = {};
     }
     render() {
-        console.log(this.state.recommendShows)
         return (
             <section class="padtop15 newshour-wrapper">
                 <div class="bg-f0f0f0 pad3010">
