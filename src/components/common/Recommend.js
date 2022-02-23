@@ -50,9 +50,6 @@ class Recommend extends React.Component {
             height:'214px',
             hover:'all .5s',
         },
-        imghover:{
-            
-        },
         absolute:{
             position:'absolute',
             height:'100%',
@@ -74,6 +71,7 @@ class Recommend extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+    
     }
     render() {
         return (

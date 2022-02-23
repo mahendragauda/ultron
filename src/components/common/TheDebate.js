@@ -139,7 +139,10 @@ class TheDebate extends React.Component {
     };
     constructor(props) {
         super(props);
-        this.state = {};
+        console.log(props)
+        this.state = {
+            debates:"debates"
+        };
     }
 
     render() {
