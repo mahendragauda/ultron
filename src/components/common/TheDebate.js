@@ -1,4 +1,5 @@
 import React from "react";
+import DebateList from "../../components/common/DebateList"
 import Image from "next/image";
 import Link from 'next/link';
 
@@ -57,7 +58,7 @@ class TheDebate extends React.Component {
         super(props);
         this.state = {};
     }
-
+   
     render() {
         return (
             <div style={this.CSS.desktop}>
@@ -74,7 +75,11 @@ class TheDebate extends React.Component {
                     <div style={this.CSS.bar}>
                         <h1 style={this.CSS.h1}>ARNAB GOSWAMI ON</h1>
                         <h1 style={this.CSS.h2}>THE DEBATE</h1>
+                        {/* <p>{this.props.debateData.debates[0].id}</p> */}
                     </div>
+                </div>
+                <div>
+                <DebateList />
                 </div>
             </div>
         );
