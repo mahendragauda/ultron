@@ -11,7 +11,10 @@ class TheDebate extends React.Component {
         super(props);
         this.state = {
             debateStory: props.debateData,
+            StoryBatchTwo: props.debateDataTwo,
+            StoryBatchThree: props.debateDataThree,
             shows: props.recommendShows
+
         };
     }
    
@@ -46,15 +49,7 @@ class TheDebate extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div class="txtcenter">
-                    <div class=" minheight90">Ads</div></div>
-                <section class="padtop25 newshour-wrapper padleft10 padright10">
-                    <div class="section1200 padbtm15 bdrBtm-dddddd">
-                        <h1 class="font14 fontweightNormal">ARNAB GOSWAMI ON</h1>
-                        <h1 class="font38 fontweight700 padtop5 clr-D10014 lineHeight36px">THE DEBATE</h1>
-                    </div>
-                </section>
-                <DebateList debateData= {this.state.debateStory} shows= {this.state.shows}/>                                                                      
+                <DebateList debateData= {this.state.debateStory} shows= {this.state.shows} debateStoryTwo={this.state.StoryBatchTwo} debateStoryThree={this.state.StoryBatchThree} />                                                              
                 <div class="padtop50 padleft10 padright10">
                     <div class="section1200 flex">
                     </div></div>

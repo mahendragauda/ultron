@@ -17,7 +17,7 @@ class Recommend extends React.Component {
                 <div class="section1200">
                     <h1 class="font25 lineHeight25px padbtm15">We also Recommend</h1>
                     <div class="newshours-recommend">
-                    {this.state.recommendShows.channels.slice(1,4).map((channels, idx) => (
+                    {this.state.recommendShows.channels.slice(0,3).map((channels, idx) => (
                         <div class="flex">
                             <div class="hover-effect">
                                 <a href={channels.complete_slug} alt="Arnab LIVE" title="Arnab LIVE">

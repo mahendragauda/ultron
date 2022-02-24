@@ -10,7 +10,9 @@ class DebateList extends React.Component {
     super(props);
     this.state = {
         storyList: props.debateData,
-        showChannels: props.shows
+        showChannels: props.shows,
+        storyListTwo: props.debateStoryTwo,
+        storyListThree: props.debateStoryThree
     };
    }
    componentDidMount() {
@@ -78,7 +80,26 @@ class DebateList extends React.Component {
             <div class="padbtm30 padleft10 padright10">
                 <div class="section1200 flex">
                     <div class="flex flexWrap" style={{width:"75%"}}>
-                    {this.state.storyList.debates.slice(5).map((stories, idx) => (
+                    {this.state.storyList.debates.slice(5,10).map((stories, idx) => (
+                        <div class="newshour-video">
+                            <div class="hover-effect">
+                                <a href="https://www.republicworld.com/the-debate/2563/7630/is-there-pfi-role-in-harsha-murder.html">
+                                    <div class="overflowHidden posRelative flex">
+                                            <Image width="222" height="144" class="width100 imghover responsiveImage" alt="Is there PFI role in Harsha murder?" src={stories.promo_large} />
+                                            <div class="videohover posAbsolute width100 height100p" style={{background: "rgba(0, 0, 0, 0.5)"}}>
+                                                <div class="flex height100p">
+                                                    <div class="livetv-play-button" style={{margin: "auto"}}></div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="font14 padtop5">{stories.pub_datetime}</div>
+                                    <div class="font16 padtop5 clr-D10014 fontweight500 txtTruncate lineClip1"> #{stories.hashtag}</div>
+                                    <div class="texthover font18 lineHeight21px bold padtop5 txtTruncate lineClip3" style={{height: "68px"}}>{stories.question}</div>
+                                </a>
+                            </div>
+                        </div>
+                        ))}  
+                        {this.state.storyListTwo.debates.slice(0,4).map((stories, idx) => (
                         <div class="newshour-video">
                             <div class="hover-effect">
                                 <a href="https://www.republicworld.com/the-debate/2563/7630/is-there-pfi-role-in-harsha-murder.html">
@@ -105,8 +126,60 @@ class DebateList extends React.Component {
                     </div>
                 </div>
             </div>
-            </section>
             <Recommend recommendChannels={this.state.showChannels}/>
+            <div class="padtop50 padleft10 padright10">
+                <div class="section1200 flex">
+                <div style={{width:"75%"}} >
+                    <div class="width100 flex flexWrap padbtm30" id="debate-load">
+                    {this.state.storyListTwo.debates.slice(4,10).map((stories, idx) => (
+                        <div class="newshour-video">
+                            <div class="hover-effect">
+                                <a href="https://www.republicworld.com/the-debate/2563/7630/is-there-pfi-role-in-harsha-murder.html">
+                                    <div class="overflowHidden posRelative flex">
+                                            <Image width="222" height="144" class="width100 imghover responsiveImage" alt="Is there PFI role in Harsha murder?" src={stories.promo_large} />
+                                            <div class="videohover posAbsolute width100 height100p" style={{background: "rgba(0, 0, 0, 0.5)"}}>
+                                                <div class="flex height100p">
+                                                    <div class="livetv-play-button" style={{margin: "auto"}}></div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="font14 padtop5">{stories.pub_datetime}</div>
+                                    <div class="font16 padtop5 clr-D10014 fontweight500 txtTruncate lineClip1"> #{stories.hashtag}</div>
+                                    <div class="texthover font18 lineHeight21px bold padtop5 txtTruncate lineClip3" style={{height: "68px"}}>{stories.question}</div>
+                                </a>
+                            </div>
+                        </div>
+                        ))}  
+                        {this.state.storyListThree.debates.slice(0,3).map((stories, idx) => (
+                        <div class="newshour-video">
+                            <div class="hover-effect">
+                                <a href="https://www.republicworld.com/the-debate/2563/7630/is-there-pfi-role-in-harsha-murder.html">
+                                    <div class="overflowHidden posRelative flex">
+                                            <Image width="222" height="144" class="width100 imghover responsiveImage" alt="Is there PFI role in Harsha murder?" src={stories.promo_large} />
+                                            <div class="videohover posAbsolute width100 height100p" style={{background: "rgba(0, 0, 0, 0.5)"}}>
+                                                <div class="flex height100p">
+                                                    <div class="livetv-play-button" style={{margin: "auto"}}></div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="font14 padtop5">{stories.pub_datetime}</div>
+                                    <div class="font16 padtop5 clr-D10014 fontweight500 txtTruncate lineClip1"> #{stories.hashtag}</div>
+                                    <div class="texthover font18 lineHeight21px bold padtop5 txtTruncate lineClip3" style={{height: "68px"}}>{stories.question}</div>
+                                </a>
+                            </div>
+                        </div>
+                        ))}  
+                    </div>
+                    <div class="cursorPtr font18 txtcenter txtdecorationunderline" id="debate-loadmore"> Load More </div>
+                    </div>
+                    <div style={{width:"25%;",minWidth: "300px"}}>
+                        <div class="ads-wrapper">
+                            <div id="div-gpt-ad"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
             </div>
        )
    }
