@@ -194,7 +194,7 @@ export default function ipl({ cricketStories,pointsTable }) {
                         </Link>
                     </div>
                 </div>
-                <TeamPointsTable data={pointsTable.rankings} />
+                <TeamPointsTable data={pointsTable[0].rankings} />
             </div>
 
         </>
@@ -209,7 +209,7 @@ export async function getServerSideProps() {
     const pointsTableRequest = axios.get(`https://groot.republicworld.com/behtarindia/cricket/ipl_rankings_2021.json`)
     await Promise.all([cricketStoriesRequest,pointsTableRequest]).then(function (results) {
         cricketStories = results[0].data;
-        pointsTable = results[1]|null;
+        pointsTable = results[1].data;
     });
     return { props: { cricketStories,pointsTable } }
 

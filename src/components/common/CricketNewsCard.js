@@ -80,7 +80,7 @@ class CricketNewsCard extends React.Component {
     render() {
         const keyvalue = this.props.keyvalue;
         return (
-            <div style={{flexWrap: "wrap",display: "flex",flex: "initial",display: "-webkit-flex",WebkitBoxSizing: "border-box"}}>
+            <div style={{flexWrap: "wrap",display: "flex",flex: "initial",display: "-webkit-box",WebkitBoxSizing: "border-box"}}>
                 {keyvalue.map((value, index) => {
                     return (
                         <article style={{ flexShrink: '0', marginRight: "20px", maxWidth: "48.68%", padding: "10px", marginBottom: "10px", borderRadius: "4px", flexGrow: "1", flexShrink: "1", flexBasis: "48%", borderTopColor: "rgb(221, 221, 221)", borderTopStyle: "solid", borderTopWidth: "1px", borderRightColor: "rgb(221, 221, 221)", borderRightStyle: "solid", borderRightWidth: "1px", borderBottomColor: "rgb(221, 221, 221)", borderBottomStyle: "solid", borderBottomWidth: "1px", borderLeftColor: "rgb(221, 221, 221)", borderLeftStyle: "solid", borderLeftWidth: "1px", borderImageSource: "initial", borderImageSlice: "initial", borderImageWidth: "initial", borderImageOutset: "initial", borderImageRepeat: "initial", webkitBoxSizing: "border-box" }}>
