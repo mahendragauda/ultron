@@ -129,7 +129,8 @@ class DebateList extends React.Component {
             <Recommend recommendChannels={this.state.showChannels}/>
             <div class="padtop50 padleft10 padright10">
                 <div class="section1200 flex">
-                    <div class="flex flexWrap" style={{width:"75%"}}>
+                <div style={{width:"75%"}} >
+                    <div class="width100 flex flexWrap padbtm30" id="debate-load">
                     {this.state.storyListTwo.debates.slice(4,10).map((stories, idx) => (
                         <div class="newshour-video">
                             <div class="hover-effect">
@@ -168,6 +169,8 @@ class DebateList extends React.Component {
                             </div>
                         </div>
                         ))}  
+                    </div>
+                    <div class="cursorPtr font18 txtcenter txtdecorationunderline" id="debate-loadmore"> Load More </div>
                     </div>
                     <div style={{width:"25%;",minWidth: "300px"}}>
                         <div class="ads-wrapper">
