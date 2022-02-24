@@ -142,7 +142,10 @@ class TheDebate extends React.Component {
         super(props);
         this.state = {
             debateStory: props.debateData,
+            StoryBatchTwo: props.debateDataTwo,
+            StoryBatchThree: props.debateDataThree,
             shows: props.recommendShows
+
         };
     }
    
@@ -177,7 +180,7 @@ class TheDebate extends React.Component {
                         </div>
                     </div>
                     <div>
-                        <DebateList debateData= {this.state.debateStory} shows= {this.state.shows}/>
+                        <DebateList debateData= {this.state.debateStory} shows= {this.state.shows} debateStoryTwo={this.state.StoryBatchTwo} debateStoryThree={this.state.StoryBatchThree} />
                     </div>
                     <div style={this.CSS.ads2}>
                         <div style={this.CSS.minheight}>
