@@ -1,0 +1,12 @@
+.state_heading {
+    white-space: pre-wrap;
+}
+.election-tabs-a.active {
+    font-weight: 700;
+    font-family: helvetica-font;
+    background: #FFE600;
+    border-radius: 2px;
+    padding: 3px 5px 2px 5px;
+    border: 1px solid #FFE600;
+    color: #000;
+}

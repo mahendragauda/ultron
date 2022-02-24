@@ -30,7 +30,9 @@ class RightStroyDetailPage extends React.Component{
                         <Link href="https://www.republicworld.com/india-news/politics"  className="font14 txtdecorationunderline">View all</Link>
                     </div>
                     <div className="rightpane-news-container">
-                        <MustRead />
+                        {this.props.rightStoryDetailArticle.data.story.must_read_stories.map((mustread)=>
+                        <MustRead mustReadSrc={mustread.promo_large}  mustReadType={mustread.type} mustReadComplete_Slug={mustread.complete_slug} mustReadTitle={mustread.title}/>
+                        )}
                     </div>
                 </div>
                 <div style={{width: "100%",background: "#F0F0F0",marginTop:"30px"}}>

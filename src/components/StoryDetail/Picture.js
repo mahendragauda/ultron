@@ -6,45 +6,35 @@ import RightStoryDetail from '../../components/StoryDetail/RightStoryDetail'
 import Data from "../../components/StoryDetail/dummy.json"
 import Link from 'next/link';
 import Image from 'next/image';
-// import {getStoryDetailProps} from "../../apiLib/StoryDetailApi"
+ 
 
 class PicturePage extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            id:'',
-            story:[],
-            tags:[]
+            Tags:[],
+            published_datetime:'',
+            recommand:'',
+            
         }
     }
-    // componentDidMount(){
-    //     getStoryDetailProps()
-    //     .then((res) => {
-    //         this.setState({
-    //             id:res.props.articleStoryData.data.story.id,
-    //             story:res.props.articleStoryData.data.story,
-    //             also_watch:res.props.articleStoryData.data.story.also_watch
-    //         })
-    //         console.log("sneha")
-           
-    //        // console.log(res.props.articleStoryData.data.story.id)
-    //     })
-    // }
-  
+componentDidMount(){
+   console.warn(this.props.articlePictureData.data.story.id)
+    this.setState({
+        Tags:this.props.articlePictureData.data.story.tags,
+        published_datetime:this.props.articlePictureData.data.story.pub_datetime,
+        recommand:this.props.articlePictureData.data.story.pub_datetime
+   }) 
+}
+ 
 
     render(){
+       
         return(
                 <main className="width100 fontRoboto" id="republic-dom">
-                    <BreadCrumb/>
-                   {/* <p>{this.state.id}</p>
-                   <p>{this.state.story.type}</p>
-                   <p>{this.state.story.story_text}</p> */}
-                   {/* {this.state.tags.map(tagdata=>
-                    <p>{tagdata}</p>
-                   )} */}
-                    {/* <p>{articleStoryData.data.story.id}</p> */}
-                    {/* <p>{this.state.data.data.story.id}</p> */}
-                    <section className="section1200 pad10">
+                    <BreadCrumb breadcrumbArticleData={this.props.articlePictureData}/>
+                    {/* <p>{this.state.pictureData.data.story.id}</p> */}
+                  <section className="section1200 pad10">
 	                    <div className="overflowHidden">
                             <div className="padtop20 txtcenter minheight90">ad</div>
                         </div>
@@ -57,16 +47,16 @@ class PicturePage extends React.Component{
                                         <div className="storywrapper">
                                             <div className="storyContent">
                                                 <div className="storypicture">
-                                                    <StoryTopContent/>
-                                                    <div class="padtop10">
+                                                    <StoryTopContent  storyTopContentArticle={this.props.articlePictureData}/>
+                                                    <div class="tags-a padtop10">
                                                         Tags:
-                                                        <Link href="">Congress</Link>, 
-                                                        <Link href="">Smriti Irani</Link>, 
-                                                        <Link href="">Manipur elections</Link>
+                                                        {this.state.Tags.map((tagdata) =>
+                                                        <Link href={"/"+tagdata.toLowerCase().split(/\s+/).join('-')}>{tagdata}</Link>
+                                                        )}
                                                     </div>
                                                     <div className="padtop20">
                                                         First Published:
-                                                        <time datetime="2022-02-18T22:59:00+05:30" title="53 secs ago">18th February, 2022 22:59 IST</time>
+                                                        <time datetime="2022-02-18T22:59:00+05:30" title="53 secs ago">{this.state.published_datetime}</time>
                                                     </div>
                                                     <div>
                                                         <div style={{cursor:"pointer",marginTop:"15px"}} onclick="window.open('https://t.me/RepublicLive');">
@@ -146,7 +136,7 @@ class PicturePage extends React.Component{
                                         </div>
                                     </div>
                                     <div className="rightpane">
-                                        <RightStoryDetail/>
+                                        <RightStoryDetail rightStoryDetailArticle={this.props.articlePictureData}/>
                                     </div>
                                 </div>
                             </div>

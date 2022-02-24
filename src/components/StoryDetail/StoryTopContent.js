@@ -2,24 +2,21 @@ import React from 'react';
 import CardImage from "../../components/common/CardImage";
 import Link from 'next/link';
 
-class StoryTopContentPage extends React.Component{
-    constructor(){
-        super();
-    }
-    render(){
+export default function StoryTopContentPage({storyTopContentArticle}){
+   
         return(
             <div className="storytopcontent_container">
-                <span className="time-elapsed">Last Updated: <time datetime="2022-02-15T11:26:30+05:30" title="27 mins ago">15th February, 2022 11:26 IST</time></span>
+                <span className="time-elapsed">Last Updated: <time datetime={storyTopContentArticle.data.story.updated_on} title="27 mins ago">{storyTopContentArticle.data.story.updated_on}</time></span>
                 <h1 className="storytitle">
-                    <span style={{color: "rgb(255 0 0"}}>Exclusive |</span> 'SP Rule Was Anarchy': BJP Leader Tells Republic, Taunts Akhilesh Over 400-seat Target
+                    <span style={{color: "rgb(255 0 0"}}>{storyTopContentArticle.data.story.short_title}</span> {storyTopContentArticle.data.story.title}
                 </h1>
-                <h2 className="storydescription">Amid the ongoing UP election &amp; speculations over hijab controversy, Uttar Pradesh BJP President Swatantra Dev Singh exuded confidence that his party&nbsp;will win.</h2>
+                <h2 className="storydescription">{storyTopContentArticle.data.story.meta_description}</h2>
                 <div className="author" style={{marginBottom: "0"}}>
                     <div className="authortitle">
                         <div className="flex mrgntbauto">
                             <div className="padright5">Written By</div>
-                            <Link href="">
-                                <span>Srishti Jha</span>
+                            <Link href={"/"+storyTopContentArticle.data.story.author_slug}>
+                                <span>{storyTopContentArticle.data.story.author_name}</span>
                             </Link>
                         </div>
                         {/* <div className="flex share-social-media">
@@ -38,16 +35,15 @@ class StoryTopContentPage extends React.Component{
                     </div>
                 </div>
                 <CardImage
-                    src="https://img.republicworld.com/republic-prod/stories/promolarge/xxhdpi/dywsixvmpxnkrm5v_1644731015.jpeg"
+                    src={storyTopContentArticle.data.story.promo_large}
                     alt="image"
                     width="758"
                     height="433"
                 />
                 
-                <p style={{background: "#F0F0F0",marginTop: "-10px",fontWeight:"400",color:"#6C6C6C"}} className="pad10 width758">Image: @SwatantraBJP/Twitter/PTI</p>
+                <p style={{background: "#F0F0F0",marginTop: "-10px",fontWeight:"400",color:"#6C6C6C"}} className="pad10 width758">{storyTopContentArticle.data.story.image_caption}</p>
             </div>
         )
-    }
+    
 }
 
-export default StoryTopContentPage

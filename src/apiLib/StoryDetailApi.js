@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 const axios = require('axios');
-import {setQueryUrl} from '../pages/[category]/[subcategory]/[slug]' 
+
 
 // var articleStoryData;
 // export async function getStoryDetailProps() {

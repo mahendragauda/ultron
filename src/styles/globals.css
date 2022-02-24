@@ -3369,9 +3369,16 @@ footer a div:hover {
 .minheight90 {
   min-height: 90px;
 }
-.color_e60000 {
+.color_e60000, .link_a_txt > a {
   color: #e60000;
 }
+.tags-a a::after {
+  content: ',';
+  color: #000;
+  padding-right:5px;
+}
+.tags-a a:last-child::after{content: unset;}
+.link_a_txt > a{font-weight:500;}
 .color_red{
   color: rgb(255, 0, 0);
 }
@@ -9747,5 +9754,42 @@ iframe {
   background-image: url(/assets/storydetail/g18.png);
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+/* must read */
+.mustarticleread.livetv-play-button {
+  width: 28px;
+  height: 28px;
+  content: url(/assets/common/play_button.png);
+  text-align: center;
+}
+.state_menu_a.active {
+  font-family: helvetica-font;
+  font-weight: bold;
+  color: #000 !important;
+  font-size: 18px !important;
+  letter-spacing: -0.03em;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.current {
+  display: flex;
+}
+.state_menu_a.active {
+  font-family: helvetica-font;
+  font-weight: bold !important;
+  color: #000 !important;
+  font-size: 18px !important;
+  letter-spacing: -0.03em;
+}
+.election-tabs-a.active {
+  font-weight: 700;
+  background: #FFE600;
+  border-radius: 2px;
+  padding: 3px 5px 2px 5px;
+  border: 1px solid #FFE600;
+  color: #000 !important;
+  line-height:11px !important
 }
 
