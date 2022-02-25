@@ -19,8 +19,8 @@ export default function ipl({ cricketStories, pointsTable, scheduleData,resultDa
             <Cricket />
             <nav id="breadcrumb" class="font14 font-roboto font14 flex flexAlignItemsCenter" style={{ paddingTop: "15px", paddingLeft: "10px", paddingRight: "10px" }}>
                 <span><Link href="/"><a style={{ textDecoration: "underline !important;" }}>Home / </a></Link></span>
-                <span class="txtTransformCaps"><Link href="/"><a style={{ textDecoration: "underline !important;" }}> Cricket / </a></Link></span>
-                <span class="txtTransformCaps"><Link href="/"><a style={{ textDecoration: "underline !important;" }}> IPL 2021 /</a></Link></span>
+                <span class="txtTransformCaps"><Link href="/"><a style={{ textDecoration: "underline !important;" }}> Topics / </a></Link></span>
+                <span class="txtTransformCaps"><Link href="/"><a style={{ textDecoration: "underline !important;" }}> IPL 2020 /</a></Link></span>
                 <span class="txtTransformCaps"><Link href="/"><a style={{ color: "#e60000" }} class="color-e60000 fontweight500"> {router.query.subcategory.charAt(0).toUpperCase()+router.query.subcategory.replace(".html","").slice(1)}</a></Link></span>
             </nav>
             {(() => {

@@ -7,7 +7,6 @@ class CricketMenuBar extends React.Component {
             display: "flex",
             width: "100%",
             maxWidth: "1200px",
-            width: "100%",
             margin: "0 auto",
             position: "relative",
             background: "linear-gradient(90deg, #E52D27 0.9%, #D10014 52.42%, #B31217 99.05%)",
@@ -33,25 +32,25 @@ class CricketMenuBar extends React.Component {
         return (
             <section style={{ position: 'relative', width: '100%' }}>
     <div style={{paddingLeft:"10px",paddingRight:"10px"}}>
-        <div style={this.CSS.navbar}>
-                <Link href="/">
+        <div class="bihar-nav-bar nav-bar flex section1200" style={{background: "linear-gradient(90deg, #E52D27 0.9%, #D10014 52.42%, #B31217 99.05%)",padding: "2px"}}>
+                <Link href="/cricket/ipl-2021">
                     <a style={this.CSS.menuWrapper}>
-                      <div style={{ flexShrink: '0', padding: '5px 10px' }}>Home</div>
+                      <div class="nav-bar" style={{ flexShrink: '0', padding: '5px 10px' }}>Home</div>
                     </a>
                     </Link>
-                    <Link href="/">
+                    <Link href="/cricket/ipl-2021/schedule.html">
                     <a style={this.CSS.menuWrapper}>
-                      <div style={{ flexShrink: '0', padding: '5px 10px' }}>Schedule</div>
+                      <div class="nav-bar" style={{ flexShrink: '0', padding: '5px 10px' }}>Schedule</div>
                     </a>
                     </Link>
-                    <Link href="/">
+                    <Link href="/cricket/ipl-2021/ipl-points-table.html">
                     <a style={this.CSS.menuWrapper}>
-                      <div style={{ flexShrink: '0', padding: '5px 10px' }}>Points Table</div>
+                      <div class="nav-bar" style={{ flexShrink: '0', padding: '5px 10px' }}>Points Table</div>
                     </a>
                     </Link>
-                    <Link href="/">
+                    <Link href="/cricket/ipl-2021/result.html">
                     <a style={this.CSS.menuWrapper}>
-                      <div style={{ flexShrink: '0', padding: '5px 10px' }}>Results</div>
+                      <div class="nav-bar" style={{ flexShrink: '0', padding: '5px 10px' }}>Results</div>
                     </a>
                     </Link>
                         </div>

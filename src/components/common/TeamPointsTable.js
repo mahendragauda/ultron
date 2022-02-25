@@ -49,12 +49,12 @@ class TeamPointsTable extends React.Component {
         const data = this.props.data;
         return (
             <div class="homepage-team-ranking" style={{ padding: "20px 10px 10px 10px", boxSizing: "border-box", display: "block", }}>
-                <div class="team-ranking-container" style={this.CSS.teamRankingContainer}>
+                <div class="team-ranking-container">
                     <div id="cricket-ipl-standings" class="pad15 padleft10 flex flexJustifyBetween" style={{ paddingLeft: "10px!important", padding: "15px!important", justifyContent: "space-between", display: "flex", flex: "initial!important", boxSizing: "border-box", }}>
                         <h1 class="font25 fontweight700 mrgn0" style={{ margin: "0!important", fontWeight: "700!important", boxSizing: "border-box", marginBlockStart: "0.83em", marginBlockEnd: "0.83em", display: "block", marginInlineStart: "0px", marginInlineEnd: "0px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px", }}>Team Points Table</h1>
                     </div>
-                    <div class="team-ranking" style={this.CSS.teamRanking}>
-                        <table border="0" cellpadding="0" cellspacing="0" id="team-rankings" style={{ width: "100%", fontFamily: "Roboto,sans-serif", boxSizing: "border-box", borderTopWidth: "0px", borderRightWidth: "0px", borderBottomWidth: "0px", borderLeftWidth: "0px", webkitBorderHorizontalSpacing: "0px", webkitBorderVerticalSpacing: "0px", display: "table", borderCollapse: "separate", boxSizing: "border-box", textIndent: "initial", borderSpacing: "2px", borderColor: "grey" }}>
+                    <div class="team-ranking">
+                        <table border="0" cellPadding="0" cellSpacing="0" id="team-rankings" style={{ width: "100%", fontFamily: "Roboto,sans-serif", boxSizing: "border-box", borderTopWidth: "0px", borderRightWidth: "0px", borderBottomWidth: "0px", borderLeftWidth: "0px", webkitBorderHorizontalSpacing: "0px", webkitBorderVerticalSpacing: "0px", display: "table", borderCollapse: "separate", boxSizing: "border-box", textIndent: "initial", borderSpacing: "2px", borderColor: "grey" }}>
                             <thead style={{ boxSizing: "border-box", display: "table-header-group", verticalAlign: "middle", borderColor: "inherit", width: "100%", fontFamily: "Roboto,sans-serif", borderCollapse: "separate", textIndent: "initial", borderSpacing: "2px" }}>
                                 <tr style={{ background: "#f7f7f7", lineHeight: "1.8em", boxSizing: "border-box", display: "table-row", verticalAlign: "inherit", borderColor: "inherit", width: "100%", fontFamily: "Roboto,sans-serif", borderCollapse: "separate", textIndent: "initial", borderSpacing: "2px" }}>
                                     <th style={{ width: "12%", lineHeight: "1.8em", borderBottom: "1px solid #ddd ", background: "#f7f7f7", mixBlendMode: "normal", textAlign: "left", padding: "8px 8px 8px 15px", fontWeight: "bold", fontSize: "12px", color: "rgb(70, 70, 70)", boxSizing: "border-box", margin: "0" }}>Pos</th>

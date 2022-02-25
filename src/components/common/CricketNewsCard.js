@@ -3,21 +3,6 @@ import Link from 'next/link';
 
 class CricketNewsCard extends React.Component {
     CSS = {
-        flexWrap: {
-            mozBoxWrap: "wrap",
-            webkitBoxWrap: "wrap",
-            msFlexboxWrap: "wrap",
-            flexWrap: "wrap",
-            webkitBoxSizing: "border-box",
-        },
-        flex: {
-            display: "-webkit-box",
-            display: "-moz-box",
-            display: "-ms-flexbox",
-            display: "-webkit-flex",
-            display: "flex",
-            flex: "initial!important;",
-        },
         body: {
             fontFamily: "Roboto,sans-serif",
             letterSpacing: "0",
@@ -80,23 +65,23 @@ class CricketNewsCard extends React.Component {
     render() {
         const keyvalue = this.props.keyvalue;
         return (
-            <div style={{flexWrap: "wrap",display: "flex",flex: "initial",display: "-webkit-box",WebkitBoxSizing: "border-box"}}>
+            <div class="flex flexWrap">
                 {keyvalue.map((value, index) => {
                     return (
-                        <article style={{ flexShrink: '0', marginRight: "20px", maxWidth: "48.68%", padding: "10px", marginBottom: "10px", borderRadius: "4px", flexGrow: "1", flexShrink: "1", flexBasis: "48%", borderTopColor: "rgb(221, 221, 221)", borderTopStyle: "solid", borderTopWidth: "1px", borderRightColor: "rgb(221, 221, 221)", borderRightStyle: "solid", borderRightWidth: "1px", borderBottomColor: "rgb(221, 221, 221)", borderBottomStyle: "solid", borderBottomWidth: "1px", borderLeftColor: "rgb(221, 221, 221)", borderLeftStyle: "solid", borderLeftWidth: "1px", borderImageSource: "initial", borderImageSlice: "initial", borderImageWidth: "initial", borderImageOutset: "initial", borderImageRepeat: "initial", webkitBoxSizing: "border-box" }}>
+                        <article class="latest-news bdr-dddddd" style={{WebkitBoxSizing: "border-box",boxSizing: "border-box",fontFamily: "Roboto,sans-serif"}}>
                             <div data-index={index = 5}>
                                 <a href="https://www.republicworld.com/sports-news/cricket-news/ipl-2022-from-csk-to-srh-heres-predicted-playing-xis-of-all-10-teams-after-mega-auction-articleshow.html" style={{ webkitBoxSizing: "border-box", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
-                                    <div class="flex" style={{display: "flex",flex: "initial!important"}}>
+                                    <div class="flex" style={{ display: "flex", flex: "initial!important" }}>
                                         <div class="posRelative flex overflowHidden" style={{ width: "30%", display: "flex", position: "relative", overflow: "hidden!important", flexGrow: "initial !important", flexShrink: "initial !important", flexBasis: "initial !important" }}>
-                                            <img  src={value.placeholder} style={{transition: "all .5s",objectFit: "cover",borderRadius: "2px",minWidth: "80px",height: "100px",width: "100%",WebkitBoxSizing: "border-box"}} />
+                                            <img class="imghover responsiveImage" src={value.placeholder}/>
                                         </div>
-                                        <div class="texthover latest-news-text flex flexDirectionCol" style={{ paddingLeft:"10px",width: "70%", flexDirection: "column", display: "flex", flex: "initial!important" }}>
-                                            <div style={{ height: "60px", webkitBoxSizing: "border-box", display: "block", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
-                                                <p class="txtTruncate lineClip3" style={{fontSize: "16px",fontWeight: "400",margin: "0 0 0 10px",margin: "0",WebkitLineClamp: "3!important",overflow: "hidden",display: "-webkit-box",WebkitBoxOrient: "vertical",WebkitBoxSizing: "border-box",display: "block",marginBlockStart: "1em",marginBlockEnd: "1em",marginInlineStart: "0px",marginInlineEnd: "0px"}}>
+                                        <div class="latest-news-text flex flexDirectionCol" style={{paddingLeft:"10px"}}>
+                                            <div>
+                                                <p class="txtTruncate lineClip3" numberoflines={1} style={{ fontSize: "16px", fontWeight: "400", margin: "0 0 0 10px", margin: "0", WebkitLineClamp: "3!important", overflow: "hidden", display: "-webkit-box", WebkitBoxOrient: "vertical", WebkitBoxSizing: "border-box", display: "block", marginBlockStart: "1em", marginBlockEnd: "1em", marginInlineStart: "0px", marginInlineEnd: "0px" }}>
                                                     {value.meta_title}
                                                 </p>
                                             </div>
-                                            <div class="mrgntop10" style={{ marginTop: "10px!important", webkitBoxSizing: "border-box" }}>
+                                            <div class="mrgntop10" style={{ flexSmarginTop: "10px!important", webkitBoxSizing: "border-box" }}>
                                                 <p style={{ fontSize: "14px", color: "#464646", margin: "0 0 0 10px", display: "block", marginBlockStart: "1em", marginBlockEnd: "1em", marginInlineStart: "0px", marginInlineEnd: "0px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>{value.pub_datetime}</p>
                                             </div>
                                         </div>
@@ -106,7 +91,6 @@ class CricketNewsCard extends React.Component {
                         </article>
                     )
                 })}
-
             </div>
         )
     }

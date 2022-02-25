@@ -17,8 +17,8 @@ export default function ipl({ cricketStories,pointsTable }) {
             <Cricket />
             <nav id="breadcrumb" class="font14 font-roboto font14 flex flexAlignItemsCenter" style={{ paddingTop: "15px", paddingLeft: "10px", paddingRight: "10px" }}>
                 <span><Link href="/"><a style={{ textDecoration: "underline !important;" }}>Home / </a></Link></span>
-                <span class="txtTransformCaps"><Link href="/"><a style={{ textDecoration: "underline !important;" }}> Cricket / </a></Link></span>
-                <span class="txtTransformCaps"><Link href="/"><a href={{ textDecoration: "underline !important;" }} class="color-e60000 fontweight500"> IPL 2021</a></Link></span>
+                <span class="txtTransformCaps"><Link href="/"><a style={{ textDecoration: "underline !important;" }}> Topics / </a></Link></span>
+                <span class="txtTransformCaps"><Link href="/"><a href={{ textDecoration: "underline !important;" }} class="color-e60000 fontweight500"> IPL 2020</a></Link></span>
             </nav>
             {/* <div class="flex padtop20 flexJustifyCenter" style={{display: "flex;"}}>
             <div class="width100 bdr-dddddd flex">
