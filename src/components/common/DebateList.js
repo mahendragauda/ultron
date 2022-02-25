@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from 'next/link';
 import TheDebate from "./TheDebate";
 import Recommend from "../../components/common/Recommend.js";
+import LoadMoreStory from "../../components/LoadMoreStory";
+import LoadMore from "../LoadMore";
 
 
 class DebateList extends React.Component {
@@ -12,21 +14,12 @@ class DebateList extends React.Component {
         storyList: props.debateData,
         showChannels: props.shows,
         storyListTwo: props.debateStoryTwo,
-        storyListThree: props.debateStoryThree
+        storyListThree: props.debateStoryThree,
+        debateStory: []
     };
    }
-   componentDidMount() {
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "../public/javascript/debate.js";
-    script.onload = () => this.scriptLoaded();
 
-    //For head
-    document.head.appendChild(script);
-
-  }
    render(){
-       console.log(this.state.showChannels.channels[0].name);
        return ( 
            <div>
            <section class="padtop15 newshour-wrapper">
@@ -168,9 +161,8 @@ class DebateList extends React.Component {
                                 </a>
                             </div>
                         </div>
-                        ))}  
+                        ))} 
                     </div>
-                    <div class="cursorPtr font18 txtcenter txtdecorationunderline" id="debate-loadmore"> Load More </div>
                     </div>
                     <div style={{width:"25%;",minWidth: "300px"}}>
                         <div class="ads-wrapper">
@@ -178,6 +170,9 @@ class DebateList extends React.Component {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div>
+            <LoadMoreStory />
             </div>
             </section>
             </div>

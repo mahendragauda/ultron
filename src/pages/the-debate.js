@@ -3,6 +3,7 @@ import Image from "next/image";
 import TheDebate from "../components/common/TheDebate";
 import Header from "../components/common/Header";
 import Recommend from "../components/common/Recommend";
+
 const axios = require('axios');
 
 export default function TheDebatePage({ debate,recommend,debateTwo,debateThree }) {
