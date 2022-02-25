@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from 'next/link';
 import TheDebate from "./TheDebate";
 import Recommend from "../../components/common/Recommend.js";
+import ReactJWPlayer from "react-jw-player";
 
 
 class DebateList extends React.Component {
@@ -26,7 +27,7 @@ class DebateList extends React.Component {
 
   }
    render(){
-       console.log(this.state.showChannels.channels[0].name);
+       console.log(this.state.storyList.debates[0]);
        return ( 
            <div>
            <section class="padtop15 newshour-wrapper">
@@ -35,8 +36,8 @@ class DebateList extends React.Component {
                 <div style={{width:"58%"}} class="newshour-hero">
                     <div class="loadVideoPlayer newshour-debate" id="video_player" data-debate_id={this.state.storyList.debates[0].id}>
                         <div class="videoWrapper">
-                            <script src="https://cdn.jwplayer.com/libraries/RXQnHIQu.js"></script>
-                        </div>
+                        <ReactJWPlayer playerId={this.state.storyList.debates[0].id} playerScript='https://cdn.jwplayer.com/libraries/RXQnHIQu.js' />
+                    </div>
                     </div>
                     <div class="debateTitle" style={{paddingTop: "70px", height:"210px", overflow:"hidden"}}>
                             <div class="flex flexJustifyBetween">
