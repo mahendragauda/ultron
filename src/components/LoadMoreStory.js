@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 function LoadMoreStory() {
-  const perPage = 3;
   const [totalPages, setTotalPages] = useState(1);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(3);
 
   const [debateStory, setUserList] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -17,7 +16,7 @@ function LoadMoreStory() {
           setTotalPages(res.data.total_pages);
           setUserList([...debateStory, ...res.data.debates]);
           setLoading(false);
-          console.log(debateStory.question);
+          console.log(res);
         });
     }
     getUserList();
@@ -27,7 +26,7 @@ function LoadMoreStory() {
         <div class="section1200 flex">
             <div style={{width:"75%"}} >
                     <div class="width100 flex flexWrap padbtm30" id="debate-load">
-    {debateStory.map((stories, i) => {
+    {debateStory.slice(4).map((stories, i) => {
     return <div key={i} class="newshour-video">
         <div class="hover-effect">
             <a href="https://www.republicworld.com/the-debate/2563/7630/is-there-pfi-role-in-harsha-murder.html">

@@ -275,6 +275,11 @@ class Header extends React.Component {
                       <div style={{ flexShrink: '0', padding: '5px 20px' }}>Business News</div>
                     </a>
                   </Link>
+                  <Link href="/shows/nation-wants-to-know">
+                    <a style={this.CSS.menuWrapper}>
+                      <div style={{ flexShrink: '0', padding: '5px 20px' }}>Nation Wants To Know</div>
+                    </a>
+                  </Link>
                 </div>
               </div>
               <div style={this.CSS.menuArrowContainer}>
