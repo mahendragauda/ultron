@@ -338,3 +338,213 @@ a {
   flex-direction: column;
   justify-content: center;
 }
+
+.texthover, .hover-effect .videohover {
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  -ms-transition: all .5s;
+  transition: all .5s;
+}
+
+.top-news p {
+  line-height: 25px;
+  font-size: 21px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 5px 10px;
+  font-weight: 700;
+}
+.no-margin h1, .no-margin h2, .no-margin h3, .no-margin h4, .no-margin p {
+  margin: 0;
+}
+.lineClip3 {
+  -webkit-line-clamp: 3!important;
+}
+.hover-effect .imghover, .hover-effect .texthover, .hover-effect .videohover {
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  -ms-transition: all .5s;
+  transition: all .5s;
+}
+.latest-news>a>div>div:nth-child(1) {
+  width: 30%;
+}
+.latest-news>a>div>div:nth-child(2) {
+  width: 70%;
+}
+.latest-news-text>div:nth-child(1) {
+  height: 60px;
+}
+.latest-news-text>div:nth-child(1)>p {
+  font-size: 16px;
+  font-weight: 400!important;
+}
+.latest-news-text p {
+  margin: 0 0 0 10px;
+}
+.no-margin h1, .no-margin h2, .no-margin h3, .no-margin h4, .no-margin p {
+  margin: 0;
+}
+.lineClip3 {
+  -webkit-line-clamp: 3!important;
+}
+.latest-news-text>div:nth-child(2)>p {
+  font-size: 14px;
+  color: #464646;
+}
+.padtop20 {
+  padding-top: 20px!important;
+}
+.padbtm20 {
+  padding-bottom: 20px!important;
+}
+.flexJustifyCenter {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.fxWidth100, .width100 {
+  width: 100%;
+}
+.mrgnright10 {
+  margin-right: 10px!important;
+}
+.padleft10 {
+  padding-left: 10px!important;
+}
+.font14 {
+  font-size: 14px;
+}
+.txtcenter {
+  text-align: center!important;
+}
+a {
+  text-decoration: none!important;
+  border: none;
+  color: #000;
+}
+.minheight90 {
+  min-height: 90px;
+}
+.clr-D10014 {
+  color: #d10014;
+}
+.mrgntop10 {
+  margin-top: 10px!important;
+}
+.pad5 {
+  padding: 5px!important;
+}
+.bdr4px-dddddd {
+  border: 4px solid #ddd;
+}
+.font18 {
+  font-size: 18px;
+}
+.fontweight700 {
+  font-weight: 700!important;
+}
+.video-container {
+  padding: 20px 30px;
+  font-family: Roboto;
+  font-size: 16px;
+  background-color: #1a1423;
+}
+.bdr-dddddd {
+  border: 1px solid #ddd;
+}
+.video-inner-container {
+  width: 50%;
+  margin-right: 20px;
+}
+.hover-effect .videohover {
+  background: rgba(0,0,0,.1);
+}
+.posAbsolute {
+  position: absolute;
+}
+.height100p {
+  height: 100%;
+}
+.livetv-play-button {
+  width: 35px;
+  height: 35px;
+  content: url(https://www.republicworld.com/assets/images/livetv/play_button.png);
+  text-align: center;
+}
+.video-container-text>p {
+  margin: 10px 0 0 0;
+  color: #fff;
+}
+.no-margin h1, .no-margin h2, .no-margin h3, .no-margin h4, .no-margin p {
+  margin: 0;
+}
+#cricket-videos {
+  padding-top: 60px;
+  margin-top: -30px;
+}
+.bdrBtm-dddddd {
+  border-bottom: 1px solid #ddd;
+}
+.bdrRight-dddddd {
+  border-right: 1px solid #ddd;
+}
+.bdrTop-dddddd {
+  border-top: 1px solid #ddd;
+}
+.recent-news:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+.recent-news a {
+  width: 100%;
+  display: flex;
+  padding: 6px;
+}
+.posRelative {
+  position: relative;
+}
+.recent-news img {
+  object-fit: cover;
+}
+.recent-news p {
+    margin: 0 0 0 5px!important;
+    letter-spacing: -.2px;
+    line-height: 21px;
+    font-size: 16px;
+}
+.padright20 {
+  padding-right: 20px!important;
+}
+.width667 {
+  width: 66.7%;
+}
+.pad15 {
+  padding: 15px!important;
+}
+.padtop15 {
+  padding-top: 15px!important;
+}
+.font16 {
+  font-size: 16px;
+}
+.mrgnleft20 {
+  margin-left: 20px!important;
+}
+.mrgnright20 {
+  margin-right: 20px!important;
+}
+.scorecard-wrapper {
+  border: 1px solid #d10014;
+  border-radius: 3px;
+  color: #d10014;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-block;
+}
+.scorecard-wrapper>p {
+  margin: 0;
+  padding: 10px 20px;
+}

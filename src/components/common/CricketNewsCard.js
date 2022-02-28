@@ -68,26 +68,24 @@ class CricketNewsCard extends React.Component {
             <div class="flex flexWrap">
                 {keyvalue.map((value, index) => {
                     return (
-                        <article class="latest-news bdr-dddddd" style={{WebkitBoxSizing: "border-box",boxSizing: "border-box",fontFamily: "Roboto,sans-serif"}}>
-                            <div data-index={index = 5}>
+                        <article class="hover-effect latest-news bdr-dddddd" style={{WebkitBoxSizing: "border-box",boxSizing: "border-box",fontFamily: "Roboto,sans-serif"}}>
                                 <a href="https://www.republicworld.com/sports-news/cricket-news/ipl-2022-from-csk-to-srh-heres-predicted-playing-xis-of-all-10-teams-after-mega-auction-articleshow.html" style={{ webkitBoxSizing: "border-box", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
-                                    <div class="flex" style={{ display: "flex", flex: "initial!important" }}>
-                                        <div class="posRelative flex overflowHidden" style={{ width: "30%", display: "flex", position: "relative", overflow: "hidden!important", flexGrow: "initial !important", flexShrink: "initial !important", flexBasis: "initial !important" }}>
+                                    <div class="flex">
+                                        <div class="posRelative flex overflowHidden">
                                             <img class="imghover responsiveImage" src={value.placeholder}/>
                                         </div>
-                                        <div class="latest-news-text flex flexDirectionCol" style={{paddingLeft:"10px"}}>
+                                        <div class="texthover latest-news-text flex flexDirectionCol" style={{fontFamily: "Roboto,sans-serif"}}>
                                             <div>
-                                                <p class="txtTruncate lineClip3" numberoflines={1} style={{ fontSize: "16px", fontWeight: "400", margin: "0 0 0 10px", margin: "0", WebkitLineClamp: "3!important", overflow: "hidden", display: "-webkit-box", WebkitBoxOrient: "vertical", WebkitBoxSizing: "border-box", display: "block", marginBlockStart: "1em", marginBlockEnd: "1em", marginInlineStart: "0px", marginInlineEnd: "0px" }}>
+                                                <p class="txtTruncate lineClip3" numberoflines={1}>
                                                     {value.meta_title}
                                                 </p>
                                             </div>
-                                            <div class="mrgntop10" style={{ flexSmarginTop: "10px!important", webkitBoxSizing: "border-box" }}>
-                                                <p style={{ fontSize: "14px", color: "#464646", margin: "0 0 0 10px", display: "block", marginBlockStart: "1em", marginBlockEnd: "1em", marginInlineStart: "0px", marginInlineEnd: "0px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>{value.pub_datetime}</p>
+                                            <div class="mrgntop10">
+                                                <p>{value.pub_datetime}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
-                            </div>
                         </article>
                     )
                 })}
