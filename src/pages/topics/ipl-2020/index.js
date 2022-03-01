@@ -7,6 +7,8 @@ import Link from 'next/link';
 import WatchUsLive from "../../../components/common/WatchUsLive";
 const axios = require('axios');
 var keyvalue;
+import styles from '/styles/Cricket.module.css'
+
 
 export default function ipl({ cricketStories, pointsTable }) {
     const router = useRouter()
@@ -15,19 +17,19 @@ export default function ipl({ cricketStories, pointsTable }) {
     return (
         <>
             <Header />
-            <nav id="breadcrumb" class="font14 font-roboto font14 flex flexAlignItemsCenter" style={{ paddingTop: "15px", paddingLeft: "10px", paddingRight: "10px" }}>
+            <nav id="breadcrumb" className={[styles.font14, styles.fontRoboto, styles.font14 ,styles.flex ,styles.flexAlignItemsCenter].join(" ")} style={{ paddingTop: "15px", paddingLeft: "10px", paddingRight: "10px" }}>
                 <span><Link href="/"><a style={{ textDecoration: "underline !important;" }}>Home / </a></Link></span>
-                <span class="txtTransformCaps"><Link href="/"><a style={{ textDecoration: "underline !important;" }}> Topics / </a></Link></span>
-                <span class="txtTransformCaps"><Link href="/"><a style={{ textDecoration: "underline !important", color: "#e60000", fontWeight: "500!important" }}> IPL 2020</a></Link></span>
+                <span className={styles.txtTransformCaps}><Link href="/"><a style={{ textDecoration: "underline !important;" }}> Topics / </a></Link></span>
+                <span className={styles.txtTransformCaps}><Link href="/"><a style={{ textDecoration: "underline !important", color: "#e60000", fontWeight: "500!important" }}> IPL 2020</a></Link></span>
             </nav>
 
-            <div class="flex padtop20 flexJustifyCenter" style={{ display: "flex;", paddingLeft: "10px", paddingRight: "10px" }}>
-                <div class="width100 bdr-dddddd flex">
-                    <div class="flex mrgnright10" style={{ width: "76%" }}>
+            <div className={[styles.flex, styles.padtop20, styles.flexJustifyCenter].join(" ")} style={{ display: "flex;", paddingLeft: "10px", paddingRight: "10px" }}>
+                <div className={[styles.width100, styles.bdrDddddd, styles.flex].join(" ")}>
+                    <div className={[styles.flex ,styles.mrgnright10].join(" ")} style={{ width: "76%" }}>
                         <img style={{ width: "100%" }} src="https://www.republicworld.com/assets/images/cricket/cricket_banner_logo.jpeg" alt="Cricket" title="Cricket" width={100} height={60} />
                     </div>
-                    <div style={{ width: "24%" }} class="flex flexJustifyCenter padleft10">
-                        <div class="flex flexJustifyCenter flexDirectionCol font14 txtcenter">Supported by</div>
+                    <div style={{ width: "24%" }} className={[styles.flex, styles.flexJustifyCenter, styles.padleft10].join(" ")}>
+                        <div className={[styles.flex, styles.flexJustifyCenter, styles.flexDirectionCol, styles.font14 ,styles.txtcenter].join(" ")}>Supported by</div>
                         <a rel="nofollow" style={{ margin: "auto 0" }} href="https://www.cricketapi.com/?ref=republicworld.com" target="_blank">
                             <img style={{ width: "120px", height: "60px" }} src="https://www.republicworld.com/assets/images/cricket/roanuz_logo.png" alt="Roanuz Cricket API" title="Roanuz Cricket API" width={120} height={60} />
                         </a>
@@ -35,8 +37,8 @@ export default function ipl({ cricketStories, pointsTable }) {
                 </div>
             </div>
 
-            <div class="overflowHidden" style={{ paddingTop: "10px", paddingLeft: "10px", paddingRight: "10px" }}>
-                <div class="padtop20 txtcenter minheight90" style={{ backgroundColor: "#ddd" }}>
+            <div className={styles.overflowHidden} style={{ paddingTop: "10px", paddingLeft: "10px", paddingRight: "10px" }}>
+                <div className={[styles.padtop20, styles.txtcenter ,styles.minheight90]} style={{ backgroundColor: "#ddd" }}>
                     <div id="div-gpt-ad-1574168742469-0" data-google-query-id="CP7To_PUofYCFb6aZgIdb4cAeA" style={{ position: "relative", zIndex: "0", width: "728px", height: "90px", marginLeft: "auto", marginRight: "auto", display: "block" }}>
                         <div id="andbeyond7281" data-google-query-id="CPfctr_7ofYCFTeBZgIdDl0JEA">
                             <div id="google_ads_iframe_/21708198417,222812108/323541-728-90-1_0__container__" style={{ border: "0pt none" }}>
@@ -46,66 +48,62 @@ export default function ipl({ cricketStories, pointsTable }) {
                 </div>
             </div>
 
-            <div class="padtop20 flex cricket-page-responsive" style={{ padding: "20px 10px 10px 10px", flexDirection: "column" }}>
-                <div class="fxWidth67 width67 cricket-page-responsive">
-                    <div class="flex" style={{ display: "flex", flex: "initial!important", webkitBoxSizing: "border-box", fontFamily: "Roboto,sans-serif" }}>
-                        <article class="hover-effect top-news bdr-dddddd" style={{ width: "56%;" }}>
+            <div className={[styles.padtop20, styles.flex ,styles.cricketPageResponsive].join(" ")} style={{ padding: "20px 10px 10px 10px", flexDirection: "column" }}>
+                <div className={[styles.fxWidth67, styles.width67, styles.cricketPageResponsive].join(" ")}>
+                    <div className={styles.flex} style={{ display: "flex", flex: "initial!important", webkitBoxSizing: "border-box", fontFamily: "Roboto,sans-serif" }}>
+                        <article className={[styles.hoverEffect, styles.topNews, styles.bdrDddddd].join(" ")} style={{ width: "56%;" }}>
                             <a href="https://www.republicworld.com/sports-news/cricket-news/india-vs-west-indies-t20i-why-was-rishabh-pant-appointed-as-team-indias-vice-captain-articleshow.html">
-                                <div class="posRelative flex overflowHidden">
+                                <div className={[styles.posRelative, styles.flex, styles.overflowHidden].join(" ")}>
                                     <img
-                                        class="imghover"
+                                        className={styles.imghover}
                                         src={cricketStories.data.stories[0].placeholder}
                                         style={{ width: "100%;" }}
                                         alt="India vs West Indies T20I: Why was Rishabh Pant appointed as Team India's vice-captain?"
                                     />
                                 </div>
-                                <p class="texthover txtTruncate lineClip3">
+                                <p className={[styles.texthover, styles.txtTruncate, styles.lineClip3].join(" ")}>
                                     {cricketStories.data.stories[0].meta_title}
                                 </p>
                             </a>
                         </article>
-                        <div class="flex flexDirectionCol bdrRight-dddddd bdrTop-dddddd bdrBtm-dddddd" style={{ width: "44%;", borderBottomWidth: "1px", borderBottomStyle: "solid", borderBottomColor: "rgb(221, 221, 221)", borderRightWidth: "1px", borderRightStyle: "solid", borderRightColor: "rgb(221, 221, 221)", borderTopWidth: "1px", borderTopStyle: "solid", borderTopColor: "rgb(221, 221, 221)", flexDirection: "column", display: "flex", flex: "initial!important", webkitBoxSizing: "border-box", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                        <div className={[styles.flex, styles.flexDirectionCol, styles.bdrRightDddddd, styles.bdrTopDddddd, styles.bdrBtmDddddd].join(" ")} style={{ width: "44%"}}>
                             {cricketStories.data.stories.slice(1, 6).map((value, index) => {
                                 return (
-                                    <article class="hover-effect recent-news" style={{ borderBottomWidth: "1px", borderBottomStyle: "solid", borderBottomColor: "rgb(221, 221, 221)", webkitBoxSizing: "border-box", display: "block", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
-                                        <div data-index={index = 5}>
-                                            <a href="https://www.republicworld.com/sports-news/cricket-news/rohit-sharma-shuts-down-questions-on-ex-skipper-virat-kohlis-form-if-you-guys-can-dot-articleshow.html" style={{ width: "100%", display: "flex", padding: "6px", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
-                                                <div class="posRelative flex overflowHidden" style={{ minWidth: "80px", height: "60px", position: "relative", overflow: "hidden!important", display: "flex", flex: "initial!important", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
+                                    <article className={[styles.hoverEffect, styles.recentNews].join(" ")}>
+                                            <a href="https://www.republicworld.com/sports-news/cricket-news/rohit-sharma-shuts-down-questions-on-ex-skipper-virat-kohlis-form-if-you-guys-can-dot-articleshow.html">
+                                                <div className={[styles.posRelative, styles.flex, styles.overflowHidden].join(" ")} style={{ minWidth: "80px", height: "60px"}}>
                                                     <img
-                                                        class="imghover"
+                                                        className={styles.imghover}
                                                         src={value.placeholder}
                                                         alt="Rohit Sharma shuts down questions on ex-skipper Virat Kohli's form; 'If you guys can...'"
-                                                        style={{ transitionProperty: "all", transitionDuration: "0.5s", transitionTimingFunction: "ease", transitionDelay: "0s" }}
                                                     />
                                                 </div>
-                                                <p class="texthover txtTruncate lineClip3 font16" style={{ transitionProperty: "all", transitionDuration: "0.5s", transitionTimingFunction: "ease", transitionDelay: "0s", margin: "0 0 0 5px!important", letterSpacing: "-.2px", lineHeight: "21px", fontSize: "16px", webkitLineClamp: "3!important", overflow: "hidden", display: "-webkit-box", webkitBoxSizing: "border-box", marginBlockStart: "1em", marginBlockEnd: "1em", marginInlineStart: "0px", marginInlineEnd: "0px", fontFamily: "Roboto,sans-serif" }}>
+                                                <p className={[styles.texthover, styles.txtTruncate, styles.lineClip3, styles.font16].join(" ")}>
                                                     {value.meta_title}
                                                 </p>
                                             </a>
-                                        </div>
-
                                     </article>
                                 )
                             })}
 
                         </div>
                     </div>
-                    <div class="padtop30" style={{ padding: "20px 10px 10px 10px" }}>
-                        <div class="flex flexJustifyBetween padbtm15" style={{ display: "flex", justifyContent: "space-between" }}>
-                            <h2 class="font25 lineHeight25px">LATEST CRICKET NEWS</h2>
+                    <div className={styles.padtop30} style={{ padding: "20px 10px 10px 10px" }}>
+                        <div className={[styles.flex, styles.flexJustifyBetween, styles.padbtm15].join(" ")} style={{ display: "flex", justifyContent: "space-between" }}>
+                            <h2 className={[styles.font25, styles.lineHeight25px].join(" ")}>LATEST CRICKET NEWS</h2>
                             <a href="https://www.republicworld.com/cricket/ipl-2021/1" style={{ textDecoration: "underline!important", fontSize: "14px", paddingTop: "25px" }}>View more</a>
                         </div>
                         <CricketNewsCard keyvalue={cricketStories.data.stories.slice(0, 6)} />
                     </div>
-                    <div class="padtop30" style={{ padding: "20px 10px 10px 10px" }}>
-                        <div class="flex flexJustifyBetween padbtm15" style={{ display: "flex", justifyContent: "space-between" }}>
-                            <h2 class="font25 lineHeight25px">EDITOR'S PICK</h2>
+                    <div className={styles.padtop30} style={{ padding: "20px 10px 10px 10px" }}>
+                        <div className={[styles.flex, styles.flexJustifyBetween, styles.padbtm15].join(" ")} style={{ display: "flex", justifyContent: "space-between" }}>
+                            <h2 className={[styles.font25, styles.lineHeight25px].join(" ")}>EDITOR'S PICK</h2>
                         </div>
                         <CricketNewsCard keyvalue={cricketStories.data.stories.slice(0, 4)} />
 
                     </div>
-                    <div class="overflowHidden" style={{ paddingTop: "10px", paddingLeft: "10px", paddingRight: "10px" }}>
-                        <div class="padtop20 txtcenter minheight90" style={{ backgroundColor: "#ddd" }}>
+                    <div className={styles.overflowHidden} style={{ paddingTop: "10px", paddingLeft: "10px", paddingRight: "10px" }}>
+                        <div className={[styles.padtop20, styles.txtcenter, styles.minheight90].join(" ")} style={{ backgroundColor: "#ddd" }}>
                             <div id="div-gpt-ad-1574168742469-0" data-google-query-id="CP7To_PUofYCFb6aZgIdb4cAeA" style={{ position: "relative", zIndex: "0", width: "728px", height: "90px", marginLeft: "auto", marginRight: "auto", display: "block" }}>
                                 <div id="andbeyond7281" data-google-query-id="CPfctr_7ofYCFTeBZgIdDl0JEA">
                                     <div id="google_ads_iframe_/21708198417,222812108/323541-728-90-1_0__container__" style={{ border: "0pt none" }}>
@@ -115,39 +113,39 @@ export default function ipl({ cricketStories, pointsTable }) {
                         </div>
                     </div>
 
-                    <div class="padtop30" style={{ padding: "20px 10px 10px 10px" }}>
-                        <div class="flex flexJustifyBetween padbtm15" style={{ display: "flex", justifyContent: "space-between" }}>
-                            <h2 class="font25 lineHeight25px">MORE CRICKET NEWS</h2>
+                    <div className={styles.padtop30} style={{ padding: "20px 10px 10px 10px" }}>
+                        <div className={[styles.flex, styles.flexJustifyBetween, styles.padbtm15].join(" ")} style={{ display: "flex", justifyContent: "space-between" }}>
+                            <h2 className={[styles.font25 ,styles.lineHeight25px].join(" ")}>MORE CRICKET NEWS</h2>
                             <a href="https://www.republicworld.com/cricket/ipl-2021/1" style={{ textDecoration: "underline!important", fontSize: "14px", paddingTop: "25px" }}>View more</a>
                         </div>
                         <CricketNewsCard keyvalue={cricketStories.data.stories.slice(0, 2)} />
 
                     </div>
-                    <div id="cricket-videos">
-                        <div class="flex flexJustifyBetween padbtm15" style={{ display: "flex", justifyContent: "space-between" }}>
-                            <h2 class="font25 lineHeight25px">VIDEOS</h2>
+                    <div id={styles.cricketVideos}>
+                        <div className={[styles.flex, styles.flexJustifyBetween, styles.padbtm15].join(" ")} style={{ display: "flex", justifyContent: "space-between" }}>
+                            <h2 className={[styles.font25, styles.lineHeight25px].join(" ")}>VIDEOS</h2>
                         </div>
-                        <div class="video-container bdr-dddddd flex">
+                        <div className={[styles.videoContainer, styles.bdrDddddd, styles.flex].join(" ")}>
                             {cricketStories.data.video_stories.slice(0,2).map((value, index) => {
                                 return(
-                                <article class="hover-effect video-inner-container">
+                                <article className={[styles.hoverEffect, styles.videoInnerContainer].join(" ")}>
                                     <Link href="https://www.republicworld.com/sports-news/cricket-news/wriddhiman-saha-on-chetan-sharmas-clear-message-we-cannot-drop-a-new-player-either-articleshow.html">
-                                        <a class="flex flexDirectionCol">
-                                            <div class="overflowHidden posRelative flex">
+                                        <a className={[styles.flex, styles.flexDirectionCol].join(" ")}>
+                                            <div className={[styles.overflowHidden, styles.posRelative, styles.flex].join(" ")}>
                                                 <img
-                                                    class="imghover"
+                                                    className={styles.imghover}
                                                     src={value.placeholder}
                                                     alt="Wriddhiman Saha on Chetan Sharma's 'clear' message: 'We cannot drop a new player either'"
                                                 />
-                                                <div class="videohover posAbsolute width100 height100p">
-                                                    <div class="flex height100p">
-                                                        <div class="livetv-play-button" style={{ margin: "auto" }}>
+                                                <div className={[styles.videohover, styles.posAbsolute, styles.width100, styles.height100p].join(" ")}>
+                                                    <div className={[styles.flex, styles.height100p].join(" ")}>
+                                                        <div className={styles.livetvPlayButton} style={{ margin: "auto" }}>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="texthover video-container-text">
-                                                <p class="txtTruncate">{value.meta_title}</p>
+                                            <div className={[styles.texthover, styles.videoContainerText].join(" ")}>
+                                                <p className={styles.txtTruncate}>{value.meta_title}</p>
                                             </div>
                                         </a>
                                     </Link>
@@ -157,14 +155,20 @@ export default function ipl({ cricketStories, pointsTable }) {
 
                         </div>
                     </div>
-                    <div class="clr-D10014 mrgntop10 pad5 font18 bdr4px-dddddd fontweight700">
-                        Disclaimer: None of the advertisers on this page are the official sponsors of the IPL 2021
+                    <div className={[styles.clrD10014, styles.mrgntop10, styles.pad5, styles.font18, styles.bdr4pxDddddd, styles.fontweight700].join(" ")}>
+                        Disclaimer: None of the advertisers on this page are the official sponsors of the IPL 2020
                     </div>
                 </div>
-            </div>
-
+               
+                <div className={styles.width33}>
+                <div className={styles.txtcenter}>
+                    <div className={[styles.mrgnbtm20, styles.bgF8f8f8, styles.padtop10, styles.padbtm10].join(" ")} style={{ backgroundColor: "#ddd" }}>
+                    </div>
+                </div>
             <WatchUsLive />
             <TeamPointsTable data={pointsTable[0].rankings} />
+            </div>
+            </div>
 
         </>
     )
@@ -174,7 +178,7 @@ export default function ipl({ cricketStories, pointsTable }) {
 export async function getServerSideProps() {
     var cricketStories
     var pointsTable
-    const cricketStoriesRequest = axios.get(`https://jarvis.mynationvoice.com/sub-category/cricketstories?sub_category_slug=cricket-news&page_no=1&limit=12&event=ipl-2021`)
+    const cricketStoriesRequest = axios.get(`https://jarvis.mynationvoice.com/sub-category/cricketstories?sub_category_slug=cricket-news&page_no=1&limit=12&event=ipl-2020`)
     const pointsTableRequest = axios.get(`https://groot.republicworld.com/behtarindia/cricket/ipl_rankings_2021.json`)
     await Promise.all([cricketStoriesRequest, pointsTableRequest]).then(function (results) {
         cricketStories = results[0].data;

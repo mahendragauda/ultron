@@ -1,5 +1,7 @@
 import React from "react";
 import Link from 'next/link';
+import styles from '/styles/Cricket.module.css'
+
 
 class CricketNewsCard extends React.Component {
     CSS = {
@@ -65,22 +67,22 @@ class CricketNewsCard extends React.Component {
     render() {
         const keyvalue = this.props.keyvalue;
         return (
-            <div class="flex flexWrap">
+            <div className={[styles.flex, styles.flexWrap].join(" ")}>
                 {keyvalue.map((value, index) => {
                     return (
-                        <article class="hover-effect latest-news bdr-dddddd" style={{WebkitBoxSizing: "border-box",boxSizing: "border-box",fontFamily: "Roboto,sans-serif"}}>
+                        <article className={[styles.hoverEffect, styles.latestNews, styles.bdrDddddd].join(" ")} style={{WebkitBoxSizing: "border-box",boxSizing: "border-box",fontFamily: "Roboto,sans-serif"}}>
                                 <a href="https://www.republicworld.com/sports-news/cricket-news/ipl-2022-from-csk-to-srh-heres-predicted-playing-xis-of-all-10-teams-after-mega-auction-articleshow.html" style={{ webkitBoxSizing: "border-box", fontFamily: "Roboto,sans-serif", letterSpacing: "0", fontSize: "100%", lineHeight: "20px" }}>
-                                    <div class="flex">
-                                        <div class="posRelative flex overflowHidden">
-                                            <img class="imghover responsiveImage" src={value.placeholder}/>
+                                    <div className={styles.flex}>
+                                        <div className={[styles.posRelative, styles.flex, styles.overflowHidden].join(" ")}>
+                                            <img className={[styles.imghover, styles.responsiveImage].join(" ")} src={value.placeholder}/>
                                         </div>
-                                        <div class="texthover latest-news-text flex flexDirectionCol" style={{fontFamily: "Roboto,sans-serif"}}>
+                                        <div className={[styles.texthover, styles.latestNewsText, styles.flex, styles.flexDirectionCol].join(" ")} style={{fontFamily: "Roboto,sans-serif"}}>
                                             <div>
-                                                <p class="txtTruncate lineClip3" numberoflines={1}>
+                                                <p className={[styles.txtTruncate, styles.lineClip3].join(" ")} numberoflines={1}>
                                                     {value.meta_title}
                                                 </p>
                                             </div>
-                                            <div class="mrgntop10">
+                                            <div className={styles.mrgntop10}>
                                                 <p>{value.pub_datetime}</p>
                                             </div>
                                         </div>
