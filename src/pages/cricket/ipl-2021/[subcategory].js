@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-import Header from '/components/common/Header'
-import Cricket from '/components/common/CricketMenuBar'
-import CricketNewsCard from '/components/common/CricketNewsCard'
-import TeamPointsTable from '/components/common/TeamPointsTable'
+import Header from '../../../components/common/Header'
+import Cricket from '../../../components/common/CricketMenuBar'
+import CricketNewsCard from '../../../components/common/CricketNewsCard'
+import TeamPointsTable from '../../../components/common/TeamPointsTable'
 import Link from 'next/link';
 import Image from "next/image";
 const axios = require('axios');
@@ -16,7 +16,7 @@ export default function ipl({ cricketStories, pointsTable, scheduleData, resultD
     return (
         <>
             <Header />
-            <Cricket value={router.query.subcategory} />
+            <Cricket slug={router.query.subcategory} />
             <nav id="breadcrumb" class="font14 font-roboto font14 flex flexAlignItemsCenter" style={{ paddingTop: "15px", paddingLeft: "10px", paddingRight: "10px" }}>
                 <span><Link href="/"><a style={{ textDecoration: "underline !important;" }}>Home / </a></Link></span>
                 <span class="txtTransformCaps"><Link href="/"><a style={{ textDecoration: "underline !important;" }}> Cricket / </a></Link></span>

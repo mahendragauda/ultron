@@ -319,7 +319,7 @@ a {
   margin: 0 auto;
   position: relative;
 }
-.nav-bar {
+/* .nav-bar {
   display: flex;
   width: 100%;
 }
@@ -337,7 +337,7 @@ a {
   margin: auto;
   flex-direction: column;
   justify-content: center;
-}
+} */
 
 .texthover, .hover-effect .videohover {
   -webkit-transition: all .5s;

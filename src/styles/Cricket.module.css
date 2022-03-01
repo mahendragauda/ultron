@@ -1,0 +1,19 @@
+.navBar {
+    display: flex;
+    width: 100%;
+  }
+  .navSelected {
+    background-color: #6d1c24;
+    font-weight: 500;
+  }
+  .navBar a>div {
+    padding: 8px 10px;
+    font-size: 16px;
+    color: #fff;
+    font-family: Roboto;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+  }

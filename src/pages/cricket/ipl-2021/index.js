@@ -15,7 +15,7 @@ export default function ipl({ cricketStories, pointsTable }) {
     return (
         <>
             <Header />
-            <Cricket />
+            <Cricket slug=""/>
             <nav id="breadcrumb" class="font14 font-roboto font14 flex flexAlignItemsCenter" style={{ paddingTop: "15px", paddingLeft: "10px", paddingRight: "10px" }}>
                 <span><Link href="/"><a style={{ textDecoration: "underline !important;" }}>Home / </a></Link></span>
                 <span class="txtTransformCaps"><Link href="/"><a style={{ textDecoration: "underline !important;" }}> Cricket / </a></Link></span>
