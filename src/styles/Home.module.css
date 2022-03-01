@@ -73,6 +73,20 @@
   height: 79px;
   overflow: hidden;
   padding-left: 10px;
+  font-family: Roboto,sans-serif;
+}
+
+.smallCardTitleCenter {
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  -ms-transition: all .5s;
+  transition: all .5s;
+  width: 68.8%;
+  height: 66px;
+  padding-left: 10px;
+  overflow: hidden;
+  font-family: Roboto,sans-serif;
 }
 
 .smallCardHeadline {
@@ -182,5 +196,12 @@
 @media (max-width: 1050px){
 .sectionTopText {
     font-size: 18px;
+}
+}
+
+@media (max-width: 1050px){
+.smallCardTitleCenter {
+    width: 74%;
+    height: 58px;
 }
 }

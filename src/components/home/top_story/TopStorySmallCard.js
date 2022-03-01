@@ -3,20 +3,19 @@ import React from "react";
 import Link from "next/link";
 import CardImage from "../../common/CardImage";
 
-export default function TopStorySmallCard({ story,height }) {
+export default function TopStorySmallCard({ story, height }) {
     return (
         <>
             <div className={styles.smallCardContainer}>
                 <Link href='/'>
                     <a>
                         <div className={styles.flex}>
-                            <div className={styles.smallCardImage}>
+                            <div className={height == '79px' ? styles.smallCardImage : ''}>
                                 <CardImage src={story.promo_large} className={styles.smallImageTag}
-                                    width={142} height={82}
-                                    alt={story.title}
+                                    alt={story.title} width={132} height={75}
                                 />
                             </div>
-                            <div className={styles.smallCardTitle} style={{height:`${height}`}}>
+                            <div className={height == '75px' ? styles.smallCardTitleCenter : styles.smallCardTitle} style={{ height: `${height}` }}>
                                 <h2 className={styles.smallCardHeadline}>{story.title}</h2>
                             </div>
                         </div>

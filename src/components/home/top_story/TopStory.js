@@ -38,8 +38,8 @@ export default class TopStory extends React.Component {
                                     </Link>
                                 }
                             </div>
-                            {this.state.latestStories.slice(1).map((item, index) => <TopStorySmallCard story={item} key={item.id} height="79px"></TopStorySmallCard>)}
-                            {this.state.topStories.slice(0, 3).map((item, index) => <TopStorySmallCard story={item} key={item.id} height="79px"></TopStorySmallCard>)}
+                            {this.state.latestStories.slice(1).map((item, index) => <TopStorySmallCard story={item} key={item.id} height="79px"/>)}
+                            {this.state.topStories.slice(0, 3).map((item, index) => <TopStorySmallCard story={item} key={item.id} height="79px"/>)}
                         </div>
                         <div className={styles.homepageShadow}>
                             <div className="cardContainer">
@@ -61,7 +61,7 @@ export default class TopStory extends React.Component {
                                     </Link>
                                 }
                             </div>
-                            {this.state.topStories.slice(4, 10).map((item, index) => <TopStorySmallCard story={item} key={item.id} height="58px"></TopStorySmallCard>)}
+                            {this.state.topStories.slice(4, 10).map((item, index) => <TopStorySmallCard story={item} key={item.id} height="75px"/>)}
                         </div>
                         <div></div>
                     </div>
