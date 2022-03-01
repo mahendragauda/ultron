@@ -548,3 +548,13 @@ a {
   margin: 0;
   padding: 10px 20px;
 }
+.score-card {
+  border: 1px solid #ddd;
+  border-radius: 3px 3px 0 0;
+  padding: 10px;
+}
+.score-card-title {
+  font-size: 14px!important;
+  display: flex;
+  justify-content: space-between;
+}

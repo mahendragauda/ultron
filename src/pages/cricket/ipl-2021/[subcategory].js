@@ -33,7 +33,7 @@ export default function ipl({ cricketStories, pointsTable, scheduleData, resultD
                                     {scheduleData.seasons[0].matches.map((value, index) => {
                                         return (
                                             <div class="schedule-match-wrapper">
-                                                <a href="https://www.republicworld.com/cricket/ipl-2021/hyderabad-vs-mumbai-live-score/iplt20-2021-g31.html" style={{ textDecoration: "none!important", border: "none", color: "#000", fontFamily: "Roboto,sans-serif", }}>
+                                                <a href={value.short_name.toLowerCase().replace(/ /g, '-') + "-live-score" + "/" + value.key + ".html"} style={{ textDecoration: "none!important", border: "none", color: "#000", fontFamily: "Roboto,sans-serif", }}>
                                                     <div class="flex flexJustifyBetween" style={{ paddingBottom: "20px!important", justifyContent: "space-between", display: "flex", flex: "initial!important", textDecoration: "none!important", border: "none", color: "#000", fontFamily: "Roboto,sans-serif", }}>
                                                         <div style={{ fontSize: "14px", fontWeight: "700", display: "block", textDecoration: "none!important", border: "none", color: "#000", fontFamily: "Roboto,sans-serif", }}>{value.start_date_f}</div></div>
                                                     <div class="flex flexJustifyBetween">
@@ -216,7 +216,7 @@ export default function ipl({ cricketStories, pointsTable, scheduleData, resultD
                                                             <div style={{ fontSize: "14px" }}>{value.start_date_f}| {value.season} | {value.venue}</div>
                                                             <div class="flex padtop15 font16">
                                                                 <div style={{ fontSize: "16px" }}>{value.teams.a.name}</div>
-                                                                <div class="vs-container-red mrgnleft20 mrgnright20" style={{display: "flex",justifyContent: "center",alignItems: "center"}}>vs</div>
+                                                                <div class="vs-container-red mrgnleft20 mrgnright20" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>vs</div>
                                                                 <div style={{ fontSize: "16px", fontFamily: "Roboto,sans-serif" }}>{value.teams.b.name}</div>
                                                             </div>
                                                             <div class="padtop15 font14 fontweight500">{value.result}</div>
@@ -275,6 +275,64 @@ export default function ipl({ cricketStories, pointsTable, scheduleData, resultD
                             <TeamPointsTable data={pointsTable[0].rankings} />
 
                         </>
+                    // case router.query.subcategory.includes("live-score"):
+                    //     return <>
+                    //         <div class="padtop20 padbtm20">
+                    //             <div class="cricket-page-responsive flex">
+                    //                 <div class="width667 padright20 no-margin score-details">
+                    //                     <div class="score-card">
+                    //                         <div class="score-card-title">
+                    //                             <div>
+                    //                                 <h3>Hyderabad vs Mumbai - 31st Match - Indian Premier League 2021</h3>
+                    //                                 <h3>May 4, 2021</h3>
+                    //                             </div>
+                    //                             <div class="flex"><div class="ms-text">SCHEDULED</div></div>
+                    //                         </div>
+                    //                         <div id="score-card-detail">
+                    //                             <div class="width100 pad1510">
+                    //                                 <div class="width100 flexJustifyBetween flex">
+                    //                                     <div class="flex">
+                    //                                         <div>
+                    //                                             <div class="schedule-team-flag" style="margin: 0 auto; width: 56px; height: 33px; background: #e3263b;">H</div>
+                    //                                             <h2 style="padding-top: 3px;" class="team-name">Hyderabad</h2>
+                    //                                         </div>
+                    //                                         <div class="padleft15"></div>
+                    //                                     </div>
+                    //                                     <div class="vs"><p>VS</p></div>
+                    //                                     <div class="flex">
+                    //                                         <div style="text-align: end;"></div>
+                    //                                         <div class="padleft15">
+                    //                                             <div class="schedule-team-flag" style="margin: 0 auto; width: 56px; height: 33px; background: #004ba0;">M</div>
+                    //                                             <h2 style="padding-top: 3px;" class="team-name">Mumbai</h2>
+                    //                                         </div>
+                    //                                     </div>
+                    //                                 </div>
+                    //                             </div>
+                    //                         </div>
+                    //                         <div class="match-status">On 04 May 2021, Hyderabad playing against Mumbai in Arun Jaitley Stadium, Delhi, India. Match (Hyderabad vs Mumbai - 31st Match - Indian Premier League 2021) will begin at 14:00 GMT.</div>
+                    //                     </div>
+                    //                     <div class="over-details" id="over-detail-wrapper" style="display: none;"></div>
+                    //                     <div style="margin-top: 15px;" id="current-team-details_a"></div>
+                    //                     <div class="score-detail-wrapper" style="display: none;">
+                    //                         <div class="padtop10 bdrTop-dddddd bdrLeft-dddddd bdrRight-dddddd navbar-container score-board-wrapper">
+                    //                             <ul>
+                    //                                 <li class="nav-link active-link" onclick="location.href='https://www.republicworld.com/cricket/ipl-2021/hyderabad-vs-mumbai-live-score/iplt20-2021-g31.html'">
+                    //                                     <div class="mrgnbtm10">Scorecard</div>
+                    //                                     <div class="underline"></div>
+                    //                                 </li>
+                    //                                 <li class="nav-link" onclick="location.href='https://www.republicworld.com/cricket/ipl-2021/hyderabad-vs-mumbai-ball-by-ball-live-score/iplt20-2021-g31.html'">
+                    //                                     <div class="mrgnbtm10">Ball by Ball Commentary</div>
+                    //                                     <div class="underline"></div>
+                    //                                 </li>
+                    //                             </ul>
+                    //                         </div>
+                    //                         <div id="score-board-container"></div>
+                    //                     </div>
+                    //                 </div>
+                    //             </div>
+                    //         </div>
+                    //     </>
+
                     default:
                         return null
                 }
