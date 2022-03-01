@@ -14,10 +14,9 @@ class TheDebate extends React.Component {
             StoryBatchTwo: props.debateDataTwo,
             StoryBatchThree: props.debateDataThree,
             shows: props.recommendShows
-
         };
     }
-   
+    
     render() {
         return (
             <main class="font-roboto width100">

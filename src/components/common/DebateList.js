@@ -17,7 +17,16 @@ class DebateList extends React.Component {
         debateStory: []
     };
    }
-
+   componentDidMount() {
+    const script = document.createElement("script");
+    script.src = "../public/javascript/dateFormatter.js";
+    script.async = true;
+    script.onload = () => this.scriptLoaded();
+    //this.convertDateTime();
+    //console.log(convertDateTime());
+    document.head.appendChild(script);
+  }
+  
    render(){
        return ( 
            <div>
@@ -27,7 +36,7 @@ class DebateList extends React.Component {
                 <div style={{width:"58%"}} class="newshour-hero">
                     <div className="loadVideoPlayer newshour-debate" id="video_player" data-debate_id={this.state.storyList.debates[0].id}>
                         <div className="videoWrapper">
-                        <ReactJWPlayer  playerId={this.state.storyList.debates[0].video_path} playerScript='https://cdn.jwplayer.com/libraries/RXQnHIQu.js' playlist='"https://cdn.jwplayer.com/v2/media/4Ym5H2TS' />
+                        <ReactJWPlayer  playerId={this.state.storyList.debates[0].video_path} playerScript='https://cdn.jwplayer.com/libraries/RXQnHIQu.js' playlist='https://cdn.jwplayer.com/v2/media/'{...this.state.storyList.debates[0].video_path} autostart="true"/>
                     </div>
                     </div>
                     <div className="debateTitle" style={{paddingTop: "70px", height:"210px", overflow:"hidden"}}>
@@ -169,9 +178,7 @@ class DebateList extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div>
-            <LoadMoreStory />
+                <LoadMoreStory />
             </div>
             </section>
             </div>

@@ -4,6 +4,7 @@ function LoadMoreStory() {
   const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(3);
 
+
   const [debateStory, setUserList] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -21,7 +22,6 @@ function LoadMoreStory() {
     getUserList();
   }, [page]);
   return (
-  <div>
         <div class="section1200 flex">
             <div style={{width:"75%"}} >
                   <div class="width100 flex flexWrap padbtm30" id="debate-load">
@@ -33,7 +33,7 @@ function LoadMoreStory() {
                         <img width="255" height="144" class="width100 imghover responsiveImage" alt="Is there PFI role in Harsha murder?" src={stories.promo_large} />
                         <div class="videohover posAbsolute width100 height100p" style={{background: "rgba(0, 0, 0, 0.5)"}}>
                             <div class="flex height100p">
-                                <div class="livetv-play-button" style={{margin: "auto"}}></div>
+                           <div class="livetv-play-button" style={{margin: "auto"}}></div>
                             </div>
                         </div>
                 </div>
@@ -46,7 +46,6 @@ function LoadMoreStory() {
     })}
     </div>
    {totalPages !== page && <div class="cursorPtr font18 txtcenter txtdecorationunderline" onClick={() => setPage(page + 1)} id="debate-loadmore"> Load More </div>}
-    </div>
     </div>
     </div>
     );
