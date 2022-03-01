@@ -1,26 +1,42 @@
 import React from "react";
 import Link from "next/link";
-import {getStoryDetailProps} from '../../apiLib/StoryDetailApi'
-
+import {getStoryDetailProps} from '../../apiLib/StoryDetailApi';
+import breadCrumbCommonStyle from '../../styles/StoryDetailCommon.module.css'
+import breadCrumbCss from '../../styles/BreadCrumb.module.css'
 
 class BreadCrumbPage extends React.Component {
     constructor(){
         super();
-        this.state={Data:null};
+        this.state={
+            breadCrumb_title:'',
+            breadCrumb_category:'',
+            breadCrumb_category_slug:'',
+            breadCrumb_subcategory_slug:'',
+            breadCrumb_subcategory:'',
+            complete_slug:''
+            
+        };
     }
+
+   
 componentDidMount(){
-    // getStoryDetailProps();
-    // console.warn(getStoryDetailProps())
-    // this.setState({storyDetail:articleStoryData})
+  this.setState({
+    breadCrumb_title:this.props.breadcrumbArticleData.data.story.title,
+    breadCrumb_category:this.props.breadcrumbArticleData.data.story.category_name,
+    breadCrumb_category_slug:this.props.breadcrumbArticleData.data.story.category_slug,
+    breadCrumb_subcategory_slug:this.props.breadcrumbArticleData.data.story.sub_category_slug,
+    breadCrumb_subcategory:this.props.breadcrumbArticleData.data.story.sub_category_name,
+    complete_slug:this.props.breadcrumbArticleData.data.story.complete_slug
+  })
 }
     render(){
         return (
-            <section className="padleft10 padright10 padtop15">
-                <nav id="breadcrumb" className="section1200  font14 fontRoboto flex flexAlignItemsCenter">
-                    <span><Link href="">Home</Link></span>
-                    <span className="txtTruncate lineClip1"><Link href="">Elections</Link></span>
-                    <span className="txtTruncate, styles.lineClip1"><Link href="">Punjab</Link></span>
-                    <span className="txtTruncate, styles.lineClip1"><Link href=""><span className="fontweight500 color_e60000">Punjab election: BJP slams CM Channi, Priyanka Vadra for 'humiliating' people of UP, Bihar</span></Link></span>
+            <section className={[breadCrumbCommonStyle.padleft10 ,breadCrumbCommonStyle.padright10,breadCrumbCommonStyle.padtop15].join(" ")}>
+                <nav id="breadcrumb" className={[breadCrumbCommonStyle.section1200 ,breadCrumbCommonStyle.font14,breadCrumbCommonStyle.fontRoboto,breadCrumbCommonStyle.flex,breadCrumbCommonStyle.flex,breadCrumbCommonStyle.flexAlignItemsCenter].join(" ")}>
+                    <span><Link href="/">Home</Link></span>
+                    <span className={[breadCrumbCss.txtTruncate ,breadCrumbCss.lineClip1].join(" ")}><Link href={'/'+this.state.breadCrumb_category_slug}>{this.state.breadCrumb_category}</Link></span>
+                    <span className={[breadCrumbCss.txtTruncate ,breadCrumbCss.lineClip1].join(" ")}><Link href={'/'+this.state.breadCrumb_subcategory_slug}>{this.state.breadCrumb_subcategory}</Link></span>
+                    <span className={[breadCrumbCss.txtTruncate ,breadCrumbCss.lineClip1].join(" ")}><span className={[breadCrumbCommonStyle.fontweight500 ].join(" ")}><Link href={'/'+this.state.complete_slug} ><span style={{color:"#e60000"}}>{this.state.breadCrumb_title}</span></Link></span></span>
                 </nav> 
             </section>
         )

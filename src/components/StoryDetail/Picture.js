@@ -6,84 +6,88 @@ import RightStoryDetail from '../../components/StoryDetail/RightStoryDetail'
 import Data from "../../components/StoryDetail/dummy.json"
 import Link from 'next/link';
 import Image from 'next/image';
-// import {getStoryDetailProps} from "../../apiLib/StoryDetailApi"
+import style from '../../styles/StoryDetailCommon.module.css'
+import pictureStyle from '../../styles/Picture.module.css'
 
 class PicturePage extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            id:'',
-            story:[],
-            tags:[]
+            Tags:[],
+            published_datetime:'',
+            recommand:'',
+            story_text:''
+            
         }
     }
-    // componentDidMount(){
-    //     getStoryDetailProps()
-    //     .then((res) => {
-    //         this.setState({
-    //             id:res.props.articleStoryData.data.story.id,
-    //             story:res.props.articleStoryData.data.story,
-    //             also_watch:res.props.articleStoryData.data.story.also_watch
-    //         })
-    //         console.log("sneha")
-           
-    //        // console.log(res.props.articleStoryData.data.story.id)
-    //     })
-    // }
-  
+componentDidMount(){
+   console.warn(this.props.articlePictureData.data.story.id)
+    this.setState({
+        Tags:this.props.articlePictureData.data.story.tags,
+        published_datetime:this.props.articlePictureData.data.story.pub_datetime,
+        recommand:this.props.articlePictureData.data.story.pub_datetime,
+        story_text:this.props.articlePictureData.data.story.story_text
+   }) 
+}
+
+telegramClick = () =>{
+    window.open('https://t.me/RepublicLive')
+}
+ 
 
     render(){
+       
         return(
-                <main className="width100 fontRoboto" id="republic-dom">
-                    <BreadCrumb/>
-                   {/* <p>{this.state.id}</p>
-                   <p>{this.state.story.type}</p>
-                   <p>{this.state.story.story_text}</p> */}
-                   {/* {this.state.tags.map(tagdata=>
-                    <p>{tagdata}</p>
-                   )} */}
-                    {/* <p>{articleStoryData.data.story.id}</p> */}
-                    {/* <p>{this.state.data.data.story.id}</p> */}
-                    <section className="section1200 pad10">
-	                    <div className="overflowHidden">
-                            <div className="padtop20 txtcenter minheight90">ad</div>
+                <main className={[style.width100 ,style.fontRoboto].join(" ")} id="republic-dom">
+                    <BreadCrumb breadcrumbArticleData={this.props.articlePictureData}/>
+                    {/* <p>{this.state.pictureData.data.story.id}</p> */}
+                  <section className={[style.section1200 ,style.pad10].join(" ")}>
+	                    <div className={style.overflowHidden}>
+                            <div className={[style.padtop20 ,style.txtcenter,style.minheight90].join(" ")}>ad</div>
                         </div>
                     </section>
                     <section style={{padding: "20px 10px 0px 10px"}}>
-                        <div className="section1200">
+                        <div className={style.section1200}>
                             <div id="paginated-stories">
-                                <div className="flex flexStoryResponsive flexJustifyBetween">
-                                    <div className="storycontainer">
-                                        <div className="storywrapper">
-                                            <div className="storyContent">
+                                <div className={[style.flex ,style.flexStoryResponsive,style.flexJustifyBetween].join(" ")}>
+                                    <div className={pictureStyle.storycontainer}>
+                                        <div className={pictureStyle.storywrapper}>
+                                            <div className={pictureStyle.storyContent}>
                                                 <div className="storypicture">
-                                                    <StoryTopContent/>
-                                                    <div class="padtop10">
-                                                        Tags:
-                                                        <Link href="">Congress</Link>, 
-                                                        <Link href="">Smriti Irani</Link>, 
-                                                        <Link href="">Manipur elections</Link>
+                                                    <StoryTopContent  storyTopContentArticle={this.props.articlePictureData}/>
+                                                    <br/>
+                                                    <div style={{width:"100%"}} className={pictureStyle.storytext}>
+                                                        <div dangerouslySetInnerHTML={{ __html: this.state.story_text }} />
                                                     </div>
-                                                    <div className="padtop20">
+                                                    <div className={[pictureStyle.fontpoint8em,pictureStyle.tags_a,style.padtop10].join(" ")}>
+                                                        <span style={{paddingRight:"5px"}}>Tags:</span>
+                                                        {this.state.Tags.map((tagdata) =>
+                                                        <Link href={"/"+tagdata.toLowerCase().split(/\s+/).join('-')}>{tagdata}</Link>
+                                                        )}
+                                                    </div>
+                                                    <div className={[style.padtop20,pictureStyle.fontpoint8em].join(" ")}>
                                                         First Published:
-                                                        <time datetime="2022-02-18T22:59:00+05:30" title="53 secs ago">18th February, 2022 22:59 IST</time>
+                                                        <time datetime="2022-02-18T22:59:00+05:30" title="53 secs ago">{this.state.published_datetime}</time>
                                                     </div>
                                                     <div>
-                                                        <div style={{cursor:"pointer",marginTop:"15px"}} onclick="window.open('https://t.me/RepublicLive');">
+                                                        <div style={{cursor:"pointer",marginTop:"15px"}} onClick={this.telegramClick}>
+                                                            
                                                             <Image style={{marginBottom:"0px"}}  src="/assets/storydetail/telegram-wdiget.png"  width="330" height="104" />
                                                         </div>
                                                     </div>
-                                                    <div className="r-logo youtube-subscribe font-roboto">
-                                                        <div className="flex flexDirectionCol">
+                                                    <div className={[pictureStyle.r_logo,pictureStyle.youtube_subscribe,style.fontRoboto].join(" ")}>
+                                                        <div className={[style.flex,style.flexDirectionCol].join(" ")}>
                                                             <div>SUBSCRIBE TO US</div>
-                                                            <div className="padtop5">
-                                                                <Image width="80" height="18" className="youtube-logo" src="/assets/storydetail/youtube.png" alt="youtube" />
+                                                            <div className={style.padtop5}>
+                                                                <Image width="80" height="18" className={pictureStyle.youtube_logo} src="/assets/storydetail/youtube.png" alt="youtube" />
                                                             </div>
                                                         </div>
-                                                        <div className="flex flexDirectionCol flexJustifyCenter">
-                                                            <div className="flex">
+                                                        <div className={[style.flex,style.flexDirectionCol,style.flexJustifyCenter].join(" ")}>
+                                                            <div className={style.flex}>
                                                                 <Link target="_blank" href="https://www.youtube.com/channel/UCwqusr8YDwM-3mEYTDeJHzw">
-                                                                    <Image width="156" height="31" className="mrgnright20" src="/assets/storydetail/r-logo-web.png" alt="REPUBLIC"/>
+                                                                   <div className={style.mrgnright20}> 
+                                                                       <Image width="156" height="31"  src="/assets/storydetail/r-logo-web.png" alt="REPUBLIC"/>
+                                                                    </div>
                                                                 </Link>
                                                                 <Link target="_blank" href="https://www.youtube.com/channel/UC7wXt18f2iA3EDXeqAVuKng">
                                                                     <Image width="156" height="31" src="/assets/storydetail/rbharat-logo-web.png" alt="R-BHARAT" />
@@ -91,20 +95,22 @@ class PicturePage extends React.Component{
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className="r-logo watch-livetv font-roboto mrgntop15">
-                                                            <div className="flex flexDirectionCol">
+                                                    <div className={[style.fontRoboto,style.mrgntop15,pictureStyle.r_logo,pictureStyle.watch_livetv].join(" ")}>
+                                                            <div className={[style.flex,style.flexDirectionCol].join(" ")}>
                                                                 <div style={{color:"white"}}>WATCH US LIVE</div>
-                                                                <div className="flex padtop5">
-                                                                    <div>
-                                                                        <Image width="28" height="20" class="livetv-logo" src="/assets/storydetail/tv-logo.png" alt="Live Tv" />
+                                                                <div className={[style.flex,style.padtop5].join(" ")}>
+                                                                    <div className={style.mrgnright5}>
+                                                                        <Image width="28" height="20" className={pictureStyle.livetv_logo} src="/assets/storydetail/tv-logo.png" alt="Live Tv" />
                                                                     </div>
-                                                                    <div className="font18 fontweight100">LIVE TV</div>
+                                                                    <div className={[style.font18,style.fontweight100].join(" ")}>LIVE TV</div>
                                                                 </div>
                                                             </div>
-                                                            <div className="flex flexDirectionCol flexJustifyCenter">
-                                                                <div className="flex">
+                                                            <div className={[style.flex,style.flexDirectionCol,style.flexJustifyCenter].join(" ")}>
+                                                                <div className={style.flex}>
                                                                     <Link href="" spark_ve_preview="none">
-                                                                        <Image width="156" height="31" class="mrgnright20" src="/assets/storydetail/r-logo-web.png" alt="REPUBLIC" />
+                                                                    <div className={style.mrgnright20}>  
+                                                                        <Image width="156" height="31"  src="/assets/storydetail/r-logo-web.png" alt="REPUBLIC" />
+                                                                    </div>
                                                                     </Link>
                                                                     <Link href="https://bharat.republicworld.com/livetv" spark_ve_preview="none">
                                                                         <Image width="156" height="31" src="/assets/storydetail/rbharat-logo-web.png" alt="R-BHARAT" />
@@ -112,7 +118,7 @@ class PicturePage extends React.Component{
                                                                 </div>
                                                             </div>
                                                     </div>
-                                                    <div className="follow-us padtop20">
+                                                    {/* <div className="follow-us padtop20">
                                                         <div>FOLLOW US</div>
                                                         <div className="flex">
                                                             <a href="https://twitter.com/republic?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" style={{marginRight:"15px"}}  target="_blank">
@@ -131,7 +137,7 @@ class PicturePage extends React.Component{
                                                                 <Image className="follow_us_img"  style={{marginTop:"-7px",marginLeft: "15px"}} src="/assets/followus/koo_share_4.svg" width="25" height="21"/>
                                                             </a>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                                                     <div className="relatedstory mrgnbtm10">
                                                         <div className="font25 fontweight700 padtop30 lineHeight30px">WE RECOMMEND</div>
                                                         <div className="recommend-wrapper">
@@ -145,9 +151,8 @@ class PicturePage extends React.Component{
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="rightpane">
-                                        <RightStoryDetail/>
-                                    </div>
+                                    <RightStoryDetail rightStoryDetailArticle={this.props.articlePictureData}/>
+                                    
                                 </div>
                             </div>
                         </div>
