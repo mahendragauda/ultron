@@ -1,8 +1,8 @@
 const axios = require('axios');
 import { useRouter } from 'next/router';
 import Header from '../../../components/common/Header';
-import Picture from '../../../components/StoryDetail/Picture'
-import Video from '../../../components/StoryDetail/Video'
+import Picture from '../../../components/StoryDetail/picture_detail/Picture'
+import Video from '../../../components/StoryDetail/video_detail/Video'
 
 var articleStoryData,slugData;
 export default function slug({articleStoryData}) {

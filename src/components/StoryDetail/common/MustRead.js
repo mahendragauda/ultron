@@ -1,7 +1,7 @@
 import React from "react";
 // import Image from "next/Image";
-import CardImage from "../common/CardImage";
-import Link from "next/Link";
+import CardImage from "../../../components/common/CardImage";
+import Link from "next/link";
 
 export default function MustRead(props){
     return(

@@ -1,9 +1,9 @@
 import React from 'react';
-import CardImage from "../../components/common/CardImage";
+import CardImage from "../../common/CardImage";
 import SocialShare from './SocialShare';
 import Link from 'next/link';
-import storyTopCommonstyle from '../../styles/StoryDetailCommon.module.css';
-import storytopCSS from '../../styles/StoryTopContent.module.css'
+import storyTopCommonstyle from '../../../styles/StoryDetailCommon.module.css';
+import storytopCSS from '../../../styles/StoryTopContent.module.css'
 
 export default function StoryTopContentPage({storyTopContentArticle}){
     // colorRed={

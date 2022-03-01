@@ -1,13 +1,13 @@
 import React from 'react';
-import BreadCrumb from './BreadCrumb';
-import StoryTopContent from './storyTopContent';
-import Recommand from '../../components/StoryDetail/Recommand'
-import RightStoryDetail from '../../components/StoryDetail/RightStoryDetail'
-import Data from "../../components/StoryDetail/dummy.json"
+import BreadCrumb from '../common/BreadCrumb';
+import StoryTopContent from '../common/StoryTopContent';
+import Recommand from '../common/Recommand'
+import RightStoryDetail from '../common/RightStoryDetail'
+import Data from "../dummy.json"
 import Link from 'next/link';
 import Image from 'next/image';
-import style from '../../styles/StoryDetailCommon.module.css'
-import pictureStyle from '../../styles/Picture.module.css'
+import style from '../../../styles/StoryDetailCommon.module.css'
+import pictureStyle from '../../../styles/Picture.module.css'
 
 class PicturePage extends React.Component{
     constructor(props){

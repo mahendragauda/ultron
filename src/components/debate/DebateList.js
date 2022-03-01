@@ -2,9 +2,9 @@ import React from "react";
 import ReactJWPlayer from "react-jw-player";
 import Image from "next/image";
 import Link from 'next/link';
-import TheDebate from "./TheDebate";
-import Recommend from "../../components/common/Recommend.js";
-import LoadMoreStory from "../../components/LoadMoreStory";
+import TheDebate from "./Debate";
+import Recommend from "./Recommend.js";
+import LoadMoreStory from "./LoadMoreStory";
 
 class DebateList extends React.Component {
    constructor(props){
@@ -28,6 +28,7 @@ class DebateList extends React.Component {
   }
   
    render(){
+       const videoUrl = `https://cdn.jwplayer.com/v2/media/${this.state.storyList.debates[0].video_path}`
        return ( 
            <div>
            <section className="padtop15 newshour-wrapper">
@@ -36,7 +37,7 @@ class DebateList extends React.Component {
                 <div style={{width:"58%"}} class="newshour-hero">
                     <div className="loadVideoPlayer newshour-debate" id="video_player" data-debate_id={this.state.storyList.debates[0].id}>
                         <div className="videoWrapper">
-                        <ReactJWPlayer  playerId={this.state.storyList.debates[0].video_path} playerScript='https://cdn.jwplayer.com/libraries/RXQnHIQu.js' playlist='https://cdn.jwplayer.com/v2/media/'{...this.state.storyList.debates[0].video_path} autostart="true"/>
+                        <ReactJWPlayer  playerId={this.state.storyList.debates[0].video_path} playerScript='https://cdn.jwplayer.com/libraries/RXQnHIQu.js' playlist={videoUrl} autostart="true"/>
                     </div>
                     </div>
                     <div className="debateTitle" style={{paddingTop: "70px", height:"210px", overflow:"hidden"}}>

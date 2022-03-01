@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import {getStoryDetailProps} from '../../apiLib/StoryDetailApi';
-import breadCrumbCommonStyle from '../../styles/StoryDetailCommon.module.css'
-import breadCrumbCss from '../../styles/BreadCrumb.module.css'
+import {getStoryDetailProps} from '../../../apiLib/StoryDetailApi';
+import breadCrumbCommonStyle from '../../../styles/StoryDetailCommon.module.css'
+import breadCrumbCss from '../../../styles/Breadcrumb.module.css'
 
 class BreadCrumbPage extends React.Component {
     constructor(){

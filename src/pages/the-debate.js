@@ -1,26 +1,23 @@
 import Head from "next/head";
 import Image from "next/image";
-import TheDebate from "../components/common/TheDebate";
+import Debate from "../components/debate/Debate";
 import Header from "../components/common/Header";
-import Recommend from "../components/common/Recommend";
 
 const axios = require('axios');
 
-export default function TheDebatePage({ debate,recommend,debateTwo,debateThree }) {
- console.log(recommend)
-//  console.log(footer);
+export default function TheDebatePage({ debate,recommend,debateSecondPage,debateThirdPage }) {
     return (
       <div>
         <Header />
-        <TheDebate debateData={debate} recommendShows={recommend} debateDataTwo={debateTwo} debateDataThree={debateThree}/>
+        <Debate debateData={debate} recommendShows={recommend} debateSecondPage={debateSecondPage} debateThirdPage={debateThirdPage}/>
       </div>
     );
   }
   
   export async function getServerSideProps() {
     var debate
-    var debateTwo
-    var debateThree
+    var debateSecondPage
+    var debateThirdPage
     var recommend
     var footer
     const theDebateRequest = axios.get(`https://jarvis.republicworld.com/debates/cards?limit=10&page_no=1`)
@@ -32,8 +29,8 @@ export default function TheDebatePage({ debate,recommend,debateTwo,debateThree }
       debate = results[0].data.data;
       footer = results[1].data.footer_links;
       recommend= results[2].data.data;
-      debateTwo= results[3].data.data;
-      debateThree= results[4].data.data;     
+      debateSecondPage= results[3].data.data;
+      debateThirdPage= results[4].data.data;     
   });
-    return { props: { debate, recommend ,footer,debateTwo,debateThree} }
+    return { props: { debate, recommend ,footer,debateSecondPage,debateThirdPage} }
   };

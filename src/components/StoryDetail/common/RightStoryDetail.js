@@ -1,9 +1,9 @@
 import React from 'react';
-import Link from 'next/Link';
-import MustRead from "../../components/StoryDetail/MustRead";
+import Link from 'next/link';
+import MustRead from "../common/MustRead";
 // import GallaryMorePhotos from "../../components/StoryDetail/GallaryMorePhotos"
-import rightStoryCss from  "../../styles/RightStoryDetail.module.css"
-import style from '../../styles/StoryDetailCommon.module.css'
+import rightStoryCss from  "../../../styles/RightStoryDetail.module.css"
+import style from '../../../styles/StoryDetailCommon.module.css'
 
 class RightStroyDetailPage extends React.Component{
     constructor(){
