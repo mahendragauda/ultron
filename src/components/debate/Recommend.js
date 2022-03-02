@@ -20,7 +20,8 @@ class Recommend extends React.Component {
                     {this.state.recommendShows.channels.slice(0,3).map((channels, idx) => (
                         <div className={style.flex}>
                             <div className={style.storyWrapper}>
-                                <a href={channels.complete_slug} alt="Arnab LIVE" title="Arnab LIVE">
+                                <Link href={channels.complete_slug} alt="Arnab LIVE" title="Arnab LIVE">
+                                    <a>
                                     <div className={style.storyDiv}>
                                         <img className={[style.imgHover,style.responsiveImage].join(" ")}  width="390" height="214" alt="Arnab LIVE" title="Arnab LIVE" src={channels.promo_large}></img>
                                         <div className={style.channelDiv} style={{background: "rgba(0, 0, 0, 0.6)"}}>
@@ -30,6 +31,7 @@ class Recommend extends React.Component {
                                         </div>
 									</div>
 								</a>
+                                </Link>
 							</div>
                         </div>
                     ))}  

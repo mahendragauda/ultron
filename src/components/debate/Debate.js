@@ -26,7 +26,7 @@ class Debate extends React.Component {
                         <nav id="breadcrumb" className={style.breadCrumbNav}>
                             <span><Link href="/"><a>Home</a></Link></span>
                             <span className={style.flexNoShrink}><Link href="/"><a>The Debate</a></Link></span>
-                            <span className={style.breadCrumbText}><Link href="/"><a class="clr-D10014">Murder not worthy of outrage?</a></Link></span>
+                            <span className={style.breadCrumbText}><Link href="/"><a className="clr-D10014">Murder not worthy of outrage?</a></Link></span>
                         </nav>
                     </section>
                     <div className={style.breakingNewsContainer}>
@@ -34,11 +34,11 @@ class Debate extends React.Component {
                             <div style={{display: "table",width: "100%"}}>
                                 <Link href="/" id="breaking-news-url">
                                     <div className={style.breakingWrapper} style={{ display: "none" }}>
-                                        <div class="breakingTitle">
+                                        <div className="breakingTitle">
                                             <span>Breaking News</span>
                                         </div>
-                                        <div class="breakingNews">
-                                            <marquee class={style.breakingNewsText} id="marqueeAction" behavior="scroll" direction="left" scrollamount="10">
+                                        <div className="breakingNews">
+                                            <marquee className={style.breakingNewsText} id="marqueeAction" behavior="scroll" direction="left" scrollamount="10">
                                                 <span className="breakingText" style={{ textTransform: "none" }}></span>
                                             </marquee>
                                         </div>

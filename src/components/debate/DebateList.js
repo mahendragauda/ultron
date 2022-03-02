@@ -35,7 +35,7 @@ class DebateList extends React.Component {
            <section className={style.newshourWrapper} style={{paddingTop: "15px!important"}}>
             <div className={style.topStoryDiv}>
                 <div className={style.topStoryContainer} style={{background:"white"}}>
-                <div style={{width:"58%"}} class={style.newshourHero}>
+                <div style={{width:"58%"}} className={style.newshourHero}>
                     <div className={style.newshourDebate} id="video_player" data-debate_id={this.state.storyList.debates[0].id}>
                         <div className={style.videoWrapper}>
                      <ReactJWPlayer  playerId={this.state.storyList.debates[0].video_path} playerScript='https://cdn.jwplayer.com/libraries/RXQnHIQu.js' playlist={videoUrl} />
@@ -91,7 +91,7 @@ class DebateList extends React.Component {
                                 <Link href={stories.complete_slug}>
                                     <a>
                                     <div className={style.storyDiv}>
-                                            <Image width={255} height={143}  class={[style.imgHover,style.responsiveImage].join(" ")} alt={stories.alt} src={stories.placeholder} />
+                                            <Image width={255} height={143}  className={[style.imgHover,style.responsiveImage].join(" ")} alt={stories.alt} src={stories.placeholder} />
                                             <div className={[style.playButtonDiv,style.videoHover].join(" ")} style={{background: "rgba(0, 0, 0, 0.5)"}}>
                                                 <div className={style.playDiv}>
                                                     <div className={style.playButton} style={{margin: "auto"}}></div>
@@ -109,7 +109,8 @@ class DebateList extends React.Component {
                         {this.state.storyListTwo.debates.slice(0,4).map((stories, idx) => (
                         <div className={style.newshourVideo}>
                             <div className={style.storyWrapper}>
-                                <a href={stories.complete_slug}>
+                                <Link href={stories.complete_slug}>
+                                    <a>
                                     <div className={style.storyDiv}>
                                             <Image width={255} height={143}  class={[style.imgHover,style.responsiveImage].join(" ")} alt={stories.alt} src={stories.promo_large} />
                                             <div className={[style.playButtonDiv,style.videoHover].join(" ")} style={{background: "rgba(0, 0, 0, 0.5)"}}>
@@ -122,6 +123,7 @@ class DebateList extends React.Component {
                                     <div className={style.storyHashTag}> #{stories.hashtag}</div>
                                     <div className={[style.storyQuestion,style.textHover].join(" ")} style={{height: "68px"}}>{stories.question}</div>
                                 </a>
+                                </Link>
                             </div>
                         </div>
                         ))}  
@@ -162,7 +164,8 @@ class DebateList extends React.Component {
                         {this.state.storyListThree.debates.slice(0,3).map((stories, idx) => (
                         <div className={style.newshourVideo}>
                             <div className={style.storyWrapper}>
-                                <a href={stories.complete_slug}>
+                                <Link href={stories.complete_slug}>
+                                    <a>
                                     <div className={style.storyDiv}>
                                             <Image width={255} height={143}  class={[style.imgHover,style.responsiveImage].join(" ")} alt={stories.alt} src={stories.placeholder} />
                                             <div className={[style.playButtonDiv,style.videoHover].join(" ")} style={{background: "rgba(0, 0, 0, 0.5)"}}>
@@ -175,6 +178,7 @@ class DebateList extends React.Component {
                                     <div className={style.storyHashTag}> #{stories.hashtag}</div>
                                     <div className={[style.storyQuestion,style.textHover].join(" ")} style={{height: "68px"}}>{stories.question}</div>
                                 </a>
+                                </Link>
                             </div>
                         </div>
                         ))} 

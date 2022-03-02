@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import style from '../../styles/Debate.module.css';
 
@@ -29,7 +30,8 @@ function LoadMoreStory() {
     {debateStory.slice(4).map((stories, i) => {
     return <div key={i} class={style.newshourVideo}>
         <div class={style.storyWrapper}>
-            <a href={stories.complete_slug}>
+            <Link href={stories.complete_slug}>
+              <a>
                 <div class={style.storyDiv}>
                         <img width="255" height="144" class={[style.imgHover,style.responsiveImage].join(" ")} alt={stories.alt} src={stories.promo_large} />
                         <div class={[style.playButtonDiv,style.videoHover].join(" ")} style={{background: "rgba(0, 0, 0, 0.5)"}}>
@@ -42,6 +44,7 @@ function LoadMoreStory() {
                 <div class={style.storyHashTag}> #{stories.hashtag}</div>
                 <div class={[style.storyQuestion,style.textHover].join(" ")} style={{height: "68px"}}>{stories.question}</div>
             </a>
+            </Link>
         </div>
     </div>
     })}
