@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from 'next/link';
+import style from '../../styles/Debate.module.css'
 
 class Recommend extends React.Component {
   
@@ -12,19 +13,19 @@ class Recommend extends React.Component {
     }
     render() {
         return (
-            <div className="bg-f0f0f0 pad3010">
-                <div className="section1200">
-                    <h1 className="font25 lineHeight25px padbtm15">WE ALSO RECOMMEND</h1>
-                    <div className="newshours-recommend">
+            <div style={{backgroundColor: "#f0f0f0",padding: "30px 10px!important"}}>
+                <div className={style.recommendSection}>
+                    <h1 className={style.recommendText}>WE ALSO RECOMMEND</h1>
+                    <div className={style.newshoursRecommend}>
                     {this.state.recommendShows.channels.slice(0,3).map((channels, idx) => (
-                        <div className="flex">
-                            <div className="hover-effect">
+                        <div className={style.flex}>
+                            <div className={style.storyWrapper}>
                                 <a href={channels.complete_slug} alt="Arnab LIVE" title="Arnab LIVE">
-                                    <div className="overflowHidden posRelative flex">
-                                        <img className="imghover responsiveImage" width="390" height="214" alt="Arnab LIVE" title="Arnab LIVE" src={channels.promo_large}></img>
-                                        <div className="posAbsolute width100 height100p" style={{background: "rgba(0, 0, 0, 0.6)"}}>
-                                            <div className="flex height100p">
-                                                <div className="font24 bold color-white" style={{margin: "auto"}}> {channels.name} </div>
+                                    <div className={style.storyDiv}>
+                                        <img className={[style.imgHover,style.responsiveImage].join(" ")}  width="390" height="214" alt="Arnab LIVE" title="Arnab LIVE" src={channels.promo_large}></img>
+                                        <div className={style.channelDiv} style={{background: "rgba(0, 0, 0, 0.6)"}}>
+                                            <div className={style.channelTextDiv}>
+                                                <div className={style.channelName}style={{margin: "auto"}}> {channels.name} </div>
                                             </div>
                                         </div>
 									</div>

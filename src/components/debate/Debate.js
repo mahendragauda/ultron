@@ -2,6 +2,7 @@ import React from "react";
 import DebateList from "./DebateList"
 import Image from "next/image";
 import Link from 'next/link';
+import style from '../../styles/Debate.module.css'
 
 
 
@@ -19,55 +20,51 @@ class Debate extends React.Component {
 
     render() {
         return (
-            <main class="font-roboto width100">
-                <section className="font-roboto letterSpacing0px bg-f8f8f8">
-                    <section className="padtop15 font14 padleft10 padright10">
-                        <nav id="breadcrumb" className="section1200 flex flexAlignItemsCenter">
+            <main className={style.pageWrapper}>
+                <section className={style.topContainer}>
+                    <section className={style.breadCrumbSection}>
+                        <nav id="breadcrumb" className={style.breadCrumbNav}>
                             <span><Link href="/"><a>Home</a></Link></span>
-                            <span className="flexNoShrink"><Link href="/"><a>The Debate</a></Link></span>
-                            <span className="txtTruncate lineClip1 fontweight500"><Link href="/"><a class="clr-D10014">Murder not worthy of outrage?</a></Link></span>
+                            <span className={style.flexNoShrink}><Link href="/"><a>The Debate</a></Link></span>
+                            <span className={style.breadCrumbText}><Link href="/"><a class="clr-D10014">Murder not worthy of outrage?</a></Link></span>
                         </nav>
                     </section>
-                    <div className="padtop20 padleft10 padright10">
-                        <div className="section1200">
-                            <div className="h-grid">
-                                <a href="#" id="breaking-news-url">
-                                    <div className="breaking-wrapper" style={{ display: "none" }}>
-                                        <div class="breaking-title">
+                    <div className={style.breakingNewsContainer}>
+                        <div className={style.breakingNewsDiv}>
+                            <div style={{display: "table",width: "100%"}}>
+                                <Link href="/" id="breaking-news-url">
+                                    <div className={style.breakingWrapper} style={{ display: "none" }}>
+                                        <div class="breakingTitle">
                                             <span>Breaking News</span>
                                         </div>
-                                        <div class="breaking-news">
-                                            <marquee class="width100 font20 mrgnleft10" id="marqueeAction" behavior="scroll" direction="left" scrollamount="10">
-                                                <span className="breaking-text" style={{ textTransform: "none" }}></span>
+                                        <div class="breakingNews">
+                                            <marquee class={style.breakingNewsText} id="marqueeAction" behavior="scroll" direction="left" scrollamount="10">
+                                                <span className="breakingText" style={{ textTransform: "none" }}></span>
                                             </marquee>
                                         </div>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
-                    <div className=" minheight90">
-                        <div style={{ position: 'relative', zIndex: '0', width: '728px', height: '90px', marginLeft: 'auto', marginRight: 'auto', display: 'block', border: '1px solid black' }}>
+                    <div className={style.adContainer}>
+                        <div className={style.adsWrapper} style={{ position: 'relative', zIndex: '0', width: '728px', height: '90px', marginLeft: 'auto', marginRight: 'auto', display: 'block', border: '1px solid black' }}>
                         </div>
                     </div>
-                    <section class="padtop25 newshour-wrapper padleft10 padright10">
-                        <div className="section1200 padbtm15 bdrBtm-dddddd">
-                            <h1 className="font14 fontweightNormal"> ARNAB GOSWAMI ON</h1>
-                            <h1 className="font38 fontweight700 padtop5 clr-D10014 lineHeight36px"> THE DEBATE </h1>
+                    <section className={[style.titleSection,style.newshourWrapper].join(" ")}>
+                        <div className={style.debateTitleWrapper}>
+                            <h1 style={{ fontWeight: "400",fontSize: "14px"}}> ARNAB GOSWAMI ON</h1>
+                            <h1 className={style.titleText}> THE DEBATE </h1>
                         </div>
-
                     </section>
                     <DebateList debateData={this.state.debateStory} shows={this.state.shows} debateStoryTwo={this.state.StoryBatchTwo} debateStoryThree={this.state.StoryBatchThree} />
-                    <div class="padtop50 padleft10 padright10">
-                        <div class="section1200 flex">
-                        </div></div>
-                    <div className="flex flexJustifyBetween padtop50 padbtm50">
-                        <div className="ads-wrapper minheight90" style={{ position: 'relative', zIndex: '0', width: '728px', height: '90px', marginLeft: 'auto', marginRight: 'auto', display: 'block', border: '1px solid black' }}>
+                    <div className={style.adContainer}>
+                        <div className={style.adsWrapper} style={{ position: 'relative', zIndex: '0', width: '728px', height: '90px', marginLeft: 'auto', marginRight: 'auto', display: 'block', border: '1px solid black' }}>
                         </div>
                     </div>
                 </section>
-                <section className="font-roboto letterSpacing0px pad10 padbtm100 footerContent bg-f8f8f8">
-                    <div className="section1200 debate-footer">
+                <section className={[style.debateDescription,style.footerContent].join(" ")}>
+                    <div className={[style.descriptionDiv,style.debateParagraph].join(" ")}>
                         <h1 style={{ margin: "0in 0in 0.0001pt" }}>
                             <strong>
                                 <span style={{ fontSize: "11pt" }}>
