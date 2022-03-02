@@ -12,6 +12,9 @@ export default function slug({articleStoryData}) {
             <Header/>
             <p>gg</p>
             
+            
+
+
             {/* <Picture articlePictureData={articleStoryData } slugValue={slugData}/> */}
            
             {(() => {
