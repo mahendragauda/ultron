@@ -2,7 +2,7 @@ import React from 'react';
 import BreadCrumb from '../common/BreadCrumb';
 import StoryTopContent from '../common/StoryTopContent';
 import Recommand from '../common/Recommand'
-import RightStoryDetail from '../common/RightStoryDetail'
+import RightStoryContainer from '../common/RightStoryContainer'
 import Data from "../dummy.json"
 import Link from 'next/link';
 import Image from 'next/image';
@@ -36,6 +36,7 @@ class VideoPage extends React.Component{
         return(
                 <main className="width100 fontRoboto" id="republic-dom">
                     <BreadCrumb/>
+                    <p>video</p>
                    {/* <p>{this.state.id}</p>
                    <p>{this.state.story.type}</p>
                    <p>{this.state.story.story_text}</p> */}
@@ -147,7 +148,7 @@ class VideoPage extends React.Component{
                                         </div>
                                     </div>
                                     <div className="rightpane">
-                                        <RightStoryDetail/>
+                                        <RightStoryContainer/>
                                     </div>
                                 </div>
                             </div>

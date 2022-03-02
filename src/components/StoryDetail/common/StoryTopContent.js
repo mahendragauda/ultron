@@ -24,7 +24,7 @@ export default function StoryTopContentPage({storyTopContentArticle}){
                                 <span style={{color:"#e60000"}}>{storyTopContentArticle.data.story.author_name}</span>
                             </Link>
                         </div>
-                        <SocialShare slugUrl={storyTopContentArticle.data.story.complete_slug.split('/')[2]}/>
+                        <SocialShare slugUrl={storyTopContentArticle}/>
                     </div>
                 </div>
                 <CardImage

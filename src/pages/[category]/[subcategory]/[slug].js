@@ -6,23 +6,28 @@ import Video from '../../../components/StoryDetail/video_detail/Video'
 
 var articleStoryData,slugData;
 export default function slug({articleStoryData}) {
-      
+     
      return (
         <div>
             <Header/>
+            <p>gg</p>
             
-            <Picture articlePictureData={articleStoryData } slugValue={slugData}/>
+            {/* <Picture articlePictureData={articleStoryData } slugValue={slugData}/> */}
            
             {(() => {
                 // var type = articleStoryData.data.story.id;
                 switch(articleStoryData.data.story.id) {
-                    case "P":  
-                        return <Picture/>
-                    case "V":  
-                        return <Video/>
-                    case "LiveBlog":
-                        return <LiveBlog/>
-                    case "G":
+                    case 'P':  
+                        console.warn("picture")
+                        return <Picture articlePictureData={articleStoryData }/>
+                    case 'V':  
+                    console.warn("video")
+                        return <Video articlePictureData={articleStoryData }/>
+                    case 'LiveBlog':
+                        console.warn("LiveBlog")
+                     return <LiveBlog/>
+                    case 'G':
+                        console.warn("G")
                         return <Gallary/>
                     default:
                 }
