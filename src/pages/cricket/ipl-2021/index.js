@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import Header from '/components/common/Header'
-import Cricket from '/components/common/CricketMenuBar'
-import CricketNewsCard from '/components/common/CricketNewsCard'
-import TeamPointsTable from '/components/common/TeamPointsTable'
+import Cricket from '/components/common/Cricket/CricketMenuBar'
+import CricketNewsCard from '/components/common/Cricket/CricketNewsCard'
+import TeamPointsTable from '/components/common/Cricket/TeamPointsTable'
 import Link from 'next/link';
-import WatchUsLive from "../../../components/common/WatchUsLive";
+import WatchUsLive from "../../../components/common/Cricket/WatchUsLive";
 const axios = require('axios');
 var keyvalue;
 import styles from '/styles/Cricket.module.css'
@@ -19,9 +19,9 @@ export default function ipl({ cricketStories, pointsTable }) {
             <Header />
             <Cricket slug="" />
             <nav id="breadcrumb" className={[styles.font14, styles.fontRoboto, styles.font14, styles.flex, styles.flexAlignItemsCenter].join(" ")} style={{ paddingTop: "15px", paddingLeft: "10px", paddingRight: "10px" }}>
-                <span><Link href="/"><a style={{ textDecoration: "underline !important;" }}>Home / </a></Link></span>
-                <span className={styles.txtTransformCaps}><Link href="/"><a style={{ textDecoration: "underline !important;" }}> Cricket / </a></Link></span>
-                <span className={styles.txtTransformCaps}><Link href="/"><a style={{ textDecoration: "underline !important", color: "#e60000", fontWeight: "500!important" }}> IPL 2021</a></Link></span>
+                <span><Link href="/"><a style={{ textDecoration: "underline !important;",paddingRight:"5px" }}> <span> Home  </span></a></Link></span> /
+                <span className={styles.txtTransformCaps}><Link href="/"><a style={{ textDecoration: "underline !important",paddingRight:"5px",paddingLeft:"5px" }}> <span> Cricket </span></a></Link></span> /
+                <span className={styles.txtTransformCaps}><Link href="/"><a style={{ textDecoration: "underline !important", color: "#e60000", fontWeight: "500!important",paddingRight:"5px",paddingLeft:"5px" }}> IPL 2021</a></Link></span>
             </nav>
 
             <div className={[styles.flex, styles.padtop20, styles.flexJustifyCenter].join(" ")} style={{ display: "flex;", paddingLeft: "10px", paddingRight: "10px" }}>
@@ -54,7 +54,7 @@ export default function ipl({ cricketStories, pointsTable }) {
             </section>
 
             <div className={[styles.padtop20, styles.flex, styles.cricketPageResponsive].join(" ")}>
-                <div className={[styles.fxWidth67, styles.width67, styles.cricketPageResponsive].join(" ")}>
+                <div className={[styles.fxWidth67, styles.width67, styles.cricketPageResponsive ,,styles.padright20].join(" ")}>
                     <div className={styles.flex}>
                         <article className={[styles.hoverEffect, styles.topNews, styles.bdrDddddd].join(" ")} style={{ width: "56%;" }}>
                             <Link href="">

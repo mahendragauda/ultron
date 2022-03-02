@@ -1,6 +1,6 @@
 import React from "react";
 import Link from 'next/link';
-import styles from '../../styles/Cricket.module.css'
+import styles from '/styles/Cricket.module.css'
 
 class CricketMenuBar extends React.Component {
   constructor(props) {

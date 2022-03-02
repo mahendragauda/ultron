@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import Header from '../../../components/common/Header'
-import Cricket from '../../../components/common/CricketMenuBar'
-import CricketNewsCard from '../../../components/common/CricketNewsCard'
-import TeamPointsTable from '../../../components/common/TeamPointsTable'
+import Cricket from '../../../components/common/Cricket/CricketMenuBar'
+import CricketNewsCard from '../../../components/common/Cricket/CricketNewsCard'
+import TeamPointsTable from '../../../components/common/Cricket/TeamPointsTable'
 import Link from 'next/link';
 import Image from "next/image";
 const axios = require('axios');
