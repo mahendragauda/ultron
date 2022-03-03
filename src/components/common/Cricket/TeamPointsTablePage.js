@@ -73,7 +73,7 @@ class TeamPointsTablePage extends React.Component {
                             <h1 className={[styles.font25, styles.fontweight700, styles.mrgn0, styles.padbtm20].join(" ")}>Team Points Table</h1>
                         </div>
                         <div className={styles.allRankingContainer}>
-                            <table cellpadding="0" cellspacing="0" className={styles.allRankings} id="teamRankings">
+                            <table cellpadding="0" cellspacing="0" className={styles.allRankings} id={styles.teamRankings}>
                                 <thead>
                                     <tr>
                                         <th style={{ width: "12%" }}>Pos</th>

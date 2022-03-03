@@ -173,17 +173,45 @@
     width: 67%;
   }
   @media(max-width: 950px){
-  .cricket-page-responsive{
+  .cricketPageResponsive{
       padding-right: 0!important;
       padding-bottom: 30px!important;
   }
   }
   @media(max-width: 950px){
-  .cricket-page-responsive {
+  .cricketPageResponsive {
       width: 100%;
       flex-direction: column;
   }
   }
+  @media(max-width: 950px){
+.cricketPageResponsive>div:nth-child(1) {
+    padding-right: 0!important;
+    padding-bottom: 30px!important;
+}
+}
+@media(max-width: 950px){
+.cricketPageResponsive>div {
+    width: 100%;
+    flex-direction: column;
+}
+}
+@media(max-width: 950px){
+.cricketPageResponsive {
+    flex-direction: column;
+}
+}
+@media(max-width: 950px){
+.cricketPageResponsive>div {
+    width: 100%;
+    flex-direction: column;
+}
+}
+  @media(max-width: 950px){
+.width20, .width25, .width30, .width33, .width34, .width35, .width40, .width45, .width50, .width55, .width60, .width65, .width66, .width70, .width75 {
+    width: 100%;
+}
+}
   
    /* Team Ranking */
    .allRankings {
@@ -999,4 +1027,14 @@
   height: 36px;
   display: flex;
   justify-content: center;
+}
+#teamRankings tr:nth-child(1) {
+  line-height: 1.8em;
+}
+.allRankings tbody tr:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+.byb h4 {
+  font-size: 14px;
+  text-align: center;
 }
