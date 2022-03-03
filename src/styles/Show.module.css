@@ -1,0 +1,52 @@
+.navWrapper{
+    background-color: #f0f0f0;
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+}
+.menusDiv{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex: initial!important;
+}
+.navShowsContainer{
+    display: flex;
+    width: 92%;
+    overflow: hidden;
+}
+.navShowsWrapper{
+    display: flex;
+    transition: .5s all;
+}
+.channelText{
+    flex-shrink: 0!important;
+}
+.navMenuText {
+    padding: 20px 30px 16px 0;
+    font-size: 16px;
+    opacity: .8;
+    line-height: 19px;
+}
+
+.arrowIconWrapper{
+    width: 8%;
+    margin: auto;
+    padding-left: 40px;
+    justify-content: space-between;
+    display: flex;
+    flex: initial!important;
+}
+.showActive{
+    opacity: 1!important;
+    font-size: 18px!important;
+    line-height: 19px!important;
+    font-weight: 700!important;
+    padding: 20px 30px 16px 30px;
+}
+.highlightLine{
+    height: 4px;
+    background: #D10014;
+    border-radius: 10px;
+}

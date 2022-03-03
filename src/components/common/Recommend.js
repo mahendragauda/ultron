@@ -17,7 +17,7 @@ class Recommend extends React.Component {
                 <div className={style.recommendSection}>
                     <h1 className={style.recommendText}>WE ALSO RECOMMEND</h1>
                     <div className={style.newshoursRecommend}>
-                    {this.state.recommendShows.channels.slice(0,3).map((channels, idx) => (
+                    {this.state.recommendShows.channels.slice(2,5).reverse().map((channels, idx) => (
                         <div className={style.flex}>
                             <div className={style.storyWrapper}>
                                 <Link href={channels.complete_slug} alt="Arnab LIVE" title="Arnab LIVE">
