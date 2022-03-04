@@ -4,11 +4,8 @@ import Image from "next/image";
 import Link from 'next/link';
 import style from '../../styles/Debate.module.css'
 
-
-
 class Debate extends React.Component {
-
-    constructor(props) {
+constructor(props) {
         super(props);
         this.state = {
             debateStory: props.debateData,
@@ -26,7 +23,7 @@ class Debate extends React.Component {
                         <nav id="breadcrumb" className={style.breadCrumbNav}>
                             <span><Link href="/"><a>Home</a></Link></span>
                             <span className={style.flexNoShrink}><Link href="/"><a>The Debate</a></Link></span>
-                            <span className={style.breadCrumbText}><Link href="/"><a className="clr-D10014">Murder not worthy of outrage?</a></Link></span>
+                            <span className={style.breadCrumbText}><Link href="/"><a style={{color:"#d10014"}}>{this.state.debateStory.debates[0].question}</a></Link></span>
                         </nav>
                     </section>
                     <div className={style.breakingNewsContainer}>
@@ -47,9 +44,7 @@ class Debate extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className={style.adContainer}>
-                        <div className={style.adsWrapper} style={{ position: 'relative', zIndex: '0', width: '728px', height: '90px', marginLeft: 'auto', marginRight: 'auto', display: 'block', border: '1px solid black' }}>
-                        </div>
+                    <div className={style.adsWrapper} style={{ position: 'relative', zIndex: '0', width: '728px', height: '90px', marginLeft: 'auto', marginRight: 'auto', display: 'block', border: '1px solid black' }}>
                     </div>
                     <section className={[style.titleSection,style.newshourWrapper].join(" ")}>
                         <div className={style.debateTitleWrapper}>

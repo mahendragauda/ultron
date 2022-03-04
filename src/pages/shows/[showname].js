@@ -1,17 +1,19 @@
 import Head from "next/head";
 import Image from "next/image";
+import { Router, useRouter } from "next/router";
 import Header from "../../components/common/Header";
 import Show from "../../components/shows/Show";
 import ShowChannels from "../../components/shows/ShowChannels";
 
 const axios = require('axios');
 
+
 export default function ShowPage({show,recommend,showSecondPage,showThirdPage}) {
-  console.log(show)
+  const router = useRouter();
   return (
     <div>
       <Header />
-      <ShowChannels recommendChannels={recommend}/>
+      <ShowChannels recommendChannels={recommend} slug= {router.query.showname}/>
       <Show showData={show} recommendShows={recommend} showSecondPage={showSecondPage} showThirdPage={showThirdPage}/>
     </div>
   );

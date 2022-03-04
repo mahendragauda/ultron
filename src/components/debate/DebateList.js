@@ -2,7 +2,8 @@ import React from "react";
 import ReactJWPlayer from "react-jw-player";
 import Image from "next/image";
 import Link from 'next/link';
-import style from '../../styles/Debate.module.css'
+import style from '../../styles/Debate.module.css';
+// import {timeDifference} from '../../public/javascript/dateFormatter.js';
 import TheDebate from "./Debate";
 import Recommend from "../common/Recommend.js";
 import LoadMoreStory from "./LoadMoreStory";
@@ -17,19 +18,24 @@ class DebateList extends React.Component {
         storyListThree: props.debateStoryThree,
     };
    }
+
    componentDidMount() {
+//     <>
+//     <Script src= "../../javascript/dateFormatter.js" />
+//   </>
+    // timeDifference();
     const script = document.createElement("script");
-    // script.src = "./public/javascript/dateFormatter.js";
+    script.src = "../../public/javascript/dateFormatter.js";
     script.async = true;
     script.onload = () => this.scriptLoaded();
-    //this.convertDateTime();
-    //console.log(convertDateTime());
+    convertDateTime();
+    // console.log(convertDateTime());
     document.head.appendChild(script);
   }
-  
+
    render(){
        const videoUrl = `https://cdn.jwplayer.com/v2/media/${this.state.storyList.debates[0].video_path}`
-       return ( 
+       return (
            <div>
            <section className={style.newshourWrapper} style={{paddingTop: "15px!important"}}>
             <div className={style.topStoryDiv}>
@@ -37,13 +43,13 @@ class DebateList extends React.Component {
                 <div style={{width:"58%"}} className={style.newshourHero}>
                     <div className={style.newshourDebate} id="video_player" data-debate_id={this.state.storyList.debates[0].id}>
                         <div className={style.videoWrapper}>
-                     <ReactJWPlayer  playerId={this.state.storyList.debates[0].video_path} playerScript='https://cdn.jwplayer.com/libraries/RXQnHIQu.js' playlist={videoUrl} />
+                     <ReactJWPlayer  playerId={this.state.storyList.debates[0].video_path} playerScript='https://cdn.jwplayer.com/libraries/RXQnHIQu.js' playlist={videoUrl} autostart="false"/>
                     </div>
                     </div>
                     <div className={style.debateTitle} style={{paddingTop: "70px", height:"210px", overflow:"hidden"}}>
                             <div className={style.debateHashTagDiv}>
-                                <div className={style.hashTagText}> #{this.state.storyList.debates[0].hashtag}</div> 
-                                <div className={style.debateTime}> {this.state.storyList.debates[0].pub_datetime} </div>
+                                <div className={style.hashTagText}> #{this.state.storyList.debates[0].hashtag}</div>
+                                {/* <div className={style.debateTime}>{timeDifference(this.state.storyList.debates[0].pub_datetime)}</div> */}
                             </div>
                             <div className={style.debateQuestion}> {this.state.storyList.debates[0].question} </div>
                             <div className={style.debateDesc }>{this.state.storyList.debates[0].short_desc} </div>
@@ -71,7 +77,7 @@ class DebateList extends React.Component {
                                 </Link>
                             </div>
                         </div>
-                        ))}  
+                        ))}
                     </div>
                 </div>
                 </div>
@@ -104,7 +110,7 @@ class DebateList extends React.Component {
                                 </Link>
                             </div>
                         </div>
-                        ))}  
+                        ))}
                         {this.state.storyListTwo.debates.slice(0,4).map((stories, idx) => (
                         <div className={style.newshourVideo}>
                             <div className={style.storyWrapper}>
@@ -125,7 +131,7 @@ class DebateList extends React.Component {
                                 </Link>
                             </div>
                         </div>
-                        ))}  
+                        ))}
                     </div>
                     <div style={{width:"25%;",minWidth: "300px"}}>
                         <div className={style.adsWrapper}>
@@ -159,7 +165,7 @@ class DebateList extends React.Component {
                                 </Link>
                             </div>
                         </div>
-                        ))}  
+                        ))}
                         {this.state.storyListThree.debates.slice(0,3).map((stories, idx) => (
                         <div className={style.newshourVideo}>
                             <div className={style.storyWrapper}>
@@ -180,7 +186,7 @@ class DebateList extends React.Component {
                                 </Link>
                             </div>
                         </div>
-                        ))} 
+                        ))}
                     </div>
                     </div>
                     <div style={{width:"25%;",minWidth: "300px"}}>
@@ -196,5 +202,5 @@ class DebateList extends React.Component {
        )
    }
 }
- 
+
 export default DebateList;

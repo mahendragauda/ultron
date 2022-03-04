@@ -9,7 +9,16 @@ class ShowChannels extends React.Component {
         super(props);
         this.state = {
             showChannels: props.recommendChannels,
+            slug: props.slug
       };
+    }
+    static getDerivedStateFromProps(props, state) {
+      if (props.slug !== state.slug) {
+        return {
+          slug: props.slug
+        };
+      }
+      return null;
     }
     onLeftArwClicked = () => {
         const navShowsContainer= document.getElementById('navShowsContainer')
@@ -54,8 +63,8 @@ class ShowChannels extends React.Component {
                         {this.state.showChannels.channels.map((channels, idx) => (
                         <Link href={channels.complete_slug.split("/")[1]} >
                         <a className={style.channelText}>
-                            <div className={channels.complete_slug.split("/")[1] === "nation-wants-to-know" ? style.showActive : style.navMenuText}>{channels.name}</div>
-                            <div className={channels.complete_slug.split("/")[1] === "nation-wants-to-know" ? style.highlightLine : ""}></div>
+                            <div className={channels.complete_slug.split("/")[1] === this.state.slug ? style.showActive : style.navMenuText}>{channels.name}</div>
+                            <div className={channels.complete_slug.split("/")[1] === this.state.slug ? style.highlightLine : ""}></div>
                         </a>
                         </Link>
                     ))}  
