@@ -8,6 +8,7 @@ var indexes;
 var battingTeam, bowlingTeam, key;
 var waitingBatsmen = [];
 var isPlayerMatching = false;
+const n = 2;
 
 
 
@@ -20,7 +21,7 @@ export default function Testing({ pointsTable, cricketStories, scheduleMatch }) 
                 <span><Link href="/"><a style={{ textDecoration: "underline !important;", paddingRight: "5px" }}> <span> Home  </span></a></Link></span> /
                 <span className={styles.txtTransformCaps}><Link href="/"><a style={{ textDecoration: "underline !important", paddingRight: "5px", paddingLeft: "5px" }}> <span> Cricket </span></a></Link></span> /
                 <span className={styles.txtTransformCaps}><Link href="/"><a style={{ textDecoration: "underline !important", paddingRight: "5px", paddingLeft: "5px" }}> IPL 2021</a></Link></span> /
-                <span className={styles.txtTransformCaps}><Link href="/"><a style={{ color: "#e60000", paddingRight: "5px", paddingLeft: "5px" }} className="color-e60000 fontweight500"> HYDERABAD VS MUMBAI</a></Link></span>
+                <span className={styles.txtTransformCaps}><Link href="/"><a style={{ color: "#e60000", paddingRight: "5px", paddingLeft: "5px" }} className="color-e60000 fontweight500">MUMBAI VS CHENNAI</a></Link></span>
             </nav>
 
             <div className={styles.overflowHidden} style={{ paddingTop: "10px", paddingLeft: "10px", paddingRight: "10px" }}>
@@ -70,137 +71,152 @@ export default function Testing({ pointsTable, cricketStories, scheduleMatch }) 
                             <div className={styles.matchStatus} style={{ padding: "10px" }}>{scheduleMatch.description}</div>
                         </div>
 
-                        {[scheduleMatch.now.innings].reverse().map((value, index) => {
-                            //   [0,1].map((index) => {
-                            battingTeam = scheduleMatch.now.bowling_team
-                            bowlingTeam = scheduleMatch.now.batting_team
+
+                        {[scheduleMatch.now.innings].reverse().map((value, i) => {
                             return (
-                                <>
-                                    <div style={{ marginTop: "15px" }} id="currentTeamDetailsA">
-                                        <div className={[styles.padtop15, styles.padbtm10].join(" ")}>
-                                            <span style={{ color: "#d61014" }} className={[styles.txtTransformUp, styles.fontweight700, styles.font20, styles.padright5, styles.cTeamName].join(" ")}>{scheduleMatch.teams[bowlingTeam].name}</span> <span className={[styles.fontweight700, styles.font20, styles.padright5].join(" ")}>{scheduleMatch.innings[`${bowlingTeam}_${value}`].run_str}</span>
-                                            <span style={{ color: "gray" }} className={[styles.cTeamOver, styles.font16, styles.padright5].join(" ")}>(20 OVER)</span> <span style={{ color: "#555555;" }} className={[styles.font16, styles.cTeamRr].join(" ")}>{"RR " + scheduleMatch.innings[`${bowlingTeam}_${value}`].run_rate}</span>
-                                        </div>
-                                    </div>
+                                [0, 1].map((elementInArray, index) => {
+                                    battingTeam = scheduleMatch.now.bowling_team
+                                    bowlingTeam = scheduleMatch.now.batting_team
+                                    if (index == 1) {
+                                        var temp = battingTeam
+                                        battingTeam = bowlingTeam
+                                        bowlingTeam = temp
+                                        styles.ui=="none"
+                                    }
+                                    return (
+                                        <>
+                                            <div style={{ marginTop: "15px" }} id="currentTeamDetailsA">
+                                                <div className={[styles.padtop15, styles.padbtm10].join(" ")}>
+                                                    <span style={{ color: "#d61014" }} className={[styles.txtTransformUp, styles.fontweight700, styles.font20, styles.padright5, styles.cTeamName].join(" ")}>{scheduleMatch.teams[bowlingTeam].name}</span> <span className={[styles.fontweight700, styles.font20, styles.padright5].join(" ")}>{scheduleMatch.innings[`${bowlingTeam}_${value}`].run_str}</span>
+                                                    <span style={{ color: "gray" }} className={[styles.cTeamOver, styles.font16, styles.padright5].join(" ")}>(20 OVER)</span> <span style={{ color: "#555555;" }} className={[styles.font16, styles.cTeamRr].join(" ")}>{"RR " + scheduleMatch.innings[`${bowlingTeam}_${value}`].run_rate}</span>
+                                                </div>
+                                            </div>
 
-                                    <div className={styles.scoreDetailWrapper} style={{ display: "block" }}>
-                                        <div className={[styles.padtop10, styles.bdrTopDddddd, styles.bdrLeftDddddd, styles.bdrRightDddddd, styles.navbarContainer, styles.scoreBoardWrapper].join(" ")}>
-                                            <ul>
-                                                <li className={[styles.navLink, styles.activeLink].join(" ")} onclick="location.href='https://www.republicworld.com/cricket/ipl-2021/rajasthan-vs-hyderabad-live-score/iplt20-2021-g28.html'">
-                                                    <div className={styles.mrgnbtm10}>Scorecard</div>
-                                                    <div className={styles.underline}></div>
-                                                </li>
-                                                <li className={styles.navLink} onclick="location.href='https://www.republicworld.com/cricket/ipl-2021/rajasthan-vs-hyderabad-ball-by-ball-live-score/iplt20-2021-g28.html'">
-                                                    <div className={styles.mrgnbtm10}>Ball by Ball Commentary</div>
-                                                    <div className={styles.underline}></div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div id="scoreBoardContainer">
-                                            <div className={[styles.bdrDddddd, styles.scoreDetailPage].join(" ")}>
-                                                <table border="0" cellpadding="0" cellspacing="0">
-                                                    <tbody>
-                                                        <tr>
-                                                            <th style={{ textAlign: "left", width: "375px" }}>Batting</th>
-                                                            <th style={{ width: "75px" }}>R</th>
-                                                            <th style={{ width: "75px" }}>B</th>
-                                                            <th style={{ width: "75px" }}>6s</th>
-                                                            <th style={{ width: "75px" }}>4s</th>
-                                                            <th style={{ width: "75px" }}>S/R</th>
-                                                        </tr>
-                                                        {scheduleMatch.innings[`${bowlingTeam}_${value}`].batting_order.map((value1, index1) => {
-                                                            key = scheduleMatch.innings[`${bowlingTeam}_${value}`].batting_order[index1]
-                                                            return (
+                                            <div className={styles.scoreDetailWrapper} style={{ display: "block" }}>
+                                                <div className={[styles.padtop10, styles.bdrTopDddddd, styles.bdrLeftDddddd, styles.bdrRightDddddd, styles.navbarContainer, styles.scoreBoardWrapper, index == 1  ? styles.uii : styles.ui].join(" ")}>
+                                                    <ul>
+                                                        <li className={[styles.navLink, styles.activeLink].join(" ")} onclick="location.href='https://www.republicworld.com/cricket/ipl-2021/rajasthan-vs-hyderabad-live-score/iplt20-2021-g28.html'">
+                                                            <div className={styles.mrgnbtm10}>Scorecard</div>
+                                                            <div className={styles.underline}></div>
+                                                        </li>
+                                                        <li className={styles.navLink} onclick="location.href='https://www.republicworld.com/cricket/ipl-2021/rajasthan-vs-hyderabad-ball-by-ball-live-score/iplt20-2021-g28.html'">
+                                                            <div className={styles.mrgnbtm10}>Ball by Ball Commentary</div>
+                                                            <div className={styles.underline}></div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div id="scoreBoardContainer">
+                                                    <div className={[styles.bdrDddddd, styles.scoreDetailPage].join(" ")}>
+                                                        <table border="0" cellpadding="0" cellspacing="0">
+                                                            <tbody>
                                                                 <tr>
-                                                                    <td>
-                                                                        <h3 style={{padding:"10px"}}>{scheduleMatch.players[key].name}</h3>
-                                                                        <h4 style={{padding:"10px"}}>{scheduleMatch.players[key].match.innings[1].batting.out_str}</h4>
-                                                                    </td>
-                                                                    <td>{scheduleMatch.players[key].match.innings[1].batting.runs}</td>
-                                                                    <td>{scheduleMatch.players[key].match.innings[1].batting.balls}</td>
-                                                                    <td>{scheduleMatch.players[key].match.innings[1].batting.sixes}</td>
-                                                                    <td>{scheduleMatch.players[key].match.innings[1].batting.fours}</td>
-                                                                    <td>{scheduleMatch.players[key].match.innings[1].batting.strike_rate}</td>
+                                                                    <th style={{ textAlign: "left", width: "375px" }}>Batting</th>
+                                                                    <th style={{ width: "75px" }}>R</th>
+                                                                    <th style={{ width: "75px" }}>B</th>
+                                                                    <th style={{ width: "75px" }}>6s</th>
+                                                                    <th style={{ width: "75px" }}>4s</th>
+                                                                    <th style={{ width: "75px" }}>S/R</th>
                                                                 </tr>
-                                                            )
-                                                        })}
+                                                                {scheduleMatch.innings[`${bowlingTeam}_${value}`].batting_order.map((value1, index1) => {
+                                                                    key = scheduleMatch.innings[`${bowlingTeam}_${value}`].batting_order[index1]
+                                                                    return (
+                                                                        <tr>
+                                                                            <td>
+                                                                                <h3 style={{ padding: "10px" }}>{scheduleMatch.players[key].name}</h3>
+                                                                                <h4 style={{ padding: "10px" }}>{scheduleMatch.players[key].match.innings[1].batting.out_str}</h4>
+                                                                            </td>
+                                                                            <td>{scheduleMatch.players[key].match.innings[1].batting.runs}</td>
+                                                                            <td>{scheduleMatch.players[key].match.innings[1].batting.balls}</td>
+                                                                            <td>{scheduleMatch.players[key].match.innings[1].batting.sixes}</td>
+                                                                            <td>{scheduleMatch.players[key].match.innings[1].batting.fours}</td>
+                                                                            <td>{scheduleMatch.players[key].match.innings[1].batting.strike_rate}</td>
+                                                                        </tr>
+                                                                    )
+                                                                })}
 
-                                                    </tbody>
-                                                </table>
-                                                {scheduleMatch.teams[bowlingTeam].match.playing_xi.map((value2, index2) => {
-                                                    {scheduleMatch.innings[`${bowlingTeam}_${value}`].batting_order.map((value3, index3) => {
-                                                        if(scheduleMatch.teams[bowlingTeam].match.playing_xi[index2] === scheduleMatch.innings[`${bowlingTeam}_${value}`].batting_order[index3]){
-                                                        isPlayerMatching = true}
-                                                        if(!isPlayerMatching){
-                                                        waitingBatsmen.push(scheduleMatch.players[scheduleMatch.teams[bowlingTeam].match.playing_xi[index2]].name)}
+                                                            </tbody>
+                                                        </table>
+                                                        {scheduleMatch.teams[bowlingTeam].match.playing_xi.map((value2, index2) => {
+                                                            {
+                                                                scheduleMatch.innings[`${bowlingTeam}_${value}`].batting_order.map((value3, index3) => {
+                                                                    if (scheduleMatch.teams[bowlingTeam].match.playing_xi[index2] === scheduleMatch.innings[`${bowlingTeam}_${value}`].batting_order[index3]) {
+                                                                        isPlayerMatching = true
+                                                                    }
+                                                                    if (!isPlayerMatching) {
+                                                                        waitingBatsmen.push(scheduleMatch.players[scheduleMatch.teams[bowlingTeam].match.playing_xi[index2]].name)
+                                                                    }
                                                                     return (
                                                                         <div className={styles.pendingPlayers}>
-                                                                        <h4>Did not bat</h4>
-                                                                        <h3>{waitingBatsmen}</h3>
-                                                                    </div>
-                    
-                                                                )
-                                                        })
-                                                    }
-                                                })}
-                                                <div className={styles.totalInfo}>
-                                                    <div className={[styles.width40, styles.fontweight700, styles.font18].join(" ")} style={{ margin: "auto 0" }}>TOTAL</div>
-                                                    <div className={[styles.width60, styles.txtright].join(" ")}>
-                                                        <div className={[styles.padbtm5, styles.fontweight700, styles.font18].join(" ")}>{scheduleMatch.innings[`${bowlingTeam}_${value}`].runs+'/'+scheduleMatch.innings[`${bowlingTeam}_${value}`].wickets}</div>
-                                                        <div className={styles.font14}>(20.0 overs, 8.25 runs per overs)</div>
+                                                                            <h4>Did not bat</h4>
+                                                                            <h3>{waitingBatsmen}</h3>
+                                                                        </div>
+
+                                                                    )
+                                                                })
+                                                            }
+                                                        })}
+                                                        <div className={styles.totalInfo}>
+                                                            <div className={[styles.width40, styles.fontweight700, styles.font18].join(" ")} style={{ margin: "auto 0" }}>TOTAL</div>
+                                                            <div className={[styles.width60, styles.txtright].join(" ")}>
+                                                                <div className={[styles.padbtm5, styles.fontweight700, styles.font18].join(" ")}>{scheduleMatch.innings[`${bowlingTeam}_${value}`].runs + '/' + scheduleMatch.innings[`${bowlingTeam}_${value}`].wickets}</div>
+                                                                <div className={styles.font14}>(20.0 overs, 8.25 runs per overs)</div>
+                                                            </div>
+                                                        </div>
+                                                        <div className={styles.extraInfo}>
+                                                            <h3>EXTRAS</h3>
+                                                            <h4>{"(b-" + scheduleMatch.innings[`${bowlingTeam}_${value}`].bye + ",w-" + scheduleMatch.innings[`${bowlingTeam}_${value}`].wide + ", no-" + scheduleMatch.innings[`${bowlingTeam}_${value}`].noball + ", lb-" + scheduleMatch.innings[`${bowlingTeam}_${value}`].legbye + ", penalty-" + scheduleMatch.innings[`${bowlingTeam}_${value}`].penalty + ")"}</h4>
+                                                        </div>
+                                                        <div className={styles.extraInfo}>
+                                                            <h3>FALL OF WICKETS</h3>
+                                                            <h4>
+                                                                {scheduleMatch.innings[`${bowlingTeam}_${value}`].fall_of_wickets}
+                                                            </h4>
+                                                        </div>
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th style={{ textAlign: "left", width: "375px" }}>Bowling</th>
+                                                                    <th style={{ width: "75px" }}>R</th>
+                                                                    <th style={{ width: "75px" }}>B</th>
+                                                                    <th style={{ width: "75px" }}>6s</th>
+                                                                    <th style={{ width: "75px" }}>4s</th>
+                                                                    <th style={{ width: "75px" }}>S/R</th>
+                                                                </tr>
+                                                                {scheduleMatch.innings[`${battingTeam}_${value}`].bowling_order.map((value1, index1) => {
+                                                                    key = scheduleMatch.innings[`${battingTeam}_${value}`].bowling_order[index1]
+                                                                    return (
+                                                                        <tr>
+                                                                            <td>
+                                                                                <h3 style={{ padding: "10px" }}>{scheduleMatch.players[key].name}</h3>
+                                                                            </td>
+                                                                            <td>{scheduleMatch.players[key].match.innings[1].bowling.overs}</td>
+                                                                            <td>{scheduleMatch.players[key].match.innings[1].bowling.maiden_overs}</td>
+                                                                            <td>{scheduleMatch.players[key].match.innings[1].bowling.runs}</td>
+                                                                            <td>{scheduleMatch.players[key].match.innings[1].bowling.wickets}</td>
+                                                                            <td>{scheduleMatch.players[key].match.innings[1].bowling.economy}</td>
+                                                                        </tr>
+                                                                    )
+                                                                })}
+
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div className={[styles.pad15, styles.bdrDddddd].join(" ")} style={{ borderTop: "0" }}>
+                                                        <div className={styles.venueDetails}><span>Toss: </span>{scheduleMatch.toss.str}</div>
+                                                        <div className={[styles.venueDetails, styles.padtop5].join(" ")}><span>Stadium: </span>{scheduleMatch.venue}</div>
                                                     </div>
                                                 </div>
-                                                <div className={styles.extraInfo}>
-                                                    <h3>EXTRAS</h3>
-                                                    <h4>{"(b-" + scheduleMatch.innings[`${bowlingTeam}_${value}`].bye + ",w-" + scheduleMatch.innings[`${bowlingTeam}_${value}`].wide + ", no-" + scheduleMatch.innings[`${bowlingTeam}_${value}`].noball + ", lb-" + scheduleMatch.innings[`${bowlingTeam}_${value}`].legbye + ", penalty-" + scheduleMatch.innings[`${bowlingTeam}_${value}`].penalty + ")"}</h4>
-                                                </div>
-                                                <div className={styles.extraInfo}>
-                                                    <h3>FALL OF WICKETS</h3>
-                                                    <h4>
-                                                        {scheduleMatch.innings[`${bowlingTeam}_${value}`].fall_of_wickets}
-                                                    </h4>
-                                                </div>
-                                                <table>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th style={{ textAlign: "left", width: "375px" }}>Bowling</th>
-                                                            <th style={{ width: "75px" }}>R</th>
-                                                            <th style={{ width: "75px" }}>B</th>
-                                                            <th style={{ width: "75px" }}>6s</th>
-                                                            <th style={{ width: "75px" }}>4s</th>
-                                                            <th style={{ width: "75px" }}>S/R</th>
-                                                        </tr>
-                                                        {scheduleMatch.innings[`${battingTeam}_${value}`].bowling_order.map((value1, index1) => {
-                                                            key = scheduleMatch.innings[`${battingTeam}_${value}`].bowling_order[index1]
-                                                            return (
-                                                                <tr>
-                                                                    <td>
-                                                                        <h3 style={{padding:"10px"}}>{scheduleMatch.players[key].name}</h3>
-                                                                    </td>
-                                                                    <td>{scheduleMatch.players[key].match.innings[1].bowling.overs}</td>
-                                                                    <td>{scheduleMatch.players[key].match.innings[1].bowling.maiden_overs}</td>
-                                                                    <td>{scheduleMatch.players[key].match.innings[1].bowling.runs}</td>
-                                                                    <td>{scheduleMatch.players[key].match.innings[1].bowling.wickets}</td>
-                                                                    <td>{scheduleMatch.players[key].match.innings[1].bowling.economy}</td>
-                                                                </tr>
-                                                            )
-                                                        })}
-
-
-                                                    </tbody>
-                                                </table>
                                             </div>
-                                            <div className={[styles.pad15, styles.bdrDddddd].join(" ")} style={{ borderTop: "0" }}>
-                                                <div className={styles.venueDetails}><span>Toss: </span>{scheduleMatch.toss.str}</div>
-                                                <div className={[styles.venueDetails, styles.padtop5].join(" ")}><span>Stadium: </span>{scheduleMatch.venue}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </>
 
+                                        </>
+
+                                    )
+                                })
                             )
-                            // })
                         })}
+
 
 
 

@@ -54,9 +54,9 @@ export default function ipl({ cricketStories, pointsTable }) {
             </section>
 
             <div className={[styles.padtop20, styles.flex, styles.cricketPageResponsive].join(" ")}>
-                <div className={[styles.fxWidth67, styles.width67, styles.cricketPageResponsive ,,styles.padright20].join(" ")}>
-                    <div className={styles.flex}>
-                        <article className={[styles.hoverEffect, styles.topNews, styles.bdrDddddd].join(" ")} style={{ width: "56%;" }}>
+                <div className={[styles.fxWidth67, styles.width67,styles.padright20].join(" ")}>
+                    <div className={styles.flex} style={{padding: "10px 10px 10px 10px" }}>
+                        <article className={[styles.hoverEffect, styles.topNews, styles.bdrDddddd].join(" ")} style={{ width: "56%;"}}>
                             <Link href="">
                                 <a>
                                     <div className={[styles.posRelative, styles.flex, styles.overflowHidden].join(" ")}>
@@ -130,7 +130,7 @@ export default function ipl({ cricketStories, pointsTable }) {
                         <CricketNewsCard keyvalue={cricketStories.data.stories.slice(0, 2)} />
 
                     </div>
-                    <div id={styles.cricketVideos}>
+                    <div id={styles.cricketVideos} style={{padding:"10px"}}>
                         <div className={[styles.flex, styles.flexJustifyBetween, styles.padbtm15].join(" ")} style={{ display: "flex", justifyContent: "space-between" }}>
                             <h2 className={[styles.font25, styles.lineHeight25px].join(" ")}>VIDEOS</h2>
                         </div>
@@ -171,7 +171,7 @@ export default function ipl({ cricketStories, pointsTable }) {
 
             <div className={styles.width33}>
                 <div className={styles.txtcenter}>
-                    <div className={[styles.mrgnbtm20, styles.bgF8f8f8, styles.padtop10, styles.padbtm10].join(" ")} style={{ backgroundColor: "#ddd" }}>
+                    <div className={[styles.mrgnbtm20, styles.bgF8f8f8, styles.padtop10, styles.padbtm10].join(" ")} style={{ backgroundColor: "#ddd", height: "200px"  }}>
                     </div>
                 </div>
             <WatchUsLive />

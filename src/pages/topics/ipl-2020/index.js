@@ -49,8 +49,8 @@ export default function ipl({ cricketStories, pointsTable }) {
             </div>
 
             <div className={[styles.padtop20, styles.flex, styles.cricketPageResponsive].join(" ")}>
-                <div className={[styles.fxWidth67, styles.width67, styles.cricketPageResponsive, styles.padright20].join(" ")}>
-                    <div className={styles.flex}>
+                <div className={[styles.fxWidth67, styles.width67, styles.padright20].join(" ")}>
+                    <div className={styles.flex} style={{padding: "10px 10px 10px 10px" }}>
                         <article className={[styles.hoverEffect, styles.topNews, styles.bdrDddddd].join(" ")} style={{ width: "56%;" }}>
                             <Link href="">
                                 <a>
@@ -166,7 +166,7 @@ export default function ipl({ cricketStories, pointsTable }) {
 
                 <div className={styles.width33}>
                     <div className={styles.txtcenter}>
-                        <div className={[styles.mrgnbtm20, styles.bgF8f8f8, styles.padtop10, styles.padbtm10].join(" ")} style={{ backgroundColor: "#ddd" }}>
+                        <div className={[styles.mrgnbtm20, styles.bgF8f8f8, styles.padtop10, styles.padbtm10].join(" ")} style={{ backgroundColor: "#ddd", height: "200px"  }}>
                         </div>
                     </div>
                     <WatchUsLive />
