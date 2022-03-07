@@ -2,7 +2,7 @@
 var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 var full_months = ['January', 'Febrauary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-function timeDifference(time, dateBeforeMonth = false, withTime = false, s = false) {
+export function timeDifference(time, dateBeforeMonth = false, withTime = false, s = false) {
   if (!time) return 
   var previous = getValidDateObject(time);
   var diff = (new Date().valueOf() - previous) / 1000;
@@ -82,7 +82,7 @@ function getValidDateObject(time) {
   return previous;
 }
 
-function convertDateTime(timeToConvert, withTime, dateBeforeMonth, s = false) {
+export function convertDateTime(timeToConvert, withTime, dateBeforeMonth, s = false) {
   var time = getValidDateObject(timeToConvert);
   let hours = time.getHours() % 12 || 12;
   let ampm = time.getHours() >= 12 ? 'PM' : 'AM';
@@ -137,3 +137,4 @@ function getTimeIn24HoursFormat(date) {
   var format = new SimpleDateFormat("HH:mm:ss");
   return format.parse(timeToConvert)
 }
+

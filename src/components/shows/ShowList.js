@@ -2,62 +2,54 @@ import React from "react";
 import ReactJWPlayer from "react-jw-player";
 import Image from "next/image";
 import Link from 'next/link';
-import style from '../../styles/Debate.module.css';
-// import {timeDifference} from '../../public/javascript/dateFormatter.js';
-import TheDebate from "./Debate";
+import style from '../../styles/Show.module.css'
+import Show from "./Show";
 import Recommend from "../common/Recommend.js";
-import LoadMoreStory from "./LoadMoreStory";
+import LoadMoreShows from "./LoadMoreShows";
 
-class DebateList extends React.Component {
+class ShowList extends React.Component {
    constructor(props){
     super(props);
     this.state = {
-        storyList: props.debateData,
+        storyList: props.showData,
         showChannels: props.shows,
-        storyListTwo: props.debateStoryTwo,
-        storyListThree: props.debateStoryThree,
+        storyListTwo: props.showStorySecondBatch,
+        storyListThree: props.showStoryThirdBatch
     };
    }
-
    componentDidMount() {
-//     <>
-//     <Script src= "../../javascript/dateFormatter.js" />
-//   </>
-    // timeDifference();
     const script = document.createElement("script");
-    script.src = "../../public/javascript/dateFormatter.js";
+    // script.src = "./public/javascript/dateFormatter.js";
     script.async = true;
     script.onload = () => this.scriptLoaded();
-    // convertDateTime();
-    // console.log(convertDateTime());
+    //this.convertDateTime();
+    //console.log(convertDateTime());
     document.head.appendChild(script);
   }
-
+  
    render(){
-       const videoUrl = `https://cdn.jwplayer.com/v2/media/${this.state.storyList.debates[0].video_path}`
-       return (
+       const videoUrl = `https://cdn.jwplayer.com/v2/media/${this.state.storyList.shows[0].video_path}`
+       return ( 
            <div>
            <section className={style.newshourWrapper} style={{paddingTop: "15px!important"}}>
             <div className={style.topStoryDiv}>
                 <div className={style.topStoryContainer} style={{background:"white"}}>
                 <div style={{width:"58%"}} className={style.newshourHero}>
-                    <div className={style.newshourDebate} id="video_player" data-debate_id={this.state.storyList.debates[0].id}>
+                    <div className={style.newshourShow} id="video_player" data-debate_id={this.state.storyList.shows[0].id}>
                         <div className={style.videoWrapper}>
-                     <ReactJWPlayer  playerId={this.state.storyList.debates[0].video_path} playerScript='https://cdn.jwplayer.com/libraries/RXQnHIQu.js' playlist={videoUrl} autostart="false"/>
+                     <ReactJWPlayer  playerId={this.state.storyList.shows[0].video_path} playerScript='https://cdn.jwplayer.com/libraries/RXQnHIQu.js' playlist={videoUrl} />
                     </div>
                     </div>
-                    <div className={style.debateTitle} style={{paddingTop: "70px", height:"210px", overflow:"hidden"}}>
-                            <div className={style.debateHashTagDiv}>
-                                <div className={style.hashTagText}> #{this.state.storyList.debates[0].hashtag}</div>
-                                {/* <div className={style.debateTime}>{timeDifference(this.state.storyList.debates[0].pub_datetime)}</div> */}
+                    <div className={style.showTitle} style={{paddingTop: "70px", height:"210px", overflow:"hidden"}}>
+                            <div className={style.showHashTagDiv}>
+                                <div className={style.hashTagText}> #{this.state.storyList.shows[0].headline}</div> 
                             </div>
-                            <div className={style.debateQuestion}> {this.state.storyList.debates[0].question} </div>
-                            <div className={style.debateDesc }>{this.state.storyList.debates[0].short_desc} </div>
+                            <div className={style.showDesc }>{this.state.storyList.shows[0].title} </div>
                     </div>
                 </div>
                 <div style={{width:"42%"}} className={style.newshourHero}>
                     <div className={style.newshourLatest}>
-                    {this.state.storyList.debates.slice(1,5).map((stories, idx) => (
+                    {this.state.storyList.shows.slice(1,5).map((stories, idx) => (
                             <div>
                             <div className={style.storyWrapper}>
                                 <Link href={stories.complete_slug} >
@@ -71,13 +63,12 @@ class DebateList extends React.Component {
                                             </div>
                                     </div>
                                     <div className={style.dateContainer}>{stories.pub_datetime}</div>
-                                    <div className={style.storyHashTag}> #{stories.hashtag}</div>
-                                    <div className={[style.storyQuestion,style.textHover].join(" ")} style={{height: "68px"}}>{stories.question}</div>
+                                    <div className={[style.storyQuestion,style.textHover].join(" ")} style={{height: "68px"}}>{stories.headline}</div>
                                 </a>
                                 </Link>
                             </div>
                         </div>
-                        ))}
+                        ))}  
                     </div>
                 </div>
                 </div>
@@ -90,7 +81,7 @@ class DebateList extends React.Component {
             <div className={style.storyCardContainer}>
                 <div className={style.cardSection}>
                     <div className={style.storyCardSection} style={{width:"75%"}}>
-                    {this.state.storyList.debates.slice(5,10).map((stories, idx) => (
+                    {this.state.storyList.shows.slice(5,10).map((stories, idx) => (
                         <div className={style.newshourVideo}>
                             <div className={style.storyWrapper}>
                                 <Link href={stories.complete_slug}>
@@ -104,14 +95,13 @@ class DebateList extends React.Component {
                                             </div>
                                     </div>
                                     <div className={style.dateContainer}>{stories.pub_datetime}</div>
-                                    <div className={style.storyHashTag}> #{stories.hashtag}</div>
-                                    <div className={[style.storyQuestion,style.textHover].join(" ")} style={{height: "68px"}}>{stories.question}</div>
+                                    <div className={[style.storyQuestion,style.textHover].join(" ")} style={{height: "68px"}}>{stories.headline}</div>
                                 </a>
                                 </Link>
                             </div>
                         </div>
-                        ))}
-                        {this.state.storyListTwo.debates.slice(0,4).map((stories, idx) => (
+                        ))}  
+                        {this.state.storyListTwo.shows.slice(0,4).map((stories, idx) => (
                         <div className={style.newshourVideo}>
                             <div className={style.storyWrapper}>
                                 <Link href={stories.complete_slug}>
@@ -125,13 +115,12 @@ class DebateList extends React.Component {
                                             </div>
                                     </div>
                                     <div className={style.dateContainer}>{stories.pub_datetime}</div>
-                                    <div className={style.storyHashTag}> #{stories.hashtag}</div>
-                                    <div className={[style.storyQuestion,style.textHover].join(" ")} style={{height: "68px"}}>{stories.question}</div>
+                                    <div className={[style.storyQuestion,style.textHover].join(" ")} style={{height: "68px"}}>{stories.headline}</div>
                                 </a>
                                 </Link>
                             </div>
                         </div>
-                        ))}
+                        ))}  
                     </div>
                     <div style={{width:"25%;",minWidth: "300px"}}>
                         <div className={style.adsWrapper}>
@@ -144,8 +133,8 @@ class DebateList extends React.Component {
             <div className={style.storyContainer}>
                 <div className={style.cardSection}>
                 <div style={{width:"75%"}} >
-                    <div className={style.debateStorySection} id="debate-load">
-                    {this.state.storyListTwo.debates.slice(4,10).map((stories, idx) => (
+                    <div className={style.showStorySection} id="show-load">
+                    {this.state.storyListTwo.shows.slice(4,10).map((stories, idx) => (
                         <div className={style.newshourVideo}>
                             <div className={style.storyWrapper}>
                                 <Link href={stories.complete_slug}>
@@ -159,14 +148,13 @@ class DebateList extends React.Component {
                                             </div>
                                     </div>
                                     <div className={style.dateContainer}>{stories.pub_datetime}</div>
-                                    <div className={style.storyHashTag}> #{stories.hashtag}</div>
-                                    <div className={[style.storyQuestion,style.textHover].join(" ")}  style={{height: "68px"}}>{stories.question}</div>
+                                    <div className={[style.storyQuestion,style.textHover].join(" ")}  style={{height: "68px"}}>{stories.headline}</div>
                                     </a>
                                 </Link>
                             </div>
                         </div>
-                        ))}
-                        {this.state.storyListThree.debates.slice(0,3).map((stories, idx) => (
+                        ))}  
+                        {this.state.storyListThree.shows.slice(0,3).map((stories, idx) => (
                         <div className={style.newshourVideo}>
                             <div className={style.storyWrapper}>
                                 <Link href={stories.complete_slug}>
@@ -180,13 +168,12 @@ class DebateList extends React.Component {
                                             </div>
                                     </div>
                                     <div className={style.dateContainer}>{stories.pub_datetime}</div>
-                                    <div className={style.storyHashTag}> #{stories.hashtag}</div>
-                                    <div className={[style.storyQuestion,style.textHover].join(" ")} style={{height: "68px"}}>{stories.question}</div>
+                                    <div className={[style.storyQuestion,style.textHover].join(" ")} style={{height: "68px"}}>{stories.headline}</div>
                                 </a>
                                 </Link>
                             </div>
                         </div>
-                        ))}
+                        ))} 
                     </div>
                     </div>
                     <div style={{width:"25%;",minWidth: "300px"}}>
@@ -195,12 +182,12 @@ class DebateList extends React.Component {
                         </div>
                     </div>
                 </div>
-                <LoadMoreStory />
+                <LoadMoreShows />
             </div>
             </section>
             </div>
        )
    }
 }
-
-export default DebateList;
+ 
+export default ShowList;
