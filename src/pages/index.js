@@ -8,7 +8,6 @@ export default function HomePage({ home,footer }) {
   return (
     <>
     <Home props={home}></Home>
-    <h1>{footer.menus[0].name}</h1>
     </>
   );
 }
