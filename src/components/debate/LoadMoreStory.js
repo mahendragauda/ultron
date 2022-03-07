@@ -16,7 +16,7 @@ function LoadMoreStory() {
       fetch(`https://jarvis.republicworld.com/debates/cards?limit=10&page_no=${page}`)
         .then(res => res.json())
         .then(res => {
-          setTotalPages(res.data.total_pages);
+          setTotalPages(res.data.meta.total_no_of_page);
           setUserList([...debateStory, ...res.data.debates]);
           setLoading(false);
         });

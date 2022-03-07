@@ -1,32 +1,32 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import style from '../../styles/Debate.module.css';
+import style from '../../styles/Show.module.css';
 
 function LoadMoreShows() {
   const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(3);
 
 
-  const [showStory, setUserList] = useState([]);
+  const [showStory, setShowList] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  
   useEffect(() => {
-    const getUserList = () => {
+    const getShowList = () => {
       setLoading(true);
       fetch(`https://jarvis.republicworld.com/shows?sub_category_slug=nation-wants-to-know&limit=10&page_no=${page}`)
         .then(res => res.json())
         .then(res => {
-          setTotalPages(res.data.total_pages);
-          setUserList([...showStory, ...res.data.shows]);
+          setTotalPages(res.data.meta.total_no_of_page);
+          setShowList([...showStory, ...res.data.shows]);
           setLoading(false);
         });
     }
-    getUserList();
+    getShowList();
   }, [page]);
   return (
         <div class={style.cardSection}>
             <div style={{width:"75%"}} >
-                  <div class={style.debateStorySection} id="debate-load">
+                  <div class={style.showStorySection} id="show-load">
     {showStory.slice(4).map((stories, i) => {
     return <div key={i} class={style.newshourVideo}>
         <div class={style.storyWrapper}>
@@ -48,7 +48,7 @@ function LoadMoreShows() {
     </div>
     })}
     </div>
-   {totalPages !== page && <div class={style.loadMoreBtn} onClick={() => setPage(page + 1)} id="debate-loadmore"> Load More </div>}
+   {totalPages !== page && <div class={style.loadMoreBtn} onClick={() => setPage(page + 1)} id="show-loadmore"> Load More </div>}
     </div>
     </div>
     );

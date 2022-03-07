@@ -28,7 +28,7 @@ class DebateList extends React.Component {
     script.src = "../../public/javascript/dateFormatter.js";
     script.async = true;
     script.onload = () => this.scriptLoaded();
-    convertDateTime();
+    // convertDateTime();
     // console.log(convertDateTime());
     document.head.appendChild(script);
   }

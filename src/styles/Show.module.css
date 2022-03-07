@@ -50,3 +50,608 @@
     background: #D10014;
     border-radius: 10px;
 }
+
+/* common css */
+.pageWrapper{
+    width:100%;
+    font-family: Roboto,sans-serif;
+}
+.topContainer{
+  font-family: Roboto,sans-serif;
+  letter-spacing: 0!important;
+  background-color: #f8f8f8
+}
+.breadCrumbSection{
+  padding-top: 15px!important;
+  font-size: 14px;
+  padding-left: 10px!important;
+  padding-right: 10px!important;
+}
+.breadCrumbNav{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: initial!important;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.flexNoShrink {
+  flex-shrink: 0!important;
+}
+.breadCrumbText{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-weight: 500!important;
+  -webkit-line-clamp: 1!important;
+}
+.breakingNewsContainer{
+  padding-top: 20px!important;
+  padding-left: 10px!important;
+  padding-right: 10px!important;
+}
+.breakingNewsDiv{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.breakingNewsText{
+  width:100%;
+  font-size: 20px;
+  margin-left: 10px!important; 
+}
+.titleSection{
+  padding-top: 25px;
+  padding-left: 10px!important;
+  padding-right: 10px!important;
+}
+.showTitleWrapper{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 15px!important;
+  border-bottom: 1px solid #ddd;
+}
+.titleText{
+  font-size: 38px;
+  font-weight: 700!important;
+  padding-top: 5px!important;
+  color: #d10014;
+  line-height: 36px!important;
+}
+.adContainer{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: initial!important;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  padding-top: 50px!important;
+  padding-bottom: 50px!important;
+}
+.showDescription{
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0!important;
+  padding: 10px!important;
+  padding-bottom: 100px!important;
+  background-color: #f8f8f8
+}
+.descriptionDiv{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.topStoryDiv{
+  padding-top: 10px!important;
+  padding-left: 10px!important;
+  padding-right: 10px!important;
+}
+.topStoryContainer{
+  border: 1px solid #ddd;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: initial!important;
+  -moz-box-wrap: wrap;
+  -webkit-box-wrap: wrap;
+  -ms-flexbox-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+.showHashTagDiv{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: initial!important;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+}
+.storyDiv{
+  overflow: hidden!important;
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: initial!important;
+}
+.playButtonDiv{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.playDiv{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: initial!important; 
+  height: 100%;
+}
+.playButton{
+  width: 35px;
+  height: 35px;
+  content: url("../public/images/play_button.png"); 
+  text-align: center
+}
+.dateContainer{
+  font-size: 14px;
+  padding-top: 5px!important;
+}
+.storyHashTag{
+  font-size: 16px;
+  padding-top: 5px!important;
+  color: #d10014;
+  font-weight: 700!important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1!important;
+}
+.storyQuestion{
+  font-size: 18px;
+  line-height: 21px!important;
+  font-weight: 700;
+  padding-top: 5px!important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1!important;
+  -webkit-line-clamp: 3!important;
+}
+.storyCardContainer{
+  padding-bottom: 30px!important;
+  padding-left: 10px!important;
+  padding-right: 10px!important;
+}
+.storyContainer{
+  padding-top: 50px!important;
+  padding-left: 10px!important;
+  padding-right: 10px!important;
+}
+.cardSection{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: initial!important;
+}
+.storyCardSection{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: initial!important;
+  -moz-box-wrap: wrap;
+  -webkit-box-wrap: wrap;
+  -ms-flexbox-wrap: wrap;
+  flex-wrap: wrap;
+}
+.showStorySection{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: initial!important;
+  width:100%;
+  -moz-box-wrap: wrap;
+  -webkit-box-wrap: wrap;
+  -ms-flexbox-wrap: wrap;
+  flex-wrap: wrap;
+  padding-bottom: 30px!important;
+}
+.recommendSection{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.recommendText{
+  font-size: 25px;
+  line-height: 25px!important;
+  padding-bottom: 15px!important;
+}
+.channelDiv{
+  position: absolute;
+  width:100%;
+  height: 100%
+}
+.channelTextDiv{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: initial!important;
+  height: 100%;
+}
+.channelName{
+  font-size: 24px; 
+  font-weight: 700;
+  color: #fff!important;
+}
+.loadMoreBtn{
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center!important;
+  text-decoration: underline !important
+}
+
+.flexNoShrink {
+  flex-shrink: 0!important;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: initial!important;
+}
+
+.flexNoShrink {
+  flex-shrink: 0!important;
+}
+
+@media only screen and (max-width :768px) {
+  .flexResponsive {
+  display: block!important;
+}
+}@-ms-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+.mobiVisible {
+  display: none!important;
+}
+.desktopVisible {
+  display: block!important;
+}
+@media only screen and (max-width :768px) {
+  .mobiVisible {
+  display: inline-block!important;
+}
+.desktopVisible {
+  display: none!important;
+}
+}
+.imgResponsive {
+  display: block;
+  height: auto;
+  max-width: 100%}
+
+@media only screen and (max-width :768px) {
+  .width10, .width20, .width25, .width30, .width33, .width34, .width35, .width40, .width45, .width50, .width55, .width60, .width62, .width65, .width66, .width67, .width70, .width75, .width80, .width90, .width95 {
+  width: 100%}
+}
+.responsiveBreakText {
+  display: block;
+}
+.responsiveBreakTextRev {
+  display: inline-block;
+}
+@media only screen and (max-width :768px) {
+  .responsiveBreakText {
+  display: inline-block;
+}
+.responsiveBreakTextRev {
+  display: block;
+}
+}
+.txtShadow {
+  text-shadow: 0 0 15px rgba(0, 0, 0, .55);
+}
+.txtAlignResponsive {
+  text-align: left!important;
+}
+@media only screen and (max-width :768px) {
+  .txtAlignResponsive {
+  text-align: center!important;
+}
+}p.dropCap:first-child:first-letter {
+  float: left;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+}
+
+.overflowHidden {
+  overflow: hidden!important;
+}
+.overflowInitial {
+  overflow: initial!important;
+}
+.overflowAuto {
+  overflow: auto!important;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.newshourShow .videoWrapper {
+  position: relative;
+  padding-bottom: 48.13%;
+  height: 0;
+}
+.shows-page .videoWrapper {
+  position: relative;
+  padding-bottom: 44%;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%}
+.videoWrapper .videoEle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%}
+.videoPortraitWrapper .videoEle {
+  width: 100%;
+  height: 498px;
+}
+
+.opinionDescription {
+  font-size: 24px;
+  letter-spacing: -.02em;
+  margin: 0;
+  padding: 10px 0;
+  line-height: 27px
+}
+
+
+.showTitle .timer {
+  font-size: 14px;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+  padding: 0 5px 0 10px
+}
+
+.showTitle {
+  background-color: #fff;
+  padding: 15px;
+  min-height: 210px
+}
+
+.hashTagText {
+  background-color: #d10014;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500
+}
+
+.showTime {
+  padding-left: 15px;
+  font-size: 12px;
+  text-align: center;
+  margin: auto 0
+}
+
+.showQuestion {
+  padding-top: 10px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 22px
+}
+
+.showDesc {
+  padding-top: 10px;
+  font-size: 16px;
+  line-height: 21px
+}
+
+.showParagraph>h1 span {
+  font-size: 18px;
+  font-weight: 700
+}
+
+.showParagraph p span {
+  font-size: 16px;
+  line-height: 22px !important
+}
+
+.showTitle #countDownToShowTime {
+  font-size: 18px
+}
+
+.adsWrapper {
+  padding: 30px 10px;
+  background-color: #f0f0f0;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 90px;
+}
+
+.light-mode {
+  background-color: #f8f8f8;
+  transition: all .5s
+}
+
+.light-mode .breaking-news-livetv {
+  background-color: #f8f8f8
+}
+
+.lightMode .breakingWrapper {
+  background-color: #fff
+}
+
+.darkMode .breakingWrapper {
+  background-color: #232121
+}
+
+.storyWrapper .imgHover,
+.storyWrapper .textHover,
+.storyWrapper.videoHover {
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  -ms-transition: all .5s;
+  transition: all .5s
+}
+
+.storyWrapper:hover .textHover {
+  opacity: .7
+}
+
+.storyWrapper:hover .imgHover {
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05)
+}
+
+.storyWrapper .videoHover {
+  background: rgba(0, 0, 0, .1)
+}
+
+.storyWrapper:hover .videoHover {
+  background: rgba(0, 0, 0, .2);
+  pointer-events: none
+}
+.responsiveImage {
+  height: auto;
+  width: 100%
+}
+
+@media only screen and (max-width :800px) {
+  .newshourHero {
+      width: 100% !important
+  }
+
+  .newshourHero:nth-child(2) {
+      border-top: 1px solid #ddd;
+      border-left: 0 !important
+  }
+}
+
+.newshourHero:nth-child(2) {
+  border-left: 1px solid #ddd
+}
+
+.newshourWrapper h1 {
+  margin: 0
+}
+.newshourVideo {
+  width: 31%;
+  min-width: 180px;
+  padding: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 10px rgba(221, 221, 221, .5)
+}
+
+.newshourLatest {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.newshourLatest>div {
+  width: 50%;
+  padding: 15px;
+  background: #fff;
+  box-sizing: border-box
+}
+
+.newshourLatest>div:nth-child(1) {
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd
+}
+
+.newshourLatest>div:nth-child(2) {
+  border-bottom: 1px solid #ddd
+}
+
+.newshourLatest>div:nth-child(3) {
+  border-right: 1px solid #ddd
+}
+
+.newshoursRecommend {
+  display: flex;
+  justify-content: space-between;
+  width: 100%
+}
+
+.newshoursRecommend>div:not(:last-child) {
+  padding-right: 10px
+}
+
+
+  

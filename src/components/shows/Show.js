@@ -2,7 +2,7 @@ import React from "react";
 import ShowList from "./ShowList";
 import Image from "next/image";
 import Link from 'next/link';
-import style from '../../styles/Debate.module.css'
+import style from '../../styles/Show.module.css'
 
 
 

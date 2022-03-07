@@ -2,7 +2,7 @@ import React from "react";
 import ReactJWPlayer from "react-jw-player";
 import Image from "next/image";
 import Link from 'next/link';
-import style from '../../styles/Debate.module.css'
+import style from '../../styles/Show.module.css'
 import Show from "./Show";
 import Recommend from "../common/Recommend.js";
 import LoadMoreShows from "./LoadMoreShows";
@@ -35,16 +35,16 @@ class ShowList extends React.Component {
             <div className={style.topStoryDiv}>
                 <div className={style.topStoryContainer} style={{background:"white"}}>
                 <div style={{width:"58%"}} className={style.newshourHero}>
-                    <div className={style.newshourDebate} id="video_player" data-debate_id={this.state.storyList.shows[0].id}>
+                    <div className={style.newshourShow} id="video_player" data-debate_id={this.state.storyList.shows[0].id}>
                         <div className={style.videoWrapper}>
                      <ReactJWPlayer  playerId={this.state.storyList.shows[0].video_path} playerScript='https://cdn.jwplayer.com/libraries/RXQnHIQu.js' playlist={videoUrl} />
                     </div>
                     </div>
-                    <div className={style.debateTitle} style={{paddingTop: "70px", height:"210px", overflow:"hidden"}}>
-                            <div className={style.debateHashTagDiv}>
+                    <div className={style.showTitle} style={{paddingTop: "70px", height:"210px", overflow:"hidden"}}>
+                            <div className={style.showHashTagDiv}>
                                 <div className={style.hashTagText}> #{this.state.storyList.shows[0].headline}</div> 
                             </div>
-                            <div className={style.debateDesc }>{this.state.storyList.shows[0].title} </div>
+                            <div className={style.showDesc }>{this.state.storyList.shows[0].title} </div>
                     </div>
                 </div>
                 <div style={{width:"42%"}} className={style.newshourHero}>
@@ -133,7 +133,7 @@ class ShowList extends React.Component {
             <div className={style.storyContainer}>
                 <div className={style.cardSection}>
                 <div style={{width:"75%"}} >
-                    <div className={style.debateStorySection} id="debate-load">
+                    <div className={style.showStorySection} id="show-load">
                     {this.state.storyListTwo.shows.slice(4,10).map((stories, idx) => (
                         <div className={style.newshourVideo}>
                             <div className={style.storyWrapper}>
