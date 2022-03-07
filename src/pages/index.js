@@ -1,22 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import CardImage from "../components/common/CardImage";
-import Header from "../components/common/Header";
+import Home from "../components/home/home";
 const axios = require('axios');
 
-export default function HomePage({ home }) {
+export default function HomePage({ home,footer }) {
   return (
-    <div>
-      <Header />
-      <CardImage
-        src="https://img.republicworld.com/republic-prod/stories/promolarge/xxhdpi/dywsixvmpxnkrm5v_1644731015.jpeg"
-        alt="image"
-        width="300"
-        height="200"
-      />
-      <div>{home.meta_title}</div>
-    </div>
+    <>
+    <Home props={home}></Home>
+    </>
   );
 }
 
@@ -27,8 +19,8 @@ export async function getServerSideProps() {
   const footerRequest = axios.get(`https://jarvis.republicworld.com/homecontent/footer-links`)
   await Promise.all([homePageRequest, footerRequest]).then(function (results) {
     home = results[0].data.data;
-    footer = results[1].data.data;
+    footer = results[1].data;
   });
-  return { props: { home } }
+  return { props: { home,footer } }
 
 };

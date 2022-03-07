@@ -1,0 +1,235 @@
+.storycontainer {
+    width: 66.7%;
+}
+.rightpane {
+    width: 33.3%;
+    padding-left: 20px;
+}
+.storywrapper {
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgb(221 221 221 / 50%);
+}
+.timeelapsed {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #0f0f0f;
+}
+
+.fontpoint8em {
+    font-size: .8em;
+}
+.tags_a a::after {
+    content: ',';
+    color: #000;
+    padding-right:4px;
+}
+.tags_a a:last-child::after{content: unset;}
+
+/* subscribe to us */
+.r_logo {
+    display: flex;
+    padding: 10px 20px 5px 20px;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.r_logo>div:last-child>div>a>img {
+    width: 156px;
+    height: 31px;
+}
+
+.youtube_subscribe {
+    background: #1a1423;
+    background-image: url(/assets/storydetail/g18.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.watch_livetv {
+    background: #6d1c24;
+    background-image: url(/assets/storydetail/g18.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.livetv_logo {
+    width: 28px !important;
+}
+
+.subscribe_img{
+  width: 156px;
+  height: 31px
+}
+
+.youtube_logo {
+    width: 80px;
+    height: 20px;
+}
+
+.storyContent a {
+    color: #e60000;
+}
+
+/* story ttext */
+.storyContent .storytext {
+    line-height: 25px;
+    font-size: 16px
+  }
+  
+  .storyContent .storytext p {
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-family: Merriweather
+  }
+/* end */
+
+
+/* content of story_text CSS coming from API */
+.storyContent .storytext p {
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-family: Merriweather;
+  }
+  .storyContent h1 {
+    font-size: 48px;
+    margin: 15px 0;
+    line-height: 50px;
+    font-family: montserratbold
+  }
+  
+  .storyContent img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 10px
+  }
+  
+  .storyContent .author span,
+  .storyContent .author time {
+    font-size: 14px
+  }
+  
+  .storyContent .author {
+    margin-bottom: 20px
+  }
+  
+  .storyContent a {
+    color: #e60000
+  }
+  
+  .storyContent .storytext {
+    line-height: 25px;
+    font-size: 16px
+  }
+  
+  .storyContent .storytext p {
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-family: Merriweather
+  }
+  
+  .storyContent .storytext blockquote,
+  .subcategory-liveupdates blockquote {
+    padding: 20px;
+    position: relative
+  }
+  
+  .storyContent .storytext blockquote::after,
+  .storyContent .storytext blockquote::before,
+  .subcategory-liveupdates blockquote::after,
+  .subcategory-liveupdates blockquote::before {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    color: #d10014;
+    position: absolute
+  }
+  
+  .storyContent .storytext blockquote::before,
+  .subcategory-liveupdates blockquote::before {
+    content: open-quote;
+    left: 0;
+    top: 0;
+    line-height: 60px
+  }
+  
+  .storyContent .storytext blockquote::after,
+  .subcategory-liveupdates blockquote::after {
+    content: close-quote;
+    right: 0;
+    bottom: 0;
+    line-height: 38px
+  }
+  
+  .storyContent.storypicture {
+    margin-bottom: 38px
+  }
+  
+  .storyContent .storytext blockquote.twitter-tweet {
+    display: inline-block;
+    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    border-color: #eee #ddd #bbb;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+    margin: 10px 5px;
+    padding: 0 16px 16px 16px;
+    max-width: 468px
+  }
+  
+  .storyContent .storytext blockquote.twitter-tweet p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px
+  }
+  
+  .storyContent .storytext blockquote.twitter-tweet a {
+    color: inherit;
+    font-weight: 400;
+    text-decoration: none;
+    outline: 0 none
+  }
+  
+  .storyContent .storytext blockquote p {
+    font-family: Roboto;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .storyContent .storytext blockquote.twitter-tweet a:hover,
+  blockquote.twitter-tweet a:focus {
+    text-decoration: underline
+  }
+
+  .storyContent .storytext blockquote::before, .subcategory-liveupdates blockquote::before {
+    content: open-quote;
+    left: 0;
+    top: 0;
+    line-height: 60px;
+}
+
+.storyContent .storytext blockquote::after, .subcategory-liveupdates blockquote::after {
+    content: close-quote;
+    right: 0;
+    bottom: 0;
+    line-height: 38px;
+}
+  /* end */
+
+@media only screen and (max-width: 950px){
+.next-story, .storycontainer {
+    width: 100%!important;
+}
+}
