@@ -110,7 +110,7 @@ class Header extends React.Component {
     },
     menuWrapper: {
       textTransform: 'capitalize',
-      flexShrink: '0'
+      flexShrink: '0',
     },
     menuArrowContainer: {
       width: '8%',
@@ -220,7 +220,7 @@ class Header extends React.Component {
             <div style={this.CSS.header}>
               <div style={this.CSS.headerMenuContainer} id='menuContainer'>
                 <div style={this.CSS.headerMenuWrapper}>
-                  <Link href="/">
+                  <Link href="/the-debate">
                     <a style={this.CSS.menuWrapper}>
                       <div style={{ flexShrink: '0', padding: '5px 20px 5px 0px' }}>The Debate</div>
                     </a>
@@ -273,6 +273,11 @@ class Header extends React.Component {
                   <Link href="/">
                     <a style={this.CSS.menuWrapper}>
                       <div style={{ flexShrink: '0', padding: '5px 20px' }}>Business News</div>
+                    </a>
+                  </Link>
+                  <Link href="/shows/nation-wants-to-know">
+                    <a style={this.CSS.menuWrapper}>
+                      <div style={{ flexShrink: '0', padding: '5px 20px' }}>Nation Wants To Know</div>
                     </a>
                   </Link>
                 </div>
