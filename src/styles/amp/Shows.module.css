@@ -1,0 +1,180 @@
+.adContainer{
+    overflow: hidden;
+    justify-content: center;
+    margin: 0px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    padding: 15px 0px;
+    visibility: visible;
+    background: rgb(219, 221, 227);
+    display: flex;
+}
+.mainAdSection{
+    background-color: rgba(255, 255, 255, 0.35);
+    font-size: 0px;
+    min-height: 266px;
+    margin: 0px auto;
+    /* padding: 0px 10px 10px; */
+    min-width: 320px;
+    /* padding-top: 50px; */
+}
+.adTextDiv{
+    color: rgb(121, 126, 144);
+    display: inline-block;
+    font-size: 11px;
+    padding: 1px 0px;
+    width: 100%;
+}
+.showsHeader{
+    width: 100%;
+    left: 0px;
+    top: 383px;
+    background: linear-gradient(90deg, rgb(229, 45, 39) 0%, rgb(209, 0, 20) 49.87%, rgb(179, 18, 23) 100%);
+    box-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+    display: block;
+    justify-content: space-between;
+    line-height: 0;
+}
+.menuContainer{
+    background: rgb(26, 20, 35);
+    height: 60px;
+    font-family: Roboto, sans-serif;
+    color: rgb(255, 255, 255);
+}
+.selectShow{
+    color: rgb(255, 255, 255);
+    padding: 10px 0px 0px 15px;
+    font-size: 12px;
+    line-height: 14px;
+}
+.navMenuWrapper{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.showActive{
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-top: 5px;
+    display: inline-flex;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+}
+.channelText{
+    font-size: 16px;
+    line-height: 21px;
+    padding-left: 15px;
+    padding-top: 5px;
+    display: inline-flex;
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+}
+.showHeadingContainer{
+    font-size: 16px;
+    line-height: 22px;
+    color: rgb(15, 15, 15);
+}
+.headingWrapper{
+    padding: 25px 15px 20px;
+    font-family: Roboto, sans-serif;
+}
+.showName{
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+}
+.showBy{
+    font-size: 16px;
+    line-height: 22px;
+    color: rgb(15, 15, 15);
+}
+.storyWrapper{
+    font-family: Roboto, sans-serif;
+    border-bottom: 1px solid rgb(229, 229, 229);
+    display: flex;
+    flex-direction: column;
+    color: rgb(15, 15, 15);
+    padding: 15px;
+    overflow: hidden;
+}
+
+.hashTagContainer{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+.showTitleWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.showTitleDiv{
+    height: 18px;
+    background: rgb(209, 0, 20);
+    border-radius: 2px;
+    display: table;
+    overflow: hidden;
+    width: fit-content;
+}
+.showTitleText{
+    line-height: 13px;
+    color: rgb(255, 255, 255);
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    word-break: break-word;
+}
+.headLine{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 25px;
+    color: rgb(15, 15, 15);
+    margin: 5px 0px 0px;
+    max-height: 75px;
+    overflow: hidden;
+}
+.imgContainer{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 56.25%;
+}
+.imgDiv{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+.progressive{
+    display: block;
+    overflow: hidden;
+    outline: 0;
+}
+.showDescription{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+}
+.descriptionText{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(15, 15, 15);
+    max-height: 40px;
+    overflow: hidden;
+    min-width: 85%;
+}

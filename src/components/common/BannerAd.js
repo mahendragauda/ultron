@@ -10,8 +10,8 @@ class BannerAd extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            width: props.width ? `${props.width}px` : '728px',
-            height: props.height ? `${props.height}px` : '90px',
+            width: props.adSlot.size[0],
+            height: props.adSlot.size[1],
             adSlot: props.adSlot
         };
     }
