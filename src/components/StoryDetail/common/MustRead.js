@@ -13,7 +13,9 @@ export default function MustRead(props){
             <a href={"/"+props.mustReadComplete_Slug}>
                 <div className={[mustReadCommonCss.flex, mustReadCommonCss.width100].join(" ")}>
                     <div style={{width:"29%",maxWidth:"150px",maxHeight:"100px"}} className={[mustReadCommonCss.overflowHidden, mustReadCommonCss.posRelative,mustReadCommonCss.flex].join(" ")}>
-                        <CardImage  src={props.mustReadSrc} alt="image" width="150" height="138"/>
+                        <div className={[mustReadCommonCss.res_wid100_Img,mustReadCommonCss.objectCover].join(" ")}>
+                            <CardImage  src={props.mustReadSrc} alt="image" width="150" height="138"/>
+                        </div>
                         {props.mustReadType == "V"?
                         <div className={[mustReadCommonCss.videohover,mustReadCommonCss.posAbsolute,mustReadCommonCss.posAbsolute,mustReadCommonCss.width100,mustReadCommonCss.height100p].join(" ")} style={{background: "rgba(0,0,0,0.5)"}}>
                             <div className={[mustReadCommonCss.flex, mustReadCommonCss.width100,mustReadCommonCss.height100p].join(" ")}>

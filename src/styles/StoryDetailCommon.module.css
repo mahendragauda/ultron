@@ -3404,3 +3404,22 @@
     border: 1px solid #ddd;
     box-shadow: 2px 2px 10px rgb(221 221 221 / 50%);
   }
+
+  /* responsive for must read, morephotos common for 950 */
+  @media only screen and (max-width: 950px){
+    .res_wid100_Img{
+      display:block!important;width:100%!important
+    }
+    .res_wid100_Img > span , .res_wid100_Img > span > span{
+      display:block!important;width:100%!important
+    }
+    .res_wid100_Img > span > span > img{
+      object-fit: cover;width:100%!important
+    }
+}
+.objectCover span > img{
+    object-fit:cover!important;
+}
+.objectCover span > span{
+   height:100%!important;
+}

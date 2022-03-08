@@ -82,7 +82,7 @@
     font-size: 16px
   }
   
-  .storyContent .storytext p {
+.storyContent .storytext p {
     padding: 0 0 10px 0;
     margin: 0;
     font-family: Merriweather
@@ -266,3 +266,13 @@
     width: 100%!important;
 }
 }
+
+@media only screen and (max-width: 768px){
+.storyContent .storytext {
+    line-height: 22px;
+    font-size: 15px;
+    text-align: justify;
+}
+}
+
+
