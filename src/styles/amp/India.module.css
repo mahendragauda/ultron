@@ -1,0 +1,15 @@
+.title{
+    padding: 10px ;
+    text-decoration: solid;
+    text-transform: uppercase;
+    }
+
+.sub{
+    padding: 10px;
+    text-align: center;
+}
+
+.newsItem{
+    margin-left: 80px;
+  }
+
