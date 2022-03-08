@@ -1,0 +1,277 @@
+.a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+.a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.storyTitle {
+    position: relative;
+    padding: 0 12px;
+}
+.storyDescription {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 12px;
+    color: #3e3e3e;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+.detailsContainer {
+    clear: both;
+    flex-direction: column;
+    display: flex;
+    line-height: 12px;
+    top: -12px;
+    padding-left: 13px;
+    position: relative;
+}
+.smallestText {
+    font-family: Montserrat,sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    padding-right: 20px;
+    margin-top: 9px;
+    color: gray;
+    float: left;
+}
+.smallText {
+    font-family: Montserrat,sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    padding-right: 20px;
+    color: gray;
+    float: left;
+}
+.content {
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+.republicDiv {
+    padding-left: 15px;
+    height: auto;
+}
+.republicText {
+    float: left;
+    width: 127px;
+    height: 25px;
+    margin-top: 8px;
+}
+.iAmphtmlLayoutSizeDefined {
+    overflow: hidden!important;
+}
+.iAmphtmlLayoutFixed, [layout=fixed][width][height]:not(.i-amphtml-layout-fixed) {
+    display: inline-block;
+    position: relative;
+}
+.iAmphtmlElement {
+    display: inline-block;
+}
+.socialShare {
+    float: right;
+    width: auto;
+    height: 35px;
+    display: flex;
+    margin-right: 18px;
+}
+.ampSocialShare.rounded {
+    border-radius: 50%;
+    background-size: 60%;
+}
+.ampSocialShareWhatsapp {
+    background-color: #25d366;
+}
+.iAmphtmlLayoutSizeDefined {
+    overflow: hidden!important;
+}
+.iAmphtmlLayoutFixed, [layout=fixed][width][height]:not(.i-amphtml-layout-fixed) {
+    display: inline-block;
+    position: relative;
+}
+.iAmphtmlElement {
+    display: inline-block;
+}
+.ampSocialShare {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+}
+.MainStory {
+    padding: 1px;
+}
+.innerStoryContainer .StoryContainer {
+    line-height: 25px;
+    font-size: 18px;
+    text-align: left;
+    overflow: hidden;
+    word-break: break-word;
+    padding-left: 20px;
+    margin-top: 40px;
+    position: relative;
+    font-family: Merriweather,Georgia,sans-serif;
+    padding-right: 20px;
+    font-weight: 400;
+}
+.innerStoryContainer .StoryContainer p {
+    padding: 0 0 10px 0;
+    color: #777474;
+}
+.innerStoryContainer a {
+    color: #e60000;
+    font-size: 1rem;
+}
+.WeRecommend {
+    margin-top: 20px;
+}
+.iAmphtmlLayoutSizeDefined {
+    overflow: hidden!important;
+}
+.iAmphtmlLayoutFixedHeight{
+    display: block;
+    position: relative;
+}
+/* .iAmphtmlElement {
+    display: inline-block;
+} */
+.iAmphtmlCarouselContent {
+    /* position: absolute;
+    top: 0; */
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.ampCarousel .iAmphtmlCarouselScroll[horizontal=true] {
+    padding-bottom: 0!important;
+}
+.iAmphtmlCarouselScroll[horizontal=true] {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    scroll-snap-type-x: mandatory;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px!important;
+    overflow-y: hidden;
+}
+.iAmphtmlCarouselScroll[hide-scrollbar=true] {
+    scrollbar-width: none;
+}
+.iAmphtmlCarouselScroll {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    -ms-flex-align: center;
+    align-items: center;
+    outline: none;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch!important;
+    --visible-count: 1;
+}
+/* .iAmphtmlCarouselScroll[horizontal=true][mixed-length=false]>.iAmphtmlCarouselSlotted, .iAmphtmlCarouselScroll[horizontal=true][mixed-length=false]>.iAmphtmlCarouselSpacer {
+    width: calc(100%/var(--visible-count))!important;
+    min-width: auto!important;
+    max-width: none!important;
+} */
+.iAmphtmlCarouselScroll>.iAmphtmlCarouselSlotted {
+    will-change: transform;
+}
+.iAmphtmlCarouselSlideItem {
+    position: relative!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+    -ms-flex-pack: center!important;
+    justify-content: center!important;
+    -ms-flex-align: center!important;
+    align-items: center!important;
+}
+.iAmphtmlCarouselSlotted, .iAmphtmlCarouselSpacer {
+    box-sizing: border-box!important;
+    margin: 0!important;
+    -ms-flex-negative: 0!important;
+    flex-shrink: 0!important;
+    width: 100%;
+    height: 100%;
+    scroll-snap-stop: always;
+}
+.ampCarouselSlide {
+    box-shadow: rgb(0 0 0 / 20%) 1px 3px 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    height: 305px;
+}
+.iAmphtmlCarouselSlideItem>* {
+    width: 100%;
+    height: 100%;
+    overflow: hidden!important;
+}
+.div {
+    display: block;
+}
+.style  {
+    scroll-snap-align: center;
+    transform: translate(0px, 0px);
+    --content-transform: translate(0px, 0px) !important;
+}
+.iAmphtmlLayoutSizeDefined {
+    overflow: hidden!important;
+}
+/* .iAmphtmlLayoutFixed, [layout=fixed][width][height]:not(.iAmphtmlLayoutFixed) {
+    display: inline-block;
+    position: relative;
+} */
+.iAmphtmlElement {
+    display: inline-block;
+}
+.iAmphtmlLayoutSizeDefined .iAmphtmlFillContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.iAmphtmlReplacedContent, .iAmphtmlScreenReader {
+    padding: 0!important;
+    border: none!important;
+}
+.iAmphtmlBlurryPlaceholder, .iAmphtmlFillContent {
+    display: block;
+    height: 0;
+    max-height: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    width: 0;
+    margin: auto;
+}
+.ampImg img {
+    object-fit: cover;
+}
+.RecommendCaptionOne {
+    font-weight: 700;
+    font-size: 14px;
+}
+.headerStyle {
+    background: rgba(255,255,255,.8);
+    box-shadow: rgb(0 0 0 / 17%) 0 2px 8px;
+}
+.row {
+    top: 0;
+    width: 100%;
+    z-index: 12;
+    background: rgba(255,255,255,.8);
+    box-shadow: rgb(0 0 0 / 17%) 0 2px 8px;
+}
+.republiclogo {
+    position: absolute;
+    left: 45%;
+    padding: 10px;
+}
