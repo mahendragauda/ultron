@@ -3330,4 +3330,9 @@
 .minheight90 {
     min-height: 90px;
 }
-
+.color_e60000 {
+    color: #e60000;
+}
+.color_red{
+    color: rgb(255, 0, 0);
+}
