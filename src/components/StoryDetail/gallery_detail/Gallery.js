@@ -1,48 +1,149 @@
-
-
 import React from 'react';
 import BreadCrumb from '../common/BreadCrumb';
 import StoryTopContent from '../common/StoryTopContent';
 import Recommand from '../common/Recommand'
 import RightStoryContainer from '../common/RightStoryContainer'
-import Data from "../dummy.json"
 import Link from 'next/link';
 import Image from 'next/image';
 import style from '../../../styles/StoryDetailCommon.module.css'
-import articleDetailStyle from '../../../styles/ArticleDetail.module.css'
+import articleDetailStyle from '../../../styles/ArticleDetail.module.css';
+import CardImage from '../../common/CardImage';
 
-class PicturePage extends React.Component{
+
+class GallaryPage extends React.Component{
+    CSS = {
+        gallery_item_number : {
+            fontFamily: "Roboto, sans-serif",
+            minWidth: "42px",
+            height: "26px",
+            padding: "5px 6px",
+            background: "#D10014",
+            borderRadius: "2px",
+            position: "absolute",
+            top: "3%",
+            left: "2%",
+            fontStyle: "normal",
+            fontWeight: "normal",
+            fontSize: "14px",
+            lineHeight: "16px",
+            textAlign: "center",
+            color: "#FFFFFF"
+        },
+        gallery_item_caption :{
+            fontFamily: "Roboto, sans-serif",
+            fontStyle: "normal",
+            fontWeight: "normal",
+            fontSize: "14px",
+            lineHeight: "16px",
+            color: "#0F0F0F",
+            textAlign: "right"
+        }
+    }
+
+
     constructor(props){
         super(props);
         this.state={
             Tags:[],
             published_datetime:'',
             recommand:'',
-            story_text:''
+            story_text:'',
+            gallery_list:[],
+            complete_slug:'',
+            mustReadStories:''
+          
             
         }
     }
 componentDidMount(){
-   console.warn(this.props.articlePictureData.data.story.id)
+   
     this.setState({
         Tags:this.props.articlePictureData.data.story.tags,
         published_datetime:this.props.articlePictureData.data.story.pub_datetime,
         recommand:this.props.articlePictureData.data.story.pub_datetime,
-        story_text:this.props.articlePictureData.data.story.story_text
+        story_text:this.props.articlePictureData.data.story.story_text,
+        gallery_list:this.props.articlePictureData.data.story.images,
+        complete_slug:this.props.articlePictureData.data.story.complete_slug,
+        mustReadStories:this.props.MustReadData,
+      
    }) 
+   console.warn("uuuuu",this.props.recommandStoryData.data.stories)
+
+//    scrollViewToImage(this.props.articlePictureData.data.story.complete_slug)
+this.scrollViewToImage(this.props.articlePictureData.data.story.complete_slug)
+window.addEventListener('scroll', this.checkGalleryStorySlug, true);
+
 }
+
+
+scrollViewToImage = (completeSlug) => {
+ 
+    setTimeout(function () {
+        console.log('nnn')
+      var imageId = completeSlug.split('imageid-')[1].replace('.html', '')
+      document.getElementById('gallery_image' + imageId).scrollIntoView({
+        behavior: 'smooth'
+      });
+     
+    })
+}
+
+ checkGalleryStorySlug = () => {
+   
+    var galleryImageElement = document.getElementsByClassName('gallery_image')
+    var current_path = ''
+    var new_path = ''
+    for (var i = 0; i < galleryImageElement.length; i++) {
+       
+      var current_element_visible = this.elementInViewport(galleryImageElement[i])
+      current_path = window.location.pathname;
+      let slug = window.location.pathname
+      let key = slug.replace('.html', '');
+      let imageIdPos = key.lastIndexOf('-imageid');
+      key = key.replace(key.substr(imageIdPos), '');
+      new_path = key + '-imageid-' + (i + 1) + '.html';
+      if (current_element_visible) {
+        if (current_path != new_path) {
+          window.history.pushState(null, null, new_path);
+        }
+        return false;
+      }
+    }
+}
+
+elementInViewport = (el) => {
+    let top = el.offsetTop;
+    let height = el.offsetHeight;
+    let vh = window.innerHeight;
+    if (height * 3 <= vh) {
+      return (top >= window.scrollY) && (top + height) <= (window.scrollY + window.innerHeight)
+    } else {
+      let minVisibleHeight = vh - height;
+      return (top >= window.scrollY || top + height >= window.scrollY + minVisibleHeight) && (top + height) <= (window.scrollY + window.innerHeight);
+    }
+}
+
+
 
 telegramClick = () =>{
     window.open('https://t.me/RepublicLive')
 }
+
+componentWillUnmount() {
+    window.removeEventListener('scroll', this.checkGalleryStorySlug);
+}
+
  
+
 
     render(){
        
         return(
+            <>
+              
                 <main className={[style.width100 ,style.fontRoboto].join(" ")} id="republic-dom">
                     <BreadCrumb breadcrumbArticleData={this.props.articlePictureData}/>
-                    {/* <p>{this.state.pictureData.data.story.id}</p> */}
+                    
                   <section className={[style.section1200 ,style.pad10].join(" ")}>
 	                    <div className={style.overflowHidden}>
                             <div className={[style.padtop20 ,style.txtcenter,style.minheight90].join(" ")}>ad</div>
@@ -58,6 +159,23 @@ telegramClick = () =>{
                                                 <div className="storypicture">
                                                     <StoryTopContent  storyTopContentArticle={this.props.articlePictureData}/>
                                                     <br/>
+                                                    <div className="gallery_items">
+                                                        {this.state.gallery_list.map((item,index) =>
+                                                            <div key= {index} className='gallery_item gallery_image' id={`gallery_image${index+1}`}>
+                                                                <div className="gallery_item_img_wrapper" style={{position:"relative"}}>
+                                                                    <div className={style.res_wid100_Img} style={{marginBottom:"10px",display:"flex"}}><CardImage src={item.picture_path} width="758" height="433" alt={item.picture_alt} className="gallary_img"/></div>
+                                                                    <div style={this.CSS.gallery_item_number}>{index+1}/{this.state.gallery_list.length}</div>
+                                                                    <div style={this.CSS.gallery_item_caption}>{item.picture_source}</div>
+                                                                </div>
+                                                                <div className={[style.flex,style.flexResponsive,style.flexJustifyBetween,style.flexAlignItemsStart,style.mrgntop15].join(" ")}>
+                                                                    <div className={[articleDetailStyle.storytext,style.width100].join(" ")}>
+                                                                          <div dangerouslySetInnerHTML={{ __html:item.picture_caption }} />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        )}
+                                                    </div>
                                                     <div style={{width:"100%"}} className={articleDetailStyle.storytext}>
                                                         <div dangerouslySetInnerHTML={{ __html: this.state.story_text }} />
                                                     </div>
@@ -145,9 +263,8 @@ telegramClick = () =>{
                                                     <div className="relatedstory mrgnbtm10">
                                                         <div className={[style.font25, style.fontweight700 ,style.padtop30 , style.lineHeight30px].join(" ")}>WE RECOMMEND</div>
                                                         <div className={style.recommend_wrapper}>
-                                                        {/* {cars.map((car) => <Car key={car.id} brand={car.brand} />)} */}
-                                                        {Data.map((recdata)=>
-                                                            <Recommand key={recdata.id} heading={recdata.heading}/>
+                                                            {this.props.recommandStoryData.data.stories.map((recdata)=> 
+                                                            <Recommand key={recdata.id} title={recdata.title} complete_slug={recdata.complete_slug} placeholder={recdata.placeholder} image_alt_text={recdata.image_alt_text} image_title={recdata.image_title} />
                                                         )}  
                                                         </div>
                                                     </div>
@@ -155,16 +272,16 @@ telegramClick = () =>{
                                             </div>
                                         </div>
                                     </div>
-                                    <RightStoryContainer rightStoryDetailArticle={this.props.articlePictureData}/>
+                                    <RightStoryContainer rightStoryDetailArticle={this.props.articlePictureData} MustReadStories={this.props.MustReadData}/>
                                     
                                 </div>
                             </div>
                         </div>
                     </section>
                 </main>
-            
+            </>
         );
     }
 }
 
-export default PicturePage
+export default GallaryPage

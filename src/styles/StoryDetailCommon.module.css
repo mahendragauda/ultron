@@ -1792,22 +1792,22 @@
 .maxHeight400px {
     max-height: 400px;
 }
-.color-black {
+.color_black {
     color: #000!important;
 }
-.color-red {
+.color_red {
     color: red;
 }
-.color-green {
+.color_green {
     color: green;
 }
-.color-blue {
+.color_blue {
     color: #00f;
 }
-.color-white {
+.color_white {
     color: #fff!important;
 }
-.color-grey {
+.color_grey {
     color: grey;
 }
 .responsiveBreakText {
@@ -3332,6 +3332,44 @@
     color: rgb(255, 0, 0);
 }
 
+
+/*  */
+
+.hover_effect .imghover,
+.hover_effect .texthover,
+.hover_effect .videohover {
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  -ms-transition: all .5s;
+  transition: all .5s
+}
+.responsiveImage {
+    height: auto;
+    width: 100%;
+}
+
+.hover_effect:hover .texthover {
+  opacity: .7
+}
+
+.hover_effect:hover .imghover {
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05)
+  }
+  
+  .hover_effect .videohover {
+    background: rgba(0, 0, 0, .1)
+  }
+  
+  .hover_effect:hover .videohover {
+    background: rgba(0, 0, 0, .2);
+    pointer-events: none
+  }
+
 /* media query */
 @media only screen and (max-width :950px) {
     .flexStoryResponsive {
@@ -3339,3 +3377,49 @@
     }
 }
 
+.recommend_wrapper>article:not(:last-child) {
+    padding-bottom: 15px;
+  }
+
+  .livetv_play_button {
+    width: 35px;
+    height: 35px;
+    content: url(/assets/common/play_button.png);
+    text-align: center;
+}
+
+  .rightpane_news_wrapper {
+    padding: 10px 10px;
+  }
+
+  .rightpane_news_wrapper:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+  
+  .rightpane_news_container {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 10px rgb(221 221 221 / 50%);
+  }
+
+  /* responsive for must read, morephotos common for 950 */
+  @media only screen and (max-width: 950px){
+    .res_wid100_Img{
+      display:block!important;width:100%!important
+    }
+    .res_wid100_Img > span , .res_wid100_Img > span > span{
+      display:block!important;width:100%!important
+    }
+    .res_wid100_Img > span > span > img{
+      object-fit: cover;width:100%!important
+    }
+}
+.objectCover span > img{
+    object-fit:cover!important;
+}
+.objectCover span > span{
+   height:100%!important;
+}
